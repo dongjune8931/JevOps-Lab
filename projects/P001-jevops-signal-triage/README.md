@@ -6,6 +6,8 @@
 
 M1 무료 로컬 관측 baseline을 구현·검증했다. 3개 합성 서비스의 metrics·logs·traces, Grafana provisioning, Alertmanager 로컬 webhook이 동작한다. Jev 호출, chaos 주입과 triage 성능 평가는 아직 수행하지 않았다.
 
+후속 순서는 로컬 M2~M4 → M4a 첫 AWS 통합 테스트 → M5 로컬·AWS 비교 평가 → M6 운영 화면 → M7 최종 AWS 검증(선택)이다. AWS 실행은 별도 비용 승인 후 진행하며 세부 조건은 [PLAN.md](PLAN.md)에 기록한다.
+
 ## 실행 및 검증
 
 실행 환경, 고정 버전, 구성 상세와 문제 확인은 [M1 로컬 실행 안내](docs/M1-LOCAL.md)를 따른다.
@@ -263,7 +265,7 @@ Noul은 별도 confidence 필드가 없으므로 반환된 0~1 값 자체를 확
 
 ## Ground truth 장애 시나리오
 
-모든 시나리오는 로컬 격리 환경, 제한된 namespace, 고정된 최대 지속시간과 deterministic abort 조건을 사용한다.
+모든 시나리오는 로컬 격리 환경을 기본으로 하며, 승인된 AWS 실습 환경에서도 제한된 namespace, 고정된 최대 지속시간과 deterministic abort 조건을 유지한다.
 
 | ID | 주입 상황 | Ground truth label | 기대되는 주요 증거 | 단계 |
 |---|---|---|---|---|

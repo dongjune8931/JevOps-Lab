@@ -5,11 +5,11 @@
 - 정답이 알려진 장애 시나리오에서 Jev 기반 signal triage의 품질과 비용을 측정한다.
 - Prometheus 경보 이후 필요한 조사·라우팅 판단을 타입 있는 결과로 제공한다.
 - confidence와 데이터 품질을 이용해 자동 추천과 human review의 안전한 경계를 찾는다.
-- 모든 실험을 로컬·격리·재현 가능한 방식으로 실행한다.
+- 로컬·격리 환경을 기본으로 하고, 별도 승인된 AWS 실습 환경에서 같은 흐름을 재현·비교한다.
 
 ## 비목표
 
-- 이번 구현 세션은 M1 로컬 관측 baseline만 다루며 M2 이후 chaos·triage·Jev 구현은 진행하지 않는다.
+- AWS에서의 상시 서비스 운영이나 production 배포를 목표로 하지 않는다.
 - anomaly detector나 observability backend를 새로 만들지 않는다.
 - Jev에 장애 주입, 복구, 배포 또는 경보 억제 권한을 주지 않는다.
 - 실제 운영 telemetry와 production cluster를 사용하지 않는다.
@@ -19,15 +19,25 @@
 
 - 상태: `active`
 - 현재 단계: Milestone 1 — 무료 로컬 관측 baseline 완료
-- 현재 브랜치: `feat/p001-local-observability`
+- 현재 브랜치: `docs/p001-aws-validation-plan`
+- AWS 검증 계획 PR: 생성 후 기록
 - M1 PR: https://github.com/dongjune8931/JevOps-Lab/pull/4
 - 기획 브랜치: `docs/p001-project-planning` (원격 브랜치 삭제 완료)
 - 기획 PR: https://github.com/dongjune8931/JevOps-Lab/pull/2 (squash merge 완료)
 - 검증 보완 브랜치: `docs/p001-planning-validation`
 - 검증 보완 PR: https://github.com/dongjune8931/JevOps-Lab/pull/3
 - 다음 미완료 단계: Milestone 2 — Chaos ground truth harness
-- 후속 결정 항목: chaos engine(M2), Context Builder 언어(M3), Jev provider·유료 평가 예산(M4)
+- 후속 결정 항목: chaos engine(M2), Context Builder 언어(M3), Jev provider·유료 평가 예산(M4), AWS 실습 계정·리전·구성·비용 상한(M4a)
 - 블로커: M1 없음. M2 시작 전 chaos engine 선택 필요
+
+## 진행 순서와 클라우드 진입 시점
+
+`로컬 M2 → 로컬 M3 → 로컬 M4 → M4a AWS 통합 테스트 → M5 로컬·AWS 비교 평가 → M6 운영 화면 → M7 최종 AWS 검증(선택)`
+
+- 첫 실제 클라우드 통합 테스트는 M4 완료 직후 진행한다. M2의 안전한 장애 주입·복구, M3의 마스킹·state·규칙 비교군, M4의 Jev 연결·실패 처리를 먼저 확보한다.
+- 기존 M1~M6 번호를 유지하고 중간 단계에 `M4a`를 추가한다. 다음 구현 세션의 첫 미완료 milestone은 계속 M2다.
+- Jev 비용 승인이 늦어지면 M3 이후 mock으로 AWS 배포·수집 경로만 먼저 확인할 수 있다. 이 경우에도 AWS 비용 승인은 필요하며, M4 또는 M4a의 실제 Jev 통합 완료로 간주하지 않는다.
+- 이 계획의 승인은 AWS 리소스 생성·크레딧 소비·유료 Jev 호출 승인이 아니다. 실행 직전에 구체적인 구성·예상 비용·상한·중단 및 정리 방법을 제시하고 승인을 받는다.
 
 ## Milestone 0 — 기획 및 프로젝트 bootstrap
 
@@ -141,7 +151,7 @@ python3 scripts/lab.py teardown
 
 ### 목표
 
-승인된 비용 범위 안에서 Jev API를 연결하고 versioned state와 atomic questions의 원본 결과를 안전하게 기록한다.
+로컬에서 승인된 비용 범위 안에서 Jev API를 연결하고 versioned state와 atomic questions의 원본 결과를 안전하게 기록한다. 이 흐름의 통과를 첫 AWS 통합 테스트의 진입 조건으로 삼는다.
 
 ### 선행 조건
 
@@ -166,11 +176,48 @@ python3 scripts/lab.py teardown
 - request redaction snapshot test
 - usage와 cost ledger 정합성 검사
 
-## Milestone 5 — 평가와 calibration
+## Milestone 4a — 첫 AWS 통합 테스트
 
 ### 목표
 
-보지 않은 test split에서 규칙 baseline과 Jev를 비교하고 품질·latency·비용·강건성을 보고한다.
+격리된 AWS 실습 환경에서 대표 장애 2~3개의 주입 → 신호 수집 → state 구성 → Jev 추천 → 복구 흐름을 짧게 검증한다. 정확도·calibration의 정식 성과 판정은 M5에서 수행한다.
+
+### 선행 조건과 범위
+
+- 로컬 M2~M4 검증이 통과하고 abort·복구·마스킹·timeout·호출 제한이 동작해야 한다.
+- 실습 계정의 운영 환경 분리 여부, 대상 계정·리전, 크레딧 잔액·만료일·적용 서비스와 예상 청구액을 확인한다.
+- EC2 + kind 또는 소규모 EKS 중 목적·예산에 맞게 선택하고 `DECISIONS.md`에 기록한다. 현재 구성은 미정이다.
+- AWS 생성·실행 시간·정리 예산과 이번 Jev 호출 예산을 각각 승인받고 `COSTS.md`에 기록한다. 기존 M4 승인을 자동 재사용하지 않는다.
+- 계정·리전·리소스 allowlist, 실행 시간과 반복 횟수 제한, 자원 생성 목록, 재현 가능한 배포·teardown 절차를 준비한다. 기존 로컬 실행기의 원격 접근 차단을 해제하지 않고 AWS 실행 경로를 구분한다.
+- M2에서 복구까지 검증한 대표 장애 2~3개와 정상 control을 사용한다. 새 AWS 고유 장애나 광범위한 node·네트워크 장애는 이 단계에 추가하지 않는다.
+
+### Acceptance criteria
+
+- [ ] 합성 workload와 observability 구성을 승인된 AWS 실습 환경에 재현했다.
+- [ ] 대표 장애마다 metrics·logs·traces가 수집되고 마스킹된 state로 Jev 추천까지 도달한다.
+- [ ] Jev 실패·timeout 시 원본 alert와 telemetry 접근을 유지하고 human review로 전환한다.
+- [ ] fault별 abort·복구와 steady state 회복을 확인했다.
+- [ ] 환경·모델·question·scenario 버전과 수집량, end-to-end latency, AWS 사용량·비용, Jev 호출량·비용을 기록했다.
+- [ ] 이번 smoke/pilot 데이터는 design 또는 validation으로 표시해 M5의 최종 test split에서 제외했다.
+- [ ] 실험 뒤 생성 목록과 대조해 cluster·instance·disk·load balancer·IP 등 해당 자원을 정리하고 잔존 자원과 추가 과금 가능성을 확인했다.
+
+### 검증 방법 후보
+
+- IaC 정적 검증과 생성 예정 자원·대상 계정·리전 대조; 실제 생성은 승인 후 수행
+- 로컬과 같은 scenario ID·parameter·workload version으로 end-to-end smoke test
+- trace ID·incident ID를 이용한 원본 신호 → state → Jev 응답 추적 및 누출 검사
+- provider 실패 시 fallback, fault abort·복구·steady state 검사
+- run 메타데이터·비용 ledger·배포 전후 자원 목록과 teardown 결과 대조
+
+실행 명령은 AWS 구성을 선택하는 구현 PR에서 확정한다. 현재는 계획만 정의했으며 AWS에 접근하거나 리소스를 생성하지 않았다.
+
+## Milestone 5 — 로컬·AWS 비교 평가와 calibration
+
+### 목표
+
+보지 않은 test split에서 규칙 baseline과 Jev를 비교하고, 로컬과 AWS 환경별 품질·calibration·latency·비용·강건성 차이를 보고한다.
+
+AWS 비교 실행은 M4a 통과와 해당 평가 범위의 별도 비용 승인을 전제로 한다. 승인이 대기 중이면 로컬 평가를 먼저 진행할 수 있으나 AWS 비교를 완료로 표시하지 않는다.
 
 ### Acceptance criteria
 
@@ -181,6 +228,10 @@ python3 scripts/lab.py teardown
 - [ ] context build, model, end-to-end latency를 분리한다.
 - [ ] 실패, timeout, 제외 데이터와 제외 이유를 포함한다.
 - [ ] signal ablation과 missing-backend 강건성을 평가한다.
+- [ ] 로컬·AWS에 같은 scenario·parameter·workload·question·모델 버전과 평가 절차를 적용하고 자원·부하·환경 차이를 기록했다.
+- [ ] 같은 환경 안의 baseline·Jev 비교에는 동일 state를 사용하고, 환경 간 비교는 각 환경에서 수집한 state를 사용함을 명시했다.
+- [ ] 환경별 정확도·calibration·coverage·latency와 AWS 인프라·Jev 비용을 분리해 보고했다.
+- [ ] M4a pilot을 최종 test split에 재사용하지 않고 AWS 평가 자원도 정리했다.
 - [ ] README의 모든 성과 수치를 원본 결과와 연결한다.
 
 ### 검증 방법 후보
@@ -190,6 +241,7 @@ python3 scripts/lab.py teardown
 - raw result 불변성과 analysis reproducibility 검사
 - 같은 commit·seed에서 report 재생성
 - 결과 표와 원본 record 표본 대조
+- 환경별 scenario manifest·split checksum·부하·반복 횟수 대조 및 비교 보고서 재생성
 
 ## Milestone 6 — 운영자 경험과 안전 경계
 
@@ -214,9 +266,27 @@ Jev의 판단을 원본 observability 증거와 함께 표시하고, 신뢰도�
 - provider unavailable 상태에서 observability 경로 유지 확인
 - 전체 teardown 및 잔존 리소스 검사
 
+## Milestone 7 — 최종 AWS 검증과 데모 (선택)
+
+### 목표와 선행 조건
+
+M5 평가와 M6 운영 화면을 완성한 뒤 최종 사용 흐름을 AWS에서 재현한다. M4a의 첫 클라우드 테스트와 구분하며, 실행 여부·범위·비용은 사용자와 별도로 확정한다. 선택하지 않으면 사유를 기록하고 이 단계만으로 프로젝트 완료를 막지 않는다.
+
+### Acceptance criteria
+
+- [ ] 최종 버전의 배포 → 장애 재현 → Grafana 신호·Jev 추천·human review 확인 → 복구 흐름을 재현했다.
+- [ ] M5에서 정한 품질·안전 기준의 회귀를 확인하고 최종 결과·한계·데모 절차를 README에 반영했다.
+- [ ] 실행 비용과 크레딧 차감을 기록하고 생성 자원을 정리했다.
+
+### 검증 방법 후보
+
+- 버전을 고정한 end-to-end 데모와 M5 기준의 회귀 검증
+- clean deployment·fallback·teardown 및 잔존 자원 확인
+
 ## 프로젝트 Definition of Done
 
-- [ ] Milestone 0~6의 acceptance criteria를 충족하거나 제외 이유를 결정 기록에 남겼다.
+- [ ] Milestone 0~6 및 M4a의 acceptance criteria를 충족하거나 합의된 범위 조정과 제외 이유를 결정 기록에 남겼다. 비용 승인 대기를 임의 제외로 처리하지 않는다.
+- [ ] M7의 실행 여부를 기록하고, 실행했다면 해당 acceptance criteria도 충족했다.
 - [ ] 테스트, lint, build와 문서 검증이 통과한다.
 - [ ] 깨끗한 로컬 환경에서 start, demo, evaluation, report, teardown을 재현했다.
 - [ ] 최소 control 1개와 독립 fault 5개의 ground truth dataset을 보존한다.
@@ -231,11 +301,12 @@ Jev의 판단을 원본 observability 증거와 함께 표시하고, 신뢰도�
 
 ## 이번 세션 인수인계
 
-- 완료: Milestone 1 로컬 수집 경로·샘플·대시보드·alert 수신·격리 lifecycle 구현
-- 마지막 검증: 2026-09-25, 테스트 9개와 clean-cluster 통합 검증 2회 통과. `git diff --check`, 문서 링크와 소스 checksum 검증도 수행
+- 완료: M4 뒤 M4a AWS 통합 테스트 추가, M5 로컬·AWS 비교 평가와 선택형 M7 최종 검증 계획 반영
+- 마지막 검증: 2026-09-25, 문서 diff·링크·milestone 순서·승인 조건·미완료 상태 검증. 실행 코드가 바뀌지 않아 M1 테스트는 재실행하지 않음
+- 마지막 구현 검증: M1 테스트 9개와 clean-cluster 통합 검증 2회 통과; 원본 결과 유지
 - 실행 안내: `docs/M1-LOCAL.md`, 원본 결과: `results/m1-final.json`, 정리 확인: `results/m1-final-teardown.json`
 - 다음 작업: M2의 chaos engine을 확정하고 S000 + 최소 5개 fault의 precondition·abort·복구·ground truth harness 구현
-- 구현 상태: M1 완료. M2~M6 미구현. Jev 호출 및 실제 성능 평가 없음
-- 비용: 0원. 로컬 `p001-m1` 클러스터·node 볼륨·포트 포워딩 정리 완료; 이미지와 빌드 캐시는 보존
+- 구현 상태: M1 완료. M2~M7 및 M4a 미구현·미실행. Jev 호출 및 실제 성능 평가 없음
+- 비용: 이번 변경은 문서만 수정, 0원. AWS 계정 접근·리소스 생성·크레딧 사용 없음. 이전 M1 자원 정리 상태 유지
 - 환경 차이: Python subprocess가 셸과 다른 kubectl을 선택해 첫 preflight 실패. 실제 실행 버전 v1.36.0으로 고정 후 통과
 - 알려진 블로커: M1 없음. 후속 milestone의 pending 결정과 유료 실행 승인은 그대로 유지
