@@ -39,6 +39,12 @@ class PolicyTests(unittest.TestCase):
             self.assertEqual(value["spec"]["mode"], "one")
             self.assertNotIn("pods", value["spec"]["selector"])
 
+    def test_sample_shutdown_fits_fault_window(self):
+        apps = [i for i in chaos.render()["items"] if i["kind"] == "Deployment" and i["metadata"]["name"] in chaos.APPS]
+        self.assertEqual(len(apps), 3)
+        for app in apps:
+            self.assertEqual(app["spec"]["template"]["spec"]["terminationGracePeriodSeconds"], 2)
+
     def test_invalid_scenario_is_rejected(self):
         for field, value in [("duration_seconds", 46), ("duration_seconds", -1),
                              ("duration_seconds", True), ("affected_service", "prometheus"),

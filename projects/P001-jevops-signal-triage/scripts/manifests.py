@@ -115,6 +115,8 @@ def render():
                                "OTEL_EXPORTER_OTLP_TIMEOUT": "3",
                                "DOWNSTREAM": "http://" + endpoint + ":8080" if downstream else ""})
         app[0]["spec"]["template"]["metadata"]["labels"]["p001-chaos"] = "enabled"
+        # Stateless synthetic services must actually stop inside the bounded fault window.
+        app[0]["spec"]["template"]["spec"]["terminationGracePeriodSeconds"] = 2
         app[0]["spec"]["replicas"] = 2 if name == "checkout" else 1
         items += app
         if name == "inventory":

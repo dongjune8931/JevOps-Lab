@@ -19,6 +19,7 @@ Chaos Mesh를 선택했다. 동일 CRD와 versioned manifest를 로컬 및 추�
 - kind·Kubernetes·관측 스택: [`versions.json`](../deploy/versions.json)의 M1 버전 유지.
 - 설정: [`chaos-values.yaml`](../deploy/chaos-values.yaml). controller 1개, dashboard·DNS server 미설치, namespace filter 활성화, host-network 대상 금지.
 - workload: checkout replica 2개, catalog/inventory 각 1개. opt-in label은 세 합성 서비스에만 있다.
+- 상태 없는 합성 서비스의 종료 유예시간은 2초다. 기본 30초에서는 20초 pod-failure 구간 이후에야 pause image가 시작되는 것을 확인했다. 운영 workload의 종료 정책으로 일반화하지 않는다.
 - catalog는 headless `inventory-direct` Service를 통해 inventory에 연결한다. 초기 ClusterIP 경로는 이 kind 환경에서 Pod-to-Pod delay가 실제 요청에 적용되지 않았다. 동일 주입 중 Service/Pod 경로 비교로 차이를 확인했으며 일반 ClusterIP Service는 비교용으로 유지한다.
 
 ## 시나리오
