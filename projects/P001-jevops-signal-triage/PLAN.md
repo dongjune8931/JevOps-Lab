@@ -18,9 +18,11 @@
 ## 현재 상태
 
 - 상태: `proposed`
-- 현재 단계: Milestone 0 — 기획 및 프로젝트 bootstrap
-- 현재 브랜치: `docs/p001-project-planning`
-- PR: https://github.com/dongjune8931/JevOps-Lab/pull/2
+- 현재 단계: Milestone 0 — 기획 및 프로젝트 bootstrap 완료
+- 기획 브랜치: `docs/p001-project-planning` (원격 브랜치 삭제 완료)
+- 기획 PR: https://github.com/dongjune8931/JevOps-Lab/pull/2 (squash merge 완료)
+- 검증 보완 브랜치: `docs/p001-planning-validation`
+- 검증 보완 PR: https://github.com/dongjune8931/JevOps-Lab/pull/3
 - 사용자 승인이 필요한 항목: chaos engine, 로컬 실행 환경, sample workload, 구현 언어, Jev provider, 유료 평가 예산
 - 블로커: 없음. 구현 시작 전 미결정 기술 선택 확인 필요
 
@@ -221,8 +223,8 @@ Jev의 판단을 원본 observability 증거와 함께 표시하고, 신뢰도�
 
 ## 이번 세션 인수인계
 
-- 완료: Milestone 0 기획 문서 초안
-- 마지막 검증: 2026-09-25에 Milestone 0의 파일 존재, 필수 키워드, 루트 README 링크와 `git diff --check` 검증 통과
+- 완료: Milestone 0 기획 문서 작성 및 PR #2 squash merge
+- 마지막 검증: 2026-09-25에 최신 `origin/main` 일치, 필수 파일·섹션·루트 README 링크와 `git diff --check` 검증
 - 다음 작업: 미결정 기술 선택을 사용자와 확정하고 Milestone 1 구현 계획을 세분화
 - 구현 상태: 구현 없음
 - 비용: 외부 호출·리소스 생성 없음, 0원
