@@ -20,7 +20,7 @@
 - 상태: `proposed`
 - 현재 단계: Milestone 0 — 기획 및 프로젝트 bootstrap
 - 현재 브랜치: `docs/p001-project-planning`
-- PR: 생성 전
+- PR: https://github.com/dongjune8931/JevOps-Lab/pull/2
 - 사용자 승인이 필요한 항목: chaos engine, 로컬 실행 환경, sample workload, 구현 언어, Jev provider, 유료 평가 예산
 - 블로커: 없음. 구현 시작 전 미결정 기술 선택 확인 필요
 
