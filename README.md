@@ -6,15 +6,13 @@ Jev를 DevOps 업무에 적용하고 실제 효과와 한계를 검증하는 프
 
 ## Projects
 
-아직 생성된 프로젝트가 없습니다.
+| ID | 이름 | 상태 | 내용 | Jev 활용 | 결과 |
+|---|---|---|---|---|---|
+| P001 | [JevOps Signal Triage](projects/P001-jevops-signal-triage/README.md) | proposed | 카오스 ground truth와 observability 신호를 이용한 alert triage 평가 | 장애 유형, 심각도, 담당 영역, 다음 조사 신호와 runbook 판단 | 아직 측정되지 않음 |
 
 ## Roadmap
 
-| ID | 이름 | 상태 | 내용 | Jev 활용 | 결과 |
-|---|---|---|---|---|---|
-| P001 | JevOps Signal Triage | proposed | 카오스로 생성한 장애의 관측 신호를 분석해 모니터링 triage를 지원 | 장애 유형, 심각도, 담당 팀, runbook 판단 | 아직 측정되지 않음 |
-
-P001은 저장소 운영 계획 확정 후 별도 프로젝트 세션과 PR에서 생성합니다.
+P001 이후 후보는 각 프로젝트 기획 PR에서 고유 ID와 함께 등록합니다.
 
 ## Experiments
 
