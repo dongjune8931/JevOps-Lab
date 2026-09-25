@@ -337,7 +337,7 @@ def validate_record(record):
     if record["outcome"] not in {"passed", "aborted", "failed", "precondition_failed"}:
         raise ValueError("Invalid outcome")
     if record["outcome"] == "passed" and not (record["precondition_passed"] and
-            record["injection_confirmed"] and record["recovery"]["passed"]):
+            (record["scenario"]["fault"] == "control" or record["injection_confirmed"]) and record["recovery"]["passed"]):
         raise ValueError("Cannot mark unverified injection/recovery passed")
     for key in ("precondition_passed", "injection_confirmed"):
         if type(record[key]) is not bool:
@@ -436,7 +436,8 @@ def run_scenario(s, abort_after=None):
               "seed": None, "seed_note": "lexical pod selection; packet loss/kernel scheduling not seedable",
               "repetitions": 1, "model": None, "question": None, "api_cost_krw": 0,
               "outcome": "precondition_failed", "precondition_passed": False,
-              "injection_confirmed": False, "recovery": {"passed": False},
+              "injection_confirmed": False, "injection_required": s["fault"] != "control",
+              "recovery": {"passed": False},
               "telemetry_window": {"start_unix": start, "end_unix": None},
               "manifest_sha256": None, "targets": {}, "samples": [], "statuses": [], "artifacts": []}
     value, created = None, False
@@ -467,8 +468,8 @@ def run_scenario(s, abort_after=None):
             created = True
             kube("create", "-f", "-", input=json.dumps(value))
         record["injection_requested_at"] = stamp()
-        injected_at = None
         phase_start = time.monotonic()
+        injected_at = phase_start if value is None else None
         while time.monotonic() - phase_start < s["duration_seconds"] + 5:
             safety()
             if time.time() - start > RUN_TIMEOUT:
@@ -479,8 +480,6 @@ def run_scenario(s, abort_after=None):
                 record["statuses"].append({"at": stamp(), "status": status})
                 if condition(status, "AllInjected"):
                     record["injection_confirmed"] = True
-            else:
-                record["injection_confirmed"] = True
             if record["injection_confirmed"] and injected_at is None:
                 injected_at = time.monotonic()
                 record["injection_confirmed_at"] = stamp()
@@ -490,7 +489,7 @@ def run_scenario(s, abort_after=None):
                 "fault" if condition(status, "AllInjected") and not condition(status, "AllRecovered") else "transition")
             record["samples"].append({"phase": phase, **probe()})
             time.sleep(2)
-        if not record["injection_confirmed"]:
+        if value and not record["injection_confirmed"]:
             raise RuntimeError("Injection not confirmed by Chaos Mesh; never label as successful fault")
         if s["fault"] == "delay" and not any(p.get("phase") == "fault" and
                 p.get("elapsed_seconds", 0) >= 0.15 for p in record["samples"]):

@@ -134,7 +134,7 @@ class PolicyTests(unittest.TestCase):
 
 
 class RunnerTests(unittest.TestCase):
-    def run_mock(self, *, precondition_error=False, abort=False, inject=True, recovery_error=False):
+    def run_mock(self, *, precondition_error=False, abort=False, inject=True, recovery_error=False, control=False):
         from contextlib import ExitStack
         with tempfile.TemporaryDirectory() as temp, ExitStack() as stack:
             stack.enter_context(patch.object(chaos.lab, "LOCAL", Path(temp)))
@@ -161,7 +161,7 @@ class RunnerTests(unittest.TestCase):
                 k: {"ok": True, "data": {}} for k in ("metrics", "logs", "traces")}))
             stack.enter_context(patch.object(chaos.time, "sleep"))
             stack.enter_context(patch.object(chaos.time, "monotonic", side_effect=iter(range(0, 1000, 3))))
-            record = chaos.run_scenario(chaos.catalog()["scenarios"][2])
+            record = chaos.run_scenario(chaos.catalog()["scenarios"][0 if control else 2])
             chaos.check_results(Path(temp) / "m2")
             return record, calls.call_args_list, recovery.call_count
 
@@ -177,6 +177,13 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(record["outcome"], "passed")
         self.assertEqual(recoveries, 1)
         self.assertEqual(len(record["manifest_sha256"]), 64)
+
+    def test_control_does_not_claim_fault_injection(self):
+        record, calls, _ = self.run_mock(control=True)
+        self.assertEqual(record["outcome"], "passed")
+        self.assertFalse(record["injection_confirmed"])
+        self.assertFalse(record["injection_required"])
+        self.assertEqual(calls, [])
 
     def test_abort_always_recovers(self):
         record, _, recoveries = self.run_mock(abort=True)
