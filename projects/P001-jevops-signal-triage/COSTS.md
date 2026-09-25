@@ -80,4 +80,3 @@ provider가 credit 기반이면 token 추정과 별도로 실제 차감 credit�
 - 로컬 실험도 container, cluster, volume과 port-forward를 teardown한다.
 - cloud 또는 SaaS를 승인받은 경우 resource ID, 생성·종료 시각과 최종 과금 상태를 기록한다.
 - 자동 정리가 실패하면 추가 비용 가능성과 수동 종료 방법을 즉시 보고한다.
-
