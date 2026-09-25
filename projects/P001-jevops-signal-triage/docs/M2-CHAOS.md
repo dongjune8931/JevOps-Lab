@@ -19,6 +19,7 @@ Chaos Mesh를 선택했다. 동일 CRD와 versioned manifest를 로컬 및 추�
 - kind·Kubernetes·관측 스택: [`versions.json`](../deploy/versions.json)의 M1 버전 유지.
 - 설정: [`chaos-values.yaml`](../deploy/chaos-values.yaml). controller 1개, dashboard·DNS server 미설치, namespace filter 활성화, host-network 대상 금지.
 - workload: checkout replica 2개, catalog/inventory 각 1개. opt-in label은 세 합성 서비스에만 있다.
+- catalog는 headless `inventory-direct` Service를 통해 inventory에 연결한다. 초기 ClusterIP 경로는 이 kind 환경에서 Pod-to-Pod delay가 실제 요청에 적용되지 않았다. 동일 주입 중 Service/Pod 경로 비교로 차이를 확인했으며 일반 ClusterIP Service는 비교용으로 유지한다.
 
 ## 시나리오
 
@@ -46,6 +47,8 @@ Pod 종료·낮은 강도의 stress·packet loss가 항상 incident를 만드는
 - 관측 backend/traffic/node 이상이나 scrape 실패 시 중단한다. 의도된 dependency 장애의 요청 실패 자체는 무조건 abort하지 않는다. 그 장애는 duration으로 제한한다.
 - Ctrl-C/SIGTERM·예외에도 정상 CR 삭제와 finalizer 복구를 시도한다. 별도 `--abort-after`로 조기 중단을 검증한다. SIGKILL/호스트 장애는 `finally`가 실행되지 않으므로 controller의 duration 복구가 보조 경계다. controller도 고장 나면 수동 cluster teardown이 필요하다.
 - 강제 삭제나 finalizer 제거를 하지 않는다. cleanup 실패 시 계속 주입하지 않고 잔존 자원을 보고한다.
+- controller의 namespace filter·이미지 버전을 실행마다 확인하고 실제 주입된 대상도 allowlist와 대조한다. 지연 시나리오는 fault window에서 150ms 이상 요청, dependency 중단은 요청 실패가 관측돼야 통과한다. 이 기준은 M2 주입 효과 smoke 검사이며 M5 성과 threshold가 아니다.
+- NetworkChaos가 남기는 비활성 내부 PodNetworkChaos는 규칙이 비었고 controller가 해당 generation을 처리한 것을 확인한 뒤 소유 대상의 것만 삭제한다. 활성 규칙이 남으면 실패로 중단한다.
 
 ## 실행
 

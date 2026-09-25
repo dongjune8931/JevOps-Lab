@@ -106,14 +106,22 @@ def render():
                               ("grafana-provider", "/etc/grafana/provisioning/dashboards"),
                               ("grafana-dashboard", "/dashboards")])
     for name, downstream in (("checkout", "catalog"), ("catalog", "inventory"), ("inventory", "")):
+        # A headless dependency exposes the selected Pod address before service DNAT,
+        # so NetworkChaos's Pod-to-Pod filter matches actual catalog traffic.
+        endpoint = "inventory-direct" if downstream == "inventory" else downstream
         app = workload(name, app_image(), [8080], health="/healthz", memory="128Mi",
                           env={"OTEL_SERVICE_NAME": name,
                                "OTEL_EXPORTER_OTLP_ENDPOINT": "http://collector:4318",
                                "OTEL_EXPORTER_OTLP_TIMEOUT": "3",
-                               "DOWNSTREAM": "http://" + downstream + ":8080" if downstream else ""})
+                               "DOWNSTREAM": "http://" + endpoint + ":8080" if downstream else ""})
         app[0]["spec"]["template"]["metadata"]["labels"]["p001-chaos"] = "enabled"
         app[0]["spec"]["replicas"] = 2 if name == "checkout" else 1
         items += app
+        if name == "inventory":
+            headless = {"apiVersion": "v1", "kind": "Service", "metadata": metadata("inventory-direct"),
+                        "spec": {"type": "ClusterIP", "clusterIP": "None", "selector": {"app": "inventory"},
+                                 "ports": [{"name": "p8080", "port": 8080, "targetPort": 8080}]}}
+            items.append(headless)
     items += workload("webhook", app_image(), [8080], health="/healthz", memory="128Mi",
                       env={"OTEL_SERVICE_NAME": "webhook"})
     items += workload("traffic", app_image(), [], args=["python", "app.py", "--traffic"], memory="128Mi")

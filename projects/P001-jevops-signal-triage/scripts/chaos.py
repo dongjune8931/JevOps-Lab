@@ -8,6 +8,7 @@ import fcntl
 import hashlib
 import json
 import platform
+from pathlib import Path
 import re
 import signal
 import subprocess
@@ -16,7 +17,7 @@ import time
 from urllib.parse import urlencode
 
 import lab
-from manifests import ROOT, NAMESPACE, CLUSTER, render
+from manifests import ROOT, NAMESPACE, CLUSTER, app_image, render
 
 ENGINE = json.loads((ROOT / "deploy/chaos-version.json").read_text())
 CATALOG_PATH = ROOT / "fixtures/scenarios.json"
@@ -152,6 +153,16 @@ def setup():
     kube("annotate", "namespace", NAMESPACE, "chaos-mesh.org/inject=enabled", "--overwrite")
     helm("upgrade", "--install", "p001-chaos", str(chart), "--create-namespace",
          "--values", str(ROOT / "deploy/chaos-values.yaml"), "--wait", "--timeout", "180s")
+    lab.kubectl("rollout", "status", "deployment", "-l", "project=p001", "--timeout=90s", timeout=100)
+    deadline = time.monotonic() + 60
+    while True:
+        try:
+            engine_state()
+            break
+        except RuntimeError:
+            if time.monotonic() >= deadline:
+                raise
+            time.sleep(2)
     print("Chaos Mesh ready in the owned local cluster; no cloud credentials used.")
 
 
@@ -175,6 +186,12 @@ def select_targets(pods):
                     not any(o["kind"] == "ReplicaSet" and o.get("controller")
                             for o in pod["metadata"].get("ownerReferences", []))):
                 raise RuntimeError("Unsafe or unmanaged target")
+            containers = pod["spec"].get("containers", [])
+            if (len(containers) != 1 or containers[0]["name"] != app or
+                    containers[0]["image"] != app_image() or
+                    containers[0].get("resources", {}).get("limits", {}).get("cpu") != "300m" or
+                    containers[0].get("resources", {}).get("limits", {}).get("memory") != "128Mi"):
+                raise RuntimeError("Target image or resource limit drift")
         selected[app] = sorted(p["metadata"]["name"] for p in matches)[0]
     return selected
 
@@ -212,7 +229,9 @@ def safety():
            for app in protected):
         raise RuntimeError("abort: protected observability/traffic workload unhealthy")
     nodes = get("nodes")["items"]
-    if len(nodes) != 1 or not all(ready(n) for n in nodes):
+    if (len(nodes) != 1 or not all(ready(n) for n in nodes) or
+            any(c["status"] != "False" for n in nodes for c in n.get("status", {}).get("conditions", [])
+                if c["type"] in {"MemoryPressure", "DiskPressure", "PIDPressure"})):
         raise RuntimeError("abort: node not Ready")
     up = proxy("prometheus", 9090, "/api/v1/query", query='up{job="p001-collector"}')
     rows = up.get("data", {}).get("result", [])
@@ -220,13 +239,55 @@ def safety():
         raise RuntimeError("abort: telemetry scrape unhealthy")
 
 
+def engine_state():
+    controller = get("deployment", "chaos-controller-manager", "-n", CHAOS_NS)
+    container = controller["spec"]["template"]["spec"]["containers"][0]
+    env = {e["name"]: e.get("value") for e in container["env"]}
+    if (env.get("ENABLE_FILTER_NAMESPACE") != "true" or
+            env.get("ALLOW_HOST_NETWORK_TESTING") != "false" or
+            container["image"] != ENGINE["images"][0]):
+        raise RuntimeError("Chaos engine safety/version configuration drift")
+    pods = get("pods", "-n", CHAOS_NS)["items"]
+    if len(pods) != 2 or not all(ready(p) for p in pods):
+        raise RuntimeError("Chaos engine is not ready")
+    images = {c["image"]: c.get("imageID") for p in pods
+              for c in p.get("status", {}).get("containerStatuses", [])}
+    if set(images) != set(ENGINE["images"][:2]) or not all(images.values()):
+        raise RuntimeError("Chaos engine image mismatch")
+    return {"images": images, "namespace_filter": True,
+            "kubernetes": get_version(),
+            "docker_server": lab.run("docker", "version", "--format", "{{.Server.Version}}", capture=True).strip()}
+
+
+def get_version():
+    return json.loads(kube("version", "-o", "json", capture=True))
+
+
+def internal_network_state(clean=False):
+    items = get("podnetworkchaos")["items"]
+    for item in items:
+        if any(item.get("spec", {}).values()):
+            raise RuntimeError("Residual network rules remain")
+        if item.get("status", {}).get("observedGeneration") != item["metadata"]["generation"]:
+            raise RuntimeError("Network recovery has not reconciled")
+        if clean:
+            pod = get("pod", item["metadata"]["name"])
+            labels = pod["metadata"].get("labels", {})
+            if labels.get("project") != "p001" or labels.get("app") not in APPS:
+                raise RuntimeError("Refusing to delete an unowned internal network record")
+            kube("delete", "podnetworkchaos", item["metadata"]["name"], "--wait=true", "--timeout=10s")
+    return len(items)
+
+
 def no_faults():
     items = get(KINDS, "--all-namespaces")["items"]
     if items:
         raise RuntimeError("Existing chaos resources; inspect and recover before another run")
+    internal_network_state()
 
 
 def precondition():
+    engine_state()
     no_faults()
     enabled = [n["metadata"]["name"] for n in get("namespaces")["items"]
                if n["metadata"].get("annotations", {}).get("chaos-mesh.org/inject") == "enabled"]
@@ -251,6 +312,18 @@ def condition(status, name):
     return any(c["type"] == name and c["status"] == "True" for c in status.get("conditions", []))
 
 
+def check_observed_targets(status, scenario, targets):
+    apps = {scenario["affected_service"]}
+    if scenario["fault"] in ("delay", "loss"):
+        apps.add("inventory")
+    allowed = {NAMESPACE + "/" + targets[a] for a in apps}
+    observed = {"/".join(r["id"].split("/")[:2])
+                for r in status.get("experiment", {}).get("containerRecords", [])}
+    if not observed <= allowed or (condition(status, "AllInjected") and not observed):
+        raise RuntimeError("abort: observed target outside allowlist")
+    return sorted(observed)
+
+
 def validate_record(record):
     required = {"schema_version", "run_id", "scenario", "started_at", "ended_at", "split",
                 "commit", "source_sha256", "catalog_sha256", "engine", "environment", "outcome",
@@ -266,6 +339,16 @@ def validate_record(record):
     if record["outcome"] == "passed" and not (record["precondition_passed"] and
             record["injection_confirmed"] and record["recovery"]["passed"]):
         raise ValueError("Cannot mark unverified injection/recovery passed")
+    for key in ("precondition_passed", "injection_confirmed"):
+        if type(record[key]) is not bool:
+            raise ValueError("Expected boolean: " + key)
+    for key in ("started_at", "ended_at"):
+        if datetime.datetime.fromisoformat(record[key]).tzinfo is None:
+            raise ValueError("Timestamp must include timezone")
+    if record["manifest_sha256"] is not None and not re.fullmatch(r"[a-f0-9]{64}", record["manifest_sha256"]):
+        raise ValueError("Invalid manifest checksum")
+    if record["outcome"] == "passed" and record["telemetry_window"]["end_unix"] is None:
+        raise ValueError("Missing telemetry window end")
     for key in ("source_sha256", "catalog_sha256"):
         if not re.fullmatch(r"[a-f0-9]{64}", record[key]):
             raise ValueError("Missing checksum")
@@ -302,6 +385,9 @@ def recover(value, created):
         kube("delete", value["kind"], value["metadata"]["name"], "--ignore-not-found",
              "--wait=true", "--timeout=60s", timeout=70)
     no_faults()
+    internal_network_state(clean=True)
+    if get("podnetworkchaos")["items"]:
+        raise RuntimeError("Internal network records remain after cleanup")
     result["fault_removed"] = True
     deadline = time.monotonic() + 90
     streak = 0
@@ -368,8 +454,9 @@ def run_scenario(s, abort_after=None):
     try:
         guard()
         targets, samples = precondition()
+        record["environment"]["actual"] = engine_state()
         record.update(targets=targets, precondition_passed=True, outcome="failed")
-        record["samples"] += samples
+        record["samples"] += [{"phase": "baseline", **p} for p in samples]
         value = manifest(s, run_id, targets)
         if value:
             validate_manifest(value, s, run_id, targets)
@@ -388,6 +475,7 @@ def run_scenario(s, abort_after=None):
                 raise RuntimeError("abort: run timeout")
             if value:
                 status = get(value["kind"], run_id).get("status", {})
+                record["observed_targets"] = check_observed_targets(status, s, targets)
                 record["statuses"].append({"at": stamp(), "status": status})
                 if condition(status, "AllInjected"):
                     record["injection_confirmed"] = True
@@ -398,10 +486,18 @@ def run_scenario(s, abort_after=None):
                 record["injection_confirmed_at"] = stamp()
             if abort_after is not None and injected_at is not None and time.monotonic() - injected_at >= abort_after:
                 raise RuntimeError("abort: deterministic abort-after test")
-            record["samples"].append(probe())
+            phase = "control" if value is None else (
+                "fault" if condition(status, "AllInjected") and not condition(status, "AllRecovered") else "transition")
+            record["samples"].append({"phase": phase, **probe()})
             time.sleep(2)
         if not record["injection_confirmed"]:
             raise RuntimeError("Injection not confirmed by Chaos Mesh; never label as successful fault")
+        if s["fault"] == "delay" and not any(p.get("phase") == "fault" and
+                p.get("elapsed_seconds", 0) >= 0.15 for p in record["samples"]):
+            raise RuntimeError("Delay effect not observed despite injection status")
+        if s["fault"] == "pod-failure" and not any(p.get("phase") == "fault" and
+                not p["ok"] for p in record["samples"]):
+            raise RuntimeError("Dependency outage effect not observed")
         record["outcome"] = "passed"
     except (RuntimeError, subprocess.SubprocessError, ValueError, KeyError) as error:
         record["error"] = str(error)[:2000]
@@ -458,7 +554,7 @@ def main():
     parser.add_argument("--scenario", choices=[*POLICY, "all"], default="all")
     parser.add_argument("--repetitions", type=int, choices=range(1, 4), default=1)
     parser.add_argument("--abort-after", type=int, choices=range(1, 11))
-    parser.add_argument("--results", type=__import__("pathlib").Path, default=lab.LOCAL / "m2")
+    parser.add_argument("--results", type=Path, default=lab.LOCAL / "m2")
     args = parser.parse_args()
     scenarios = catalog()["scenarios"]
     if args.command == "check-results":
