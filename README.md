@@ -1,2 +1,29 @@
 # JevOps-Lab
-Jev랑 친해질거에요
+
+Jev를 DevOps 업무에 적용하고 실제 효과와 한계를 검증하는 프로젝트·실험 저장소입니다.
+
+각 작업은 독립된 폴더, 문서, Codex 세션, PR을 사용합니다. 저장소 구조와 작업 규칙은 [`docs/WORKING_AGREEMENT.md`](docs/WORKING_AGREEMENT.md)에서 확인할 수 있습니다.
+
+## Projects
+
+아직 생성된 프로젝트가 없습니다.
+
+## Roadmap
+
+| ID | 이름 | 상태 | 내용 | Jev 활용 | 결과 |
+|---|---|---|---|---|---|
+| P001 | JevOps Signal Triage | proposed | 카오스로 생성한 장애의 관측 신호를 분석해 모니터링 triage를 지원 | 장애 유형, 심각도, 담당 팀, runbook 판단 | 아직 측정되지 않음 |
+
+P001은 저장소 운영 계획 확정 후 별도 프로젝트 세션과 PR에서 생성합니다.
+
+## Experiments
+
+아직 등록된 독립 실험이 없습니다.
+
+## 기본 원칙
+
+- 프로젝트: `projects/P###-slug/`
+- 독립 실험: `experiments/E###-slug/`
+- 모든 변경은 PR을 통해 반영
+- 각 작업 단위에 README, 계획, 결정 기록, 비용 기록 유지
+- 비용이 발생할 수 있는 작업은 실행 전에 사용자 승인 필요
