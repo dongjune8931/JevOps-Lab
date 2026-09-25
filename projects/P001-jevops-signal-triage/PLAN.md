@@ -9,7 +9,7 @@
 
 ## 비목표
 
-- 이번 기획 세션에서 구현하거나 리소스를 생성하지 않는다.
+- 이번 구현 세션은 M1 로컬 관측 baseline만 다루며 M2 이후 chaos·triage·Jev 구현은 진행하지 않는다.
 - anomaly detector나 observability backend를 새로 만들지 않는다.
 - Jev에 장애 주입, 복구, 배포 또는 경보 억제 권한을 주지 않는다.
 - 실제 운영 telemetry와 production cluster를 사용하지 않는다.
@@ -17,14 +17,17 @@
 
 ## 현재 상태
 
-- 상태: `proposed`
-- 현재 단계: Milestone 0 — 기획 및 프로젝트 bootstrap 완료
+- 상태: `active`
+- 현재 단계: Milestone 1 — 무료 로컬 관측 baseline 완료
+- 현재 브랜치: `feat/p001-local-observability`
+- M1 PR: 생성 후 이 항목에 기록
 - 기획 브랜치: `docs/p001-project-planning` (원격 브랜치 삭제 완료)
 - 기획 PR: https://github.com/dongjune8931/JevOps-Lab/pull/2 (squash merge 완료)
 - 검증 보완 브랜치: `docs/p001-planning-validation`
 - 검증 보완 PR: https://github.com/dongjune8931/JevOps-Lab/pull/3
-- 사용자 승인이 필요한 항목: chaos engine, 로컬 실행 환경, sample workload, 구현 언어, Jev provider, 유료 평가 예산
-- 블로커: 없음. 구현 시작 전 미결정 기술 선택 확인 필요
+- 다음 미완료 단계: Milestone 2 — Chaos ground truth harness
+- 후속 결정 항목: chaos engine(M2), Context Builder 언어(M3), Jev provider·유료 평가 예산(M4)
+- 블로커: M1 없음. M2 시작 전 chaos engine 선택 필요
 
 ## Milestone 0 — 기획 및 프로젝트 bootstrap
 
@@ -64,22 +67,27 @@ rg -n "Choice|Score|Noul|ground truth|teardown" projects/P001-jevops-signal-tria
 
 ### Acceptance criteria
 
-- [ ] 선택한 runtime과 모든 이미지·chart·dependency 버전을 고정했다.
-- [ ] OpenTelemetry에서 Prometheus, Tempo, Loki까지 신호가 도달한다.
-- [ ] trace ID를 이용해 trace와 허용된 로그를 상관 분석할 수 있다.
-- [ ] Grafana에 SLI와 신호 탐색 dashboard가 provisioning된다.
-- [ ] Alertmanager가 합성 alert를 로컬 endpoint에 전달한다.
-- [ ] start, verify, teardown 명령이 문서화되고 깨끗한 환경에서 통과한다.
-- [ ] 외부 SaaS와 유료 API 호출이 없다.
+- [x] 선택한 runtime과 모든 이미지·dependency 버전을 고정했다. Helm chart는 사용하지 않는다.
+- [x] OpenTelemetry에서 Prometheus, Tempo, Loki까지 신호가 도달한다.
+- [x] trace ID를 이용해 trace와 허용된 로그를 상관 분석할 수 있다.
+- [x] Grafana에 SLI와 신호 탐색 dashboard가 provisioning된다.
+- [x] Alertmanager가 합성 alert를 로컬 endpoint에 전달한다.
+- [x] start, verify, teardown 명령이 문서화되고 깨끗한 환경에서 통과한다.
+- [x] 외부 SaaS와 유료 API 호출이 없다.
 
-### 검증 방법 후보
+### 검증 방법과 결과
 
-- 컨테이너·Pod readiness 검사
-- Prometheus API에서 대상과 기록 규칙 확인
-- Tempo에서 synthetic trace ID 조회
-- Loki에서 synthetic fingerprint 조회
-- Grafana provisioning API 또는 파일 검증
-- teardown 전후 리소스 목록 비교
+```bash
+cd projects/P001-jevops-signal-triage
+python3 scripts/lab.py test
+python3 scripts/lab.py start
+python3 scripts/lab.py verify
+python3 scripts/lab.py dashboard
+# Ctrl-C로 포워딩 종료 후
+python3 scripts/lab.py teardown
+```
+
+2026-09-25: 단위·경계 테스트 9개, 두 번의 신규 클러스터 통합 검증과 teardown 통과. 최종 검증은 SLI PromQL의 유효한 수치까지 확인했다. [검증 기록](docs/M1-VALIDATION.md)과 [원본 결과](results/m1-final.json)를 참조한다.
 
 ## Milestone 2 — Chaos ground truth harness
 
@@ -223,9 +231,11 @@ Jev의 판단을 원본 observability 증거와 함께 표시하고, 신뢰도�
 
 ## 이번 세션 인수인계
 
-- 완료: Milestone 0 기획 문서 작성 및 PR #2 squash merge
-- 마지막 검증: 2026-09-25에 최신 `origin/main` 일치, 필수 파일·섹션·루트 README 링크와 `git diff --check` 검증
-- 다음 작업: 미결정 기술 선택을 사용자와 확정하고 Milestone 1 구현 계획을 세분화
-- 구현 상태: 구현 없음
-- 비용: 외부 호출·리소스 생성 없음, 0원
-- 알려진 블로커: 구현 시작 전 `DECISIONS.md`의 pending 항목 결정 필요
+- 완료: Milestone 1 로컬 수집 경로·샘플·대시보드·alert 수신·격리 lifecycle 구현
+- 마지막 검증: 2026-09-25, 테스트 9개와 clean-cluster 통합 검증 2회 통과. `git diff --check`, 문서 링크와 소스 checksum 검증도 수행
+- 실행 안내: `docs/M1-LOCAL.md`, 원본 결과: `results/m1-final.json`, 정리 확인: `results/m1-final-teardown.json`
+- 다음 작업: M2의 chaos engine을 확정하고 S000 + 최소 5개 fault의 precondition·abort·복구·ground truth harness 구현
+- 구현 상태: M1 완료. M2~M6 미구현. Jev 호출 및 실제 성능 평가 없음
+- 비용: 0원. 로컬 `p001-m1` 클러스터·node 볼륨·포트 포워딩 정리 완료; 이미지와 빌드 캐시는 보존
+- 환경 차이: Python subprocess가 셸과 다른 kubectl을 선택해 첫 preflight 실패. 실제 실행 버전 v1.36.0으로 고정 후 통과
+- 알려진 블로커: M1 없음. 후속 milestone의 pending 결정과 유료 실행 승인은 그대로 유지

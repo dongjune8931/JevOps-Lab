@@ -49,13 +49,15 @@
 - 이유: Jev가 실제로 추가하는 정확도와 비용을 가장 단순한 대안과 먼저 비교할 수 있다.
 - 영향: rules baseline도 동일한 state와 test split을 사용한다.
 
-## 결정 대기
+## 기술 선택 상태
 
-아래 항목은 구현 전에 사용자 결정을 받는다. 추천은 초기 실험을 위한 제안이며 아직 확정이 아니다.
+2026-09-25의 첫 미완료 milestone 구현 요청에 따라 M1에 필요한 로컬 실행 환경·샘플·전달 경로·대시보드를 아래 추천안으로 선택했다. 후속 milestone의 pending 결정과 비용 승인은 별도로 유지한다.
 
 ### P001-D006 — 로컬 실행 환경
 
-- 상태: pending
+- 날짜: 2026-09-25
+- 상태: accepted (M1)
+- 결정: 전용 `p001-m1` kind 클러스터와 프로젝트 내부 kubeconfig 사용. 기존 로컬 Docker만 사용하고 원격 context는 거부한다.
 - 추천: `kind`
 - 이유: Kubernetes API와 CRD 기반 chaos 도구를 로컬에서 재현하기 쉽고 cluster 전체를 삭제해 teardown할 수 있다.
 - 대안:
@@ -75,7 +77,9 @@
 
 ### P001-D008 — Sample workload
 
-- 상태: pending
+- 날짜: 2026-09-25
+- 상태: accepted (M1)
+- 결정: `checkout → catalog → inventory` 3개 Python 서비스를 하나의 이미지로 실행한다. OTel SDK로 metrics·logs·traces를 계측한다.
 - 추천: 3~4개의 작은 다중 서비스 workload를 프로젝트 내부에서 구성
 - 이유: 리소스 사용량과 ground truth를 통제하고 필요한 signal을 의도적으로 설계할 수 있다.
 - 대안: OpenTelemetry Demo 전체 또는 일부
@@ -93,7 +97,9 @@
 
 ### P001-D010 — Alert trigger
 
-- 상태: pending
+- 날짜: 2026-09-25
+- 상태: accepted (M1 전달 검증)
+- 결정: Alertmanager webhook을 로컬 메모리 수신기에 전달한다. 실제 triage event 처리·deduplication은 M3 이후 범위다.
 - 추천: Alertmanager webhook
 - 이유: Prometheus alert 이후 triage라는 제품 경계를 명확히 하고 event-driven으로 실행할 수 있다.
 - 대안: 주기적 Prometheus polling 또는 Grafana alert webhook.
@@ -101,7 +107,9 @@
 
 ### P001-D011 — 운영자 UI
 
-- 상태: pending
+- 날짜: 2026-09-25
+- 상태: accepted (M1 baseline)
+- 결정: Grafana provisioning으로 SLI·로그·trace 탐색 dashboard를 제공한다. Jev 판단과 ground truth 시각화는 M6 범위다.
 - 추천: MVP에서는 Grafana dashboard와 annotation만 사용
 - 이유: 별도 frontend 없이 원본 signals와 평가 결과를 같은 화면에서 비교할 수 있다.
 - 대안: 전용 web UI.

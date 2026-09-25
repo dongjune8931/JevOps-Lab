@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+scrape_configs:
+  - job_name: p001-collector
+    static_configs:
+      - targets: [collector:8889]
+rule_files: [/config/rules.yaml]
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: [alertmanager:9093]

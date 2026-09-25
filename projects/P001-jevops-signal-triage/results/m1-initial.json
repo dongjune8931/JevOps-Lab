@@ -1,0 +1,55 @@
+{
+  "time_utc": "2026-09-25T06:11:16.528175+00:00",
+  "commit": "59a3c40687f83358fc4b3010c35ead2dea71afc0",
+  "dirty": true,
+  "source_sha256": "0b22b4475fecde1f6563440f9ab3adf74d8d6c4dd22bbe4e27326e7c7dda91f8",
+  "versions": {
+    "kind": "v0.31.0",
+    "kubectl": "v1.36.0",
+    "node": "kindest/node:v1.35.0",
+    "python": "python:3.12.10-slim",
+    "collector": "otel/opentelemetry-collector-contrib:0.128.0",
+    "prometheus": "prom/prometheus:v3.2.1",
+    "alertmanager": "prom/alertmanager:v0.28.1",
+    "tempo": "grafana/tempo:2.7.2",
+    "loki": "grafana/loki:3.4.2",
+    "grafana": "grafana/grafana:11.6.0"
+  },
+  "host": "macOS-15.4-arm64-arm-64bit-Mach-O",
+  "model": null,
+  "question": null,
+  "seed": null,
+  "repetitions": 1,
+  "api_cost_krw": 0,
+  "dataset": "M1 synthetic smoke traffic (not an evaluation dataset)",
+  "verification": {
+    "passed": true,
+    "trace_id": "d998ab978c1bf2e41d3bd9f6d98a784e",
+    "trace_services": [
+      "catalog",
+      "checkout",
+      "inventory"
+    ],
+    "metric_series": 3,
+    "log_streams": 3,
+    "dashboard_panels": 5,
+    "alert": {
+      "status": "firing",
+      "labels": {
+        "alertname": "P001SyntheticTraffic",
+        "project": "p001",
+        "severity": "smoke"
+      }
+    },
+    "recording_rule_series": 3
+  },
+  "images": {
+    "docker.io/prom/alertmanager:v0.28.1": "sha256:d1950c730ae9121fe5ad7b7313be63a26f4a075087d2190a31fd9261f7767a44",
+    "docker.io/library/p001-m1-workload:c472331d369756ee": "sha256:e69de06a419c435d99ce0e710db6a45069cc9ad909e93ba6991a7644877d0bd2",
+    "docker.io/otel/opentelemetry-collector-contrib:0.128.0": "sha256:544e9ddaab31864e8bad77d64fde663840bfe3ab71424783f817841f49ede292",
+    "docker.io/grafana/grafana:11.6.0": "sha256:bfadbbcb25fd75c30c295843f1a861414f46c080f0f1d0c5cd93843c88edabcf",
+    "docker.io/grafana/loki:3.4.2": "sha256:f9bca3c5226cf375451256c3b1079e684c9ef3711dc777330494b760758dc58a",
+    "docker.io/prom/prometheus:v3.2.1": "sha256:bddbcb4cc90686ddf7ef05b64eeafe557224549ae93b68115bb27d15a698081a",
+    "docker.io/grafana/tempo:2.7.2": "sha256:0f7c6218c009c0716f33a6e005302b2c23e088f34deb4eb29d79141477eef32f"
+  }
+}

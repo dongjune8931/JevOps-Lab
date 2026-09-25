@@ -1,0 +1,13 @@
+groups:
+  - name: p001-baseline
+    rules:
+      - record: p001:request_rate
+        expr: sum by (service) (rate(p001_requests_total[1m]))
+      - alert: P001SyntheticTraffic
+        expr: sum(p001:request_rate) > 0
+        for: 5s
+        labels:
+          project: p001
+          severity: smoke
+        annotations:
+          summary: Synthetic traffic confirms the M1 local alert path
