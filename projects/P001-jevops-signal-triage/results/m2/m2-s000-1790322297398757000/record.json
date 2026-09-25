@@ -1,0 +1,230 @@
+{
+  "api_cost_krw": 0,
+  "artifacts": [
+    {
+      "path": "telemetry.json",
+      "sha256": "05d514510b868237289ff3db092d76a9be47ba4572c9c31ba9225318ffec550f"
+    }
+  ],
+  "catalog_sha256": "54df136f9be30cd19662c3be322dd5e24012407b53f746111f669721e24c2165",
+  "commit": "f15a7d6658da0b5889f8823a97038bccd9899f05",
+  "dirty": false,
+  "ended_at": "2026-09-25T07:45:40.467901+00:00",
+  "engine": {
+    "chart_sha256": "ae4abd385649771300e4d33a44627c0df3618be0780c385bf30cc2fdf2ad93fa",
+    "helm": "v3.16.1",
+    "images": [
+      "ghcr.io/chaos-mesh/chaos-mesh:v2.8.4",
+      "ghcr.io/chaos-mesh/chaos-daemon:v2.8.4",
+      "registry.k8s.io/pause:3.10"
+    ],
+    "version": "2.8.4"
+  },
+  "environment": {
+    "actual": {
+      "docker_server": "28.0.1",
+      "images": {
+        "ghcr.io/chaos-mesh/chaos-daemon:v2.8.4": "sha256:40f7b1b7dbae6962c3066175817aac84324d6876fdf73851d600ca19a8524cab",
+        "ghcr.io/chaos-mesh/chaos-mesh:v2.8.4": "sha256:ee58ccf2c50e09aff1e56305b79cef11c31406d4d218fc14611aff12e2119434"
+      },
+      "kubernetes": {
+        "clientVersion": {
+          "buildDate": "2026-04-22T13:51:51Z",
+          "compiler": "gc",
+          "gitCommit": "ecf6decece6a6de25a57aad9ba90b6ce580f6f78",
+          "gitTreeState": "clean",
+          "gitVersion": "v1.36.0",
+          "goVersion": "go1.26.2",
+          "major": "1",
+          "minor": "36",
+          "platform": "darwin/arm64"
+        },
+        "kustomizeVersion": "v5.8.1",
+        "serverVersion": {
+          "buildDate": "2025-12-17T12:32:07Z",
+          "compiler": "gc",
+          "emulationMajor": "1",
+          "emulationMinor": "35",
+          "gitCommit": "66452049f3d692768c39c797b21b793dce80314e",
+          "gitTreeState": "clean",
+          "gitVersion": "v1.35.0",
+          "goVersion": "go1.25.5",
+          "major": "1",
+          "minCompatibilityMajor": "1",
+          "minCompatibilityMinor": "34",
+          "minor": "35",
+          "platform": "linux/arm64"
+        }
+      },
+      "namespace_filter": true
+    },
+    "cluster": "p001-m1",
+    "host": "macOS-15.4-arm64-arm-64bit-Mach-O",
+    "namespace": "p001",
+    "versions": {
+      "alertmanager": "prom/alertmanager:v0.28.1",
+      "collector": "otel/opentelemetry-collector-contrib:0.128.0",
+      "grafana": "grafana/grafana:11.6.0",
+      "kind": "v0.31.0",
+      "kubectl": "v1.36.0",
+      "loki": "grafana/loki:3.4.2",
+      "node": "kindest/node:v1.35.0",
+      "prometheus": "prom/prometheus:v3.2.1",
+      "python": "python:3.12.10-slim",
+      "tempo": "grafana/tempo:2.7.2"
+    }
+  },
+  "fault_window_end_at": "2026-09-25T07:45:26.842123+00:00",
+  "injection_confirmed": false,
+  "injection_requested_at": "2026-09-25T07:45:01.496726+00:00",
+  "injection_required": false,
+  "manifest_sha256": null,
+  "model": null,
+  "outcome": "passed",
+  "precondition_passed": true,
+  "question": null,
+  "recovery": {
+    "fault_removed": true,
+    "passed": true,
+    "recovered_at": "2026-09-25T07:45:34.333805+00:00",
+    "samples": [
+      {
+        "at": "2026-09-25T07:45:28.034810+00:00",
+        "elapsed_seconds": 0.004615042009390891,
+        "ok": true,
+        "status": 200,
+        "trace_id": "7636d001373c19ea8ab5e32770572835"
+      },
+      {
+        "at": "2026-09-25T07:45:31.045722+00:00",
+        "elapsed_seconds": 0.0050279159331694245,
+        "ok": true,
+        "status": 200,
+        "trace_id": "f19aa0eb687b0a23f44418b3a4b487dd"
+      },
+      {
+        "at": "2026-09-25T07:45:34.333752+00:00",
+        "elapsed_seconds": 0.006045625079423189,
+        "ok": true,
+        "status": 200,
+        "trace_id": "fc432a759c6469b8b5ec5a75724d9d74"
+      }
+    ]
+  },
+  "repetitions": 1,
+  "run_id": "m2-s000-1790322297398757000",
+  "samples": [
+    {
+      "at": "2026-09-25T07:44:58.962223+00:00",
+      "elapsed_seconds": 0.007488709059543908,
+      "ok": true,
+      "phase": "baseline",
+      "status": 200,
+      "trace_id": "cad7d6c738a8494f0aa6a75cfe454147"
+    },
+    {
+      "at": "2026-09-25T07:45:00.136867+00:00",
+      "elapsed_seconds": 0.008010750054381788,
+      "ok": true,
+      "phase": "baseline",
+      "status": 200,
+      "trace_id": "0d82dd4d806f2e63a99e2c6d8868f6ec"
+    },
+    {
+      "at": "2026-09-25T07:45:01.345490+00:00",
+      "elapsed_seconds": 0.00730516598559916,
+      "ok": true,
+      "phase": "baseline",
+      "status": 200,
+      "trace_id": "f888e325571db56b377dd5c30416ea7a"
+    },
+    {
+      "at": "2026-09-25T07:45:02.733012+00:00",
+      "elapsed_seconds": 0.01293149997945875,
+      "ok": true,
+      "phase": "control",
+      "status": 200,
+      "trace_id": "2a8c55a0905aae147893708947a06424"
+    },
+    {
+      "at": "2026-09-25T07:45:06.042210+00:00",
+      "elapsed_seconds": 0.006615000078454614,
+      "ok": true,
+      "phase": "control",
+      "status": 200,
+      "trace_id": "b4f767a86ec258484b0c524983caa132"
+    },
+    {
+      "at": "2026-09-25T07:45:09.339571+00:00",
+      "elapsed_seconds": 0.006720375036820769,
+      "ok": true,
+      "phase": "control",
+      "status": 200,
+      "trace_id": "0bfcd8fcc82582a402a4e5630a8abfc2"
+    },
+    {
+      "at": "2026-09-25T07:45:12.645032+00:00",
+      "elapsed_seconds": 0.006083040963858366,
+      "ok": true,
+      "phase": "control",
+      "status": 200,
+      "trace_id": "bde69493d2d62454f5ff71e742ffe9ff"
+    },
+    {
+      "at": "2026-09-25T07:45:15.856256+00:00",
+      "elapsed_seconds": 0.005420792032964528,
+      "ok": true,
+      "phase": "control",
+      "status": 200,
+      "trace_id": "e30556d84e2f7f712a38b904f825d471"
+    },
+    {
+      "at": "2026-09-25T07:45:18.835724+00:00",
+      "elapsed_seconds": 0.004711791989393532,
+      "ok": true,
+      "phase": "control",
+      "status": 200,
+      "trace_id": "3da8e0b03b6b059d92b1d7c30d28f3c5"
+    },
+    {
+      "at": "2026-09-25T07:45:21.836598+00:00",
+      "elapsed_seconds": 0.004692166927270591,
+      "ok": true,
+      "phase": "control",
+      "status": 200,
+      "trace_id": "460d87d8b2e1fa8311a7481d2b413b10"
+    },
+    {
+      "at": "2026-09-25T07:45:24.834892+00:00",
+      "elapsed_seconds": 0.004663290921598673,
+      "ok": true,
+      "phase": "control",
+      "status": 200,
+      "trace_id": "2dbb4585f154ccd58366285d2c44f07a"
+    }
+  ],
+  "scenario": {
+    "affected_service": "checkout",
+    "duration_seconds": 20,
+    "expected_cause": "no_incident",
+    "fault": "control",
+    "id": "S000"
+  },
+  "schema_version": "p001-ground-truth-v1",
+  "seed": null,
+  "seed_note": "lexical pod selection; packet loss/kernel scheduling not seedable",
+  "source_sha256": "e3e82303c6bc4794a33fa6abf056e7b4771a17f15192d18505570bec32080ee8",
+  "split": "design",
+  "started_at": "2026-09-25T07:44:57.398839+00:00",
+  "statuses": [],
+  "targets": {
+    "catalog": "catalog-d546db8f8-rhbzv",
+    "checkout": "checkout-54bc985f9b-jmkdk",
+    "inventory": "inventory-7d7f47bc9f-l2wcj"
+  },
+  "telemetry_collected": true,
+  "telemetry_window": {
+    "end_unix": 1790322340.336844,
+    "start_unix": 1790322297.398755
+  }
+}

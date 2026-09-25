@@ -1,0 +1,19 @@
+{
+  "at": "2026-09-25T07:36:18.388750+00:00",
+  "events": [
+    {
+      "first": "2026-09-25T07:33:38Z",
+      "last": "2026-09-25T07:34:08Z",
+      "message": "Container inventory definition changed, will be restarted",
+      "reason": "Killing"
+    },
+    {
+      "first": "2026-09-25T07:34:08Z",
+      "last": "2026-09-25T07:34:08Z",
+      "message": "Container image \"registry.k8s.io/pause:3.10\" already present on machine and can be accessed by the pod",
+      "reason": "Pulled"
+    }
+  ],
+  "pod": "inventory-598dcf44f8-rwg9h",
+  "termination_grace_seconds": 30
+}

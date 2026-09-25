@@ -1,0 +1,585 @@
+{
+  "api_cost_krw": 0,
+  "artifacts": [
+    {
+      "path": "manifest.json",
+      "sha256": "ecdb5908cf8d3d5ce60b847eff51151f99243d0edf7996ac303e34d4ff54e301"
+    },
+    {
+      "path": "telemetry.json",
+      "sha256": "dfa4846b6b4fc4c700316d9a037cb18389098bdce9a34ef6a411dea6a8e90cf2"
+    }
+  ],
+  "catalog_sha256": "54df136f9be30cd19662c3be322dd5e24012407b53f746111f669721e24c2165",
+  "commit": "f15a7d6658da0b5889f8823a97038bccd9899f05",
+  "dirty": false,
+  "ended_at": "2026-09-25T07:44:57.398227+00:00",
+  "engine": {
+    "chart_sha256": "ae4abd385649771300e4d33a44627c0df3618be0780c385bf30cc2fdf2ad93fa",
+    "helm": "v3.16.1",
+    "images": [
+      "ghcr.io/chaos-mesh/chaos-mesh:v2.8.4",
+      "ghcr.io/chaos-mesh/chaos-daemon:v2.8.4",
+      "registry.k8s.io/pause:3.10"
+    ],
+    "version": "2.8.4"
+  },
+  "environment": {
+    "actual": {
+      "docker_server": "28.0.1",
+      "images": {
+        "ghcr.io/chaos-mesh/chaos-daemon:v2.8.4": "sha256:40f7b1b7dbae6962c3066175817aac84324d6876fdf73851d600ca19a8524cab",
+        "ghcr.io/chaos-mesh/chaos-mesh:v2.8.4": "sha256:ee58ccf2c50e09aff1e56305b79cef11c31406d4d218fc14611aff12e2119434"
+      },
+      "kubernetes": {
+        "clientVersion": {
+          "buildDate": "2026-04-22T13:51:51Z",
+          "compiler": "gc",
+          "gitCommit": "ecf6decece6a6de25a57aad9ba90b6ce580f6f78",
+          "gitTreeState": "clean",
+          "gitVersion": "v1.36.0",
+          "goVersion": "go1.26.2",
+          "major": "1",
+          "minor": "36",
+          "platform": "darwin/arm64"
+        },
+        "kustomizeVersion": "v5.8.1",
+        "serverVersion": {
+          "buildDate": "2025-12-17T12:32:07Z",
+          "compiler": "gc",
+          "emulationMajor": "1",
+          "emulationMinor": "35",
+          "gitCommit": "66452049f3d692768c39c797b21b793dce80314e",
+          "gitTreeState": "clean",
+          "gitVersion": "v1.35.0",
+          "goVersion": "go1.25.5",
+          "major": "1",
+          "minCompatibilityMajor": "1",
+          "minCompatibilityMinor": "34",
+          "minor": "35",
+          "platform": "linux/arm64"
+        }
+      },
+      "namespace_filter": true
+    },
+    "cluster": "p001-m1",
+    "host": "macOS-15.4-arm64-arm-64bit-Mach-O",
+    "namespace": "p001",
+    "versions": {
+      "alertmanager": "prom/alertmanager:v0.28.1",
+      "collector": "otel/opentelemetry-collector-contrib:0.128.0",
+      "grafana": "grafana/grafana:11.6.0",
+      "kind": "v0.31.0",
+      "kubectl": "v1.36.0",
+      "loki": "grafana/loki:3.4.2",
+      "node": "kindest/node:v1.35.0",
+      "prometheus": "prom/prometheus:v3.2.1",
+      "python": "python:3.12.10-slim",
+      "tempo": "grafana/tempo:2.7.2"
+    }
+  },
+  "fault_window_end_at": "2026-09-25T07:44:42.742761+00:00",
+  "injection_confirmed": true,
+  "injection_confirmed_at": "2026-09-25T07:44:16.426078+00:00",
+  "injection_requested_at": "2026-09-25T07:44:16.211804+00:00",
+  "injection_required": true,
+  "manifest_sha256": "ecdb5908cf8d3d5ce60b847eff51151f99243d0edf7996ac303e34d4ff54e301",
+  "model": null,
+  "observed_targets": [
+    "p001/inventory-7d7f47bc9f-l2wcj"
+  ],
+  "outcome": "passed",
+  "precondition_passed": true,
+  "question": null,
+  "recovery": {
+    "fault_removed": true,
+    "passed": true,
+    "recovered_at": "2026-09-25T07:44:51.231432+00:00",
+    "samples": [
+      {
+        "at": "2026-09-25T07:44:44.455687+00:00",
+        "elapsed_seconds": 0.008086791960522532,
+        "ok": true,
+        "status": 200,
+        "trace_id": "c59d4ac6c6c097ffc9325e22a1201ac7"
+      },
+      {
+        "at": "2026-09-25T07:44:47.752464+00:00",
+        "elapsed_seconds": 0.007466707960702479,
+        "ok": true,
+        "status": 200,
+        "trace_id": "37ab7dcd448700a00b002a1e2db4ac00"
+      },
+      {
+        "at": "2026-09-25T07:44:51.231381+00:00",
+        "elapsed_seconds": 0.007456166087649763,
+        "ok": true,
+        "status": 200,
+        "trace_id": "1b92983211e63dd1503179796ff3dad3"
+      }
+    ]
+  },
+  "repetitions": 1,
+  "run_id": "m2-s005-1790322251798320000",
+  "samples": [
+    {
+      "at": "2026-09-25T07:44:13.443356+00:00",
+      "elapsed_seconds": 0.006557415938004851,
+      "ok": true,
+      "phase": "baseline",
+      "status": 200,
+      "trace_id": "a1e88329273d6efb46c165c84f0c62e7"
+    },
+    {
+      "at": "2026-09-25T07:44:14.644241+00:00",
+      "elapsed_seconds": 0.007505750050768256,
+      "ok": true,
+      "phase": "baseline",
+      "status": 200,
+      "trace_id": "58bb942435ce8d88cffa2e7856be4ad6"
+    },
+    {
+      "at": "2026-09-25T07:44:15.842452+00:00",
+      "elapsed_seconds": 0.007609874941408634,
+      "ok": true,
+      "phase": "baseline",
+      "status": 200,
+      "trace_id": "23559ed7ec83141508827038352ea957"
+    },
+    {
+      "at": "2026-09-25T07:44:17.627681+00:00",
+      "elapsed_seconds": 0.007754749967716634,
+      "ok": true,
+      "phase": "fault",
+      "status": 200,
+      "trace_id": "79bc602dfa5c2f813f6f6f0ea50e4e0f"
+    },
+    {
+      "at": "2026-09-25T07:44:20.931075+00:00",
+      "elapsed_seconds": 0.010899999993853271,
+      "ok": false,
+      "phase": "fault",
+      "status": 502,
+      "trace_id": "25a4f9393e35b1066bf8bab36e5bdd0c"
+    },
+    {
+      "at": "2026-09-25T07:44:24.251993+00:00",
+      "elapsed_seconds": 0.015110707958228886,
+      "ok": false,
+      "phase": "fault",
+      "status": 502,
+      "trace_id": "54dbcfea145602e1cff1387d56ea5b9b"
+    },
+    {
+      "at": "2026-09-25T07:44:27.552431+00:00",
+      "elapsed_seconds": 0.010468124994076788,
+      "ok": false,
+      "phase": "fault",
+      "status": 502,
+      "trace_id": "4a208ee6b143645b95eddf69beb2b15b"
+    },
+    {
+      "at": "2026-09-25T07:44:30.956621+00:00",
+      "elapsed_seconds": 0.012856624904088676,
+      "ok": false,
+      "phase": "fault",
+      "status": 502,
+      "trace_id": "eb9c192799a664ed9c827fae486cb030"
+    },
+    {
+      "at": "2026-09-25T07:44:34.355813+00:00",
+      "elapsed_seconds": 0.011610875022597611,
+      "ok": false,
+      "phase": "fault",
+      "status": 502,
+      "trace_id": "883bd1c73cc8357538b62c801ac7d62a"
+    },
+    {
+      "at": "2026-09-25T07:44:37.344383+00:00",
+      "elapsed_seconds": 0.07719808293040842,
+      "ok": false,
+      "phase": "transition",
+      "status": 502,
+      "trace_id": "fcd427e28b674197eae6d4f7d6af3f57"
+    },
+    {
+      "at": "2026-09-25T07:44:40.732457+00:00",
+      "elapsed_seconds": 0.007343832985498011,
+      "ok": true,
+      "phase": "transition",
+      "status": 200,
+      "trace_id": "23819b0ae74fd5b891238c05eb6766ba"
+    }
+  ],
+  "scenario": {
+    "affected_service": "inventory",
+    "duration_seconds": 20,
+    "expected_cause": "dependency_failure",
+    "fault": "pod-failure",
+    "id": "S005"
+  },
+  "schema_version": "p001-ground-truth-v1",
+  "seed": null,
+  "seed_note": "lexical pod selection; packet loss/kernel scheduling not seedable",
+  "source_sha256": "e3e82303c6bc4794a33fa6abf056e7b4771a17f15192d18505570bec32080ee8",
+  "split": "design",
+  "started_at": "2026-09-25T07:44:11.798401+00:00",
+  "statuses": [
+    {
+      "at": "2026-09-25T07:44:16.426045+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          },
+          {
+            "status": "True",
+            "type": "Selected"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:44:16Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:44:19.819351+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          },
+          {
+            "status": "True",
+            "type": "Selected"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:44:16Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:44:23.123386+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          },
+          {
+            "status": "True",
+            "type": "Selected"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:44:16Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:44:26.464719+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          },
+          {
+            "status": "True",
+            "type": "Selected"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:44:16Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:44:29.736330+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          },
+          {
+            "status": "True",
+            "type": "Selected"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:44:16Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:44:33.157290+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          },
+          {
+            "status": "True",
+            "type": "Selected"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:44:16Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:44:36.508362+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "False",
+            "type": "AllInjected"
+          },
+          {
+            "status": "True",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:44:16Z",
+                  "type": "Succeeded"
+                },
+                {
+                  "operation": "Recover",
+                  "timestamp": "2026-09-25T07:44:36Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Not Injected",
+              "recoveredCount": 1,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Stop"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:44:39.533860+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "False",
+            "type": "AllInjected"
+          },
+          {
+            "status": "True",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:44:16Z",
+                  "type": "Succeeded"
+                },
+                {
+                  "operation": "Recover",
+                  "timestamp": "2026-09-25T07:44:36Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Not Injected",
+              "recoveredCount": 1,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Stop"
+        }
+      }
+    }
+  ],
+  "targets": {
+    "catalog": "catalog-d546db8f8-rhbzv",
+    "checkout": "checkout-54bc985f9b-jmkdk",
+    "inventory": "inventory-7d7f47bc9f-l2wcj"
+  },
+  "telemetry_collected": true,
+  "telemetry_window": {
+    "end_unix": 1790322297.238919,
+    "start_unix": 1790322251.798319
+  }
+}

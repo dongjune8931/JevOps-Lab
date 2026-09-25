@@ -1,0 +1,11 @@
+{
+  "version": "p001-scenarios-v1",
+  "scenarios": [
+    {"id": "S000", "fault": "control", "duration_seconds": 20, "expected_cause": "no_incident", "affected_service": "checkout"},
+    {"id": "S001", "fault": "pod-kill", "duration_seconds": 20, "expected_cause": "workload_unavailable", "affected_service": "checkout"},
+    {"id": "S002", "fault": "delay", "duration_seconds": 30, "expected_cause": "network_latency", "affected_service": "catalog"},
+    {"id": "S003", "fault": "loss", "duration_seconds": 30, "expected_cause": "network_loss", "affected_service": "catalog"},
+    {"id": "S004", "fault": "cpu", "duration_seconds": 20, "expected_cause": "resource_exhaustion", "affected_service": "inventory"},
+    {"id": "S005", "fault": "pod-failure", "duration_seconds": 20, "expected_cause": "dependency_failure", "affected_service": "inventory"}
+  ]
+}

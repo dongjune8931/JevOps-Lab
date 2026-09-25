@@ -1,0 +1,68 @@
+{
+  "api_cost_krw": 0,
+  "artifacts": [],
+  "catalog_sha256": "54df136f9be30cd19662c3be322dd5e24012407b53f746111f669721e24c2165",
+  "commit": "e63ca8ccc61b06471e290924051fbb2536fdbe2e",
+  "dirty": true,
+  "ended_at": "2026-09-25T07:14:46.678159+00:00",
+  "engine": {
+    "chart_sha256": "ae4abd385649771300e4d33a44627c0df3618be0780c385bf30cc2fdf2ad93fa",
+    "helm": "v3.16.1",
+    "images": [
+      "ghcr.io/chaos-mesh/chaos-mesh:v2.8.4",
+      "ghcr.io/chaos-mesh/chaos-daemon:v2.8.4",
+      "registry.k8s.io/pause:3.10"
+    ],
+    "version": "2.8.4"
+  },
+  "environment": {
+    "cluster": "p001-m1",
+    "host": "macOS-15.4-arm64-arm-64bit-Mach-O",
+    "namespace": "p001",
+    "versions": {
+      "alertmanager": "prom/alertmanager:v0.28.1",
+      "collector": "otel/opentelemetry-collector-contrib:0.128.0",
+      "grafana": "grafana/grafana:11.6.0",
+      "kind": "v0.31.0",
+      "kubectl": "v1.36.0",
+      "loki": "grafana/loki:3.4.2",
+      "node": "kindest/node:v1.35.0",
+      "prometheus": "prom/prometheus:v3.2.1",
+      "python": "python:3.12.10-slim",
+      "tempo": "grafana/tempo:2.7.2"
+    }
+  },
+  "error": "Steady-state precondition failed",
+  "fault_window_end_at": "2026-09-25T07:14:46.678156+00:00",
+  "injection_confirmed": false,
+  "manifest_sha256": null,
+  "model": null,
+  "outcome": "precondition_failed",
+  "precondition_passed": false,
+  "question": null,
+  "recovery": {
+    "passed": false
+  },
+  "repetitions": 1,
+  "run_id": "m2-s000-1790320486222120000",
+  "samples": [],
+  "scenario": {
+    "affected_service": "checkout",
+    "duration_seconds": 20,
+    "expected_cause": "no_incident",
+    "fault": "control",
+    "id": "S000"
+  },
+  "schema_version": "p001-ground-truth-v1",
+  "seed": null,
+  "seed_note": "lexical pod selection; packet loss/kernel scheduling not seedable",
+  "source_sha256": "2cb94c041b43887aecda90e399447c350701610ef0b4a9c7da9998fb7bcb54e4",
+  "split": "design",
+  "started_at": "2026-09-25T07:14:46.222353+00:00",
+  "statuses": [],
+  "targets": {},
+  "telemetry_window": {
+    "end_unix": null,
+    "start_unix": 1790320486.222115
+  }
+}

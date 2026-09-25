@@ -1,0 +1,3858 @@
+{
+  "logs": {
+    "data": {
+      "data": {
+        "result": [
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320876232222626",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "c62c40f815583a5c",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "0697e5e3fc1a19bd0ed5df6ec7dd7b8c"
+            },
+            "values": [
+              [
+                "1790320876232161280",
+                "synthetic_request trace_id=0697e5e3fc1a19bd0ed5df6ec7dd7b8c service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320878238652293",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "1f999511c98c54a0",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "c8aeb16a7a51bef354f60cc6ef8732c2"
+            },
+            "values": [
+              [
+                "1790320878238611968",
+                "synthetic_request trace_id=c8aeb16a7a51bef354f60cc6ef8732c2 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320878239233460",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "aa5d2da67e6c559f",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "c8aeb16a7a51bef354f60cc6ef8732c2"
+            },
+            "values": [
+              [
+                "1790320878239204608",
+                "synthetic_request trace_id=c8aeb16a7a51bef354f60cc6ef8732c2 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320878239768377",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "49af506beb6127b4",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "c8aeb16a7a51bef354f60cc6ef8732c2"
+            },
+            "values": [
+              [
+                "1790320878239737600",
+                "synthetic_request trace_id=c8aeb16a7a51bef354f60cc6ef8732c2 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320878729488794",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "63db03e788797122",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "55ea0b442aa1f32eba895fb4097186df"
+            },
+            "values": [
+              [
+                "1790320878729455104",
+                "synthetic_request trace_id=55ea0b442aa1f32eba895fb4097186df service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320878730000169",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "3d9eedc4e18323d6",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "55ea0b442aa1f32eba895fb4097186df"
+            },
+            "values": [
+              [
+                "1790320878729973248",
+                "synthetic_request trace_id=55ea0b442aa1f32eba895fb4097186df service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320878730482502",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "90a4be8cca7a8cd4",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "55ea0b442aa1f32eba895fb4097186df"
+            },
+            "values": [
+              [
+                "1790320878730449920",
+                "synthetic_request trace_id=55ea0b442aa1f32eba895fb4097186df service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320880249047669",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "d4c4a794767d580b",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "6fd882bed79b553c043616029f7bf6bf"
+            },
+            "values": [
+              [
+                "1790320880248998144",
+                "synthetic_request trace_id=6fd882bed79b553c043616029f7bf6bf service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320880250019669",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "1afd1a3579484c2b",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "6fd882bed79b553c043616029f7bf6bf"
+            },
+            "values": [
+              [
+                "1790320880249986560",
+                "synthetic_request trace_id=6fd882bed79b553c043616029f7bf6bf service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320880250868544",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "fe2056060fb53137",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "6fd882bed79b553c043616029f7bf6bf"
+            },
+            "values": [
+              [
+                "1790320880250824192",
+                "synthetic_request trace_id=6fd882bed79b553c043616029f7bf6bf service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320882038950420",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "2594594bfa5e8852",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "75908ec88eef8c1ce840ee114208cfcf"
+            },
+            "values": [
+              [
+                "1790320882038915584",
+                "synthetic_request trace_id=75908ec88eef8c1ce840ee114208cfcf service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320882039386087",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "d23e77bea10b4e3b",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "75908ec88eef8c1ce840ee114208cfcf"
+            },
+            "values": [
+              [
+                "1790320882039360000",
+                "synthetic_request trace_id=75908ec88eef8c1ce840ee114208cfcf service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320882039832045",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "636c81a112f2f52a",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "75908ec88eef8c1ce840ee114208cfcf"
+            },
+            "values": [
+              [
+                "1790320882039802368",
+                "synthetic_request trace_id=75908ec88eef8c1ce840ee114208cfcf service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320882256292045",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "57e99859fb6015b3",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "912c098eac505555ac980982e3a18c6d"
+            },
+            "values": [
+              [
+                "1790320882256261888",
+                "synthetic_request trace_id=912c098eac505555ac980982e3a18c6d service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320882256778004",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "41f74eeb2792b42a",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "912c098eac505555ac980982e3a18c6d"
+            },
+            "values": [
+              [
+                "1790320882256748032",
+                "synthetic_request trace_id=912c098eac505555ac980982e3a18c6d service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320882257259962",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "01bbc3b06b5fa6bc",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "912c098eac505555ac980982e3a18c6d"
+            },
+            "values": [
+              [
+                "1790320882257232128",
+                "synthetic_request trace_id=912c098eac505555ac980982e3a18c6d service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320884267284546",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "0b4c616b2318cac3",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "536bf055589cbbd17749fe7fefa3c012"
+            },
+            "values": [
+              [
+                "1790320884267234304",
+                "synthetic_request trace_id=536bf055589cbbd17749fe7fefa3c012 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320884268259671",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "b8fb7ed86c908d4c",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "536bf055589cbbd17749fe7fefa3c012"
+            },
+            "values": [
+              [
+                "1790320884268216320",
+                "synthetic_request trace_id=536bf055589cbbd17749fe7fefa3c012 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320884269314088",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "5d1ead834073f584",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "536bf055589cbbd17749fe7fefa3c012"
+            },
+            "values": [
+              [
+                "1790320884269267968",
+                "synthetic_request trace_id=536bf055589cbbd17749fe7fefa3c012 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320885504831547",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "38a79a7795bea8b8",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "12f1b8a3ad4f5321bd909ec6f6256ac9"
+            },
+            "values": [
+              [
+                "1790320885504799744",
+                "synthetic_request trace_id=12f1b8a3ad4f5321bd909ec6f6256ac9 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320885505374213",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "6eafddad9620a93f",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "12f1b8a3ad4f5321bd909ec6f6256ac9"
+            },
+            "values": [
+              [
+                "1790320885505349632",
+                "synthetic_request trace_id=12f1b8a3ad4f5321bd909ec6f6256ac9 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320885505867547",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "c745cc50915bd046",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "12f1b8a3ad4f5321bd909ec6f6256ac9"
+            },
+            "values": [
+              [
+                "1790320885505842176",
+                "synthetic_request trace_id=12f1b8a3ad4f5321bd909ec6f6256ac9 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320886282058839",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "6810af1be9e4d4bb",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "a2a47df1959910400dcfc168aa7baf10"
+            },
+            "values": [
+              [
+                "1790320886281982464",
+                "synthetic_request trace_id=a2a47df1959910400dcfc168aa7baf10 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320886283580964",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "a4eb6c38bb52bf69",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "a2a47df1959910400dcfc168aa7baf10"
+            },
+            "values": [
+              [
+                "1790320886283520768",
+                "synthetic_request trace_id=a2a47df1959910400dcfc168aa7baf10 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320886285130422",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "383cd610012d7d6d",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "a2a47df1959910400dcfc168aa7baf10"
+            },
+            "values": [
+              [
+                "1790320886285066240",
+                "synthetic_request trace_id=a2a47df1959910400dcfc168aa7baf10 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320888307256798",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "ff8398b0e5a1fad9",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "40936cd9012b06e7e0c745d49577952b"
+            },
+            "values": [
+              [
+                "1790320888307230464",
+                "synthetic_request trace_id=40936cd9012b06e7e0c745d49577952b service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320888307703298",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "6164a1a649c78ef6",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "40936cd9012b06e7e0c745d49577952b"
+            },
+            "values": [
+              [
+                "1790320888307681280",
+                "synthetic_request trace_id=40936cd9012b06e7e0c745d49577952b service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320888308183215",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "42d5070e498632c0",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "40936cd9012b06e7e0c745d49577952b"
+            },
+            "values": [
+              [
+                "1790320888308159488",
+                "synthetic_request trace_id=40936cd9012b06e7e0c745d49577952b service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320888833375673",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "edce777320a1a0d5",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "a299a187e69164d4fd5dffb5b1c35264"
+            },
+            "values": [
+              [
+                "1790320888833350656",
+                "synthetic_request trace_id=a299a187e69164d4fd5dffb5b1c35264 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320888833769840",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "79bb11302ed00c36",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "a299a187e69164d4fd5dffb5b1c35264"
+            },
+            "values": [
+              [
+                "1790320888833748480",
+                "synthetic_request trace_id=a299a187e69164d4fd5dffb5b1c35264 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320888834219090",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "fb482606ae1198cb",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "a299a187e69164d4fd5dffb5b1c35264"
+            },
+            "values": [
+              [
+                "1790320888834194688",
+                "synthetic_request trace_id=a299a187e69164d4fd5dffb5b1c35264 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320889965104216",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "2f80d7e9f3438b0f",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "bd99c0dbf1cc62a82283ae023db2f0bc"
+            },
+            "values": [
+              [
+                "1790320889965069568",
+                "synthetic_request trace_id=bd99c0dbf1cc62a82283ae023db2f0bc service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320889966433007",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "57df2b68380a2130",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "5af4da7845ddaf9d16f32ef0a61b6176"
+            },
+            "values": [
+              [
+                "1790320889966420992",
+                "synthetic_request trace_id=5af4da7845ddaf9d16f32ef0a61b6176 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320889967542424",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "2f6064d43e6a4fae",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "d47b477b10b0ba6906be6bd508f65d3f"
+            },
+            "values": [
+              [
+                "1790320889967527936",
+                "synthetic_request trace_id=d47b477b10b0ba6906be6bd508f65d3f service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320890314298841",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "f0192cede6de952a",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "4e82d0e2d651c2e2fcb5a41b31101385"
+            },
+            "values": [
+              [
+                "1790320890314271232",
+                "synthetic_request trace_id=4e82d0e2d651c2e2fcb5a41b31101385 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320890314859091",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "954bc28ff4e9eb89",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "4e82d0e2d651c2e2fcb5a41b31101385"
+            },
+            "values": [
+              [
+                "1790320890314835200",
+                "synthetic_request trace_id=4e82d0e2d651c2e2fcb5a41b31101385 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320890315294091",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "da4a650fd8fcf823",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "4e82d0e2d651c2e2fcb5a41b31101385"
+            },
+            "values": [
+              [
+                "1790320890315269376",
+                "synthetic_request trace_id=4e82d0e2d651c2e2fcb5a41b31101385 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320890373185424",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "1cff1a6cd49a929a",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "480be24ee1391210ff881eaf8c6166aa"
+            },
+            "values": [
+              [
+                "1790320890373109760",
+                "synthetic_request trace_id=480be24ee1391210ff881eaf8c6166aa service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320890777974341",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "bfb83ae3cc4b2b6f",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "70a7d507c4aedfd560ef7013660ab6cd"
+            },
+            "values": [
+              [
+                "1790320890777946624",
+                "synthetic_request trace_id=70a7d507c4aedfd560ef7013660ab6cd service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320891182193383",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "52c16fc187d2c359",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "956d697082d0ba2e9ac6cdbdfc728791"
+            },
+            "values": [
+              [
+                "1790320891182170112",
+                "synthetic_request trace_id=956d697082d0ba2e9ac6cdbdfc728791 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320892127533800",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "47c4a0e55418eb30",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "a1e59df3f0c8b249609d81136893993a"
+            },
+            "values": [
+              [
+                "1790320892127500032",
+                "synthetic_request trace_id=a1e59df3f0c8b249609d81136893993a service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320892128012633",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "925b6081b8835152",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "a1e59df3f0c8b249609d81136893993a"
+            },
+            "values": [
+              [
+                "1790320892127986688",
+                "synthetic_request trace_id=a1e59df3f0c8b249609d81136893993a service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320892128483675",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "4ffbd0998db4b34a",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "a1e59df3f0c8b249609d81136893993a"
+            },
+            "values": [
+              [
+                "1790320892128453376",
+                "synthetic_request trace_id=a1e59df3f0c8b249609d81136893993a service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320892322082550",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "94bdb91589734fb8",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "dd8779c28708ab99273331c8978af768"
+            },
+            "values": [
+              [
+                "1790320892322052096",
+                "synthetic_request trace_id=dd8779c28708ab99273331c8978af768 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320892322660717",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "3c809c91011146af",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "dd8779c28708ab99273331c8978af768"
+            },
+            "values": [
+              [
+                "1790320892322630656",
+                "synthetic_request trace_id=dd8779c28708ab99273331c8978af768 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320892323283425",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "53b282ce562c0b5f",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "dd8779c28708ab99273331c8978af768"
+            },
+            "values": [
+              [
+                "1790320892323259392",
+                "synthetic_request trace_id=dd8779c28708ab99273331c8978af768 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320894333673718",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "6f4e0e607f08a842",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "f0ce94ff4f5bd88ed66b2a17791999cd"
+            },
+            "values": [
+              [
+                "1790320894333602816",
+                "synthetic_request trace_id=f0ce94ff4f5bd88ed66b2a17791999cd service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320894334917593",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "587eb7c481f3a3e4",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "f0ce94ff4f5bd88ed66b2a17791999cd"
+            },
+            "values": [
+              [
+                "1790320894334876928",
+                "synthetic_request trace_id=f0ce94ff4f5bd88ed66b2a17791999cd service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320894335808384",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "de421e5bd90673ee",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "f0ce94ff4f5bd88ed66b2a17791999cd"
+            },
+            "values": [
+              [
+                "1790320894335747328",
+                "synthetic_request trace_id=f0ce94ff4f5bd88ed66b2a17791999cd service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320895628260593",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "a10dd6b6d86543c0",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "d6075bb234718398c828c1a8c97e716a"
+            },
+            "values": [
+              [
+                "1790320895628226048",
+                "synthetic_request trace_id=d6075bb234718398c828c1a8c97e716a service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320895628718968",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "5b6d450cac56e884",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "d6075bb234718398c828c1a8c97e716a"
+            },
+            "values": [
+              [
+                "1790320895628690432",
+                "synthetic_request trace_id=d6075bb234718398c828c1a8c97e716a service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320895629239802",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "d4492aa109be9423",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "d6075bb234718398c828c1a8c97e716a"
+            },
+            "values": [
+              [
+                "1790320895629203712",
+                "synthetic_request trace_id=d6075bb234718398c828c1a8c97e716a service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320896348649635",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "09b0d858819accf2",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "9d62fc52265b3d59f87e07374acc772e"
+            },
+            "values": [
+              [
+                "1790320896348572928",
+                "synthetic_request trace_id=9d62fc52265b3d59f87e07374acc772e service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320896349898344",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "6c02f409c29f6977",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "9d62fc52265b3d59f87e07374acc772e"
+            },
+            "values": [
+              [
+                "1790320896349841408",
+                "synthetic_request trace_id=9d62fc52265b3d59f87e07374acc772e service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320896351112344",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "8dd35f143027b84f",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "9d62fc52265b3d59f87e07374acc772e"
+            },
+            "values": [
+              [
+                "1790320896351048192",
+                "synthetic_request trace_id=9d62fc52265b3d59f87e07374acc772e service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320898357552470",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "1699383784e71676",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "c08c8127e3af59c5cf92cb6cae944a58"
+            },
+            "values": [
+              [
+                "1790320898357499648",
+                "synthetic_request trace_id=c08c8127e3af59c5cf92cb6cae944a58 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320898358055053",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "74641766ec2cf277",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "c08c8127e3af59c5cf92cb6cae944a58"
+            },
+            "values": [
+              [
+                "1790320898358025728",
+                "synthetic_request trace_id=c08c8127e3af59c5cf92cb6cae944a58 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320898358548928",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "cd970f3a537454ba",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "c08c8127e3af59c5cf92cb6cae944a58"
+            },
+            "values": [
+              [
+                "1790320898358517248",
+                "synthetic_request trace_id=c08c8127e3af59c5cf92cb6cae944a58 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320899006009887",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "89e2c59121e432c9",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "0fcf038329475e64ca6c6b52ba864f9b"
+            },
+            "values": [
+              [
+                "1790320899005969920",
+                "synthetic_request trace_id=0fcf038329475e64ca6c6b52ba864f9b service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320899006572220",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "a1bbf11f581953b7",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "0fcf038329475e64ca6c6b52ba864f9b"
+            },
+            "values": [
+              [
+                "1790320899006540800",
+                "synthetic_request trace_id=0fcf038329475e64ca6c6b52ba864f9b service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320899007140428",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "44a1f965876cb2b7",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "0fcf038329475e64ca6c6b52ba864f9b"
+            },
+            "values": [
+              [
+                "1790320899007105792",
+                "synthetic_request trace_id=0fcf038329475e64ca6c6b52ba864f9b service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320900406756012",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "48e41a02fdc8d94d",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "70ae05719c9c4716cc9bb83a19f76281"
+            },
+            "values": [
+              [
+                "1790320900406718208",
+                "synthetic_request trace_id=70ae05719c9c4716cc9bb83a19f76281 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320900407272554",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "7eac0c366247e449",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "70ae05719c9c4716cc9bb83a19f76281"
+            },
+            "values": [
+              [
+                "1790320900407244544",
+                "synthetic_request trace_id=70ae05719c9c4716cc9bb83a19f76281 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320900407760137",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "a3612dba0c8a3fd2",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "70ae05719c9c4716cc9bb83a19f76281"
+            },
+            "values": [
+              [
+                "1790320900407729664",
+                "synthetic_request trace_id=70ae05719c9c4716cc9bb83a19f76281 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320902345732847",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "6e69075460ced986",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "72f573d257b8e408c0be2931e4619c1f"
+            },
+            "values": [
+              [
+                "1790320902345700096",
+                "synthetic_request trace_id=72f573d257b8e408c0be2931e4619c1f service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320902346202972",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "3503c4df2ca8bf28",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "72f573d257b8e408c0be2931e4619c1f"
+            },
+            "values": [
+              [
+                "1790320902346176000",
+                "synthetic_request trace_id=72f573d257b8e408c0be2931e4619c1f service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320902346656263",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "b4adde6430defd35",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "72f573d257b8e408c0be2931e4619c1f"
+            },
+            "values": [
+              [
+                "1790320902346626816",
+                "synthetic_request trace_id=72f573d257b8e408c0be2931e4619c1f service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320902416263680",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "109c447f161a1f60",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "2c281034c984949b39b800f75cceefd5"
+            },
+            "values": [
+              [
+                "1790320902416229632",
+                "synthetic_request trace_id=2c281034c984949b39b800f75cceefd5 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320902416759930",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "600ac5f6371f6335",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "2c281034c984949b39b800f75cceefd5"
+            },
+            "values": [
+              [
+                "1790320902416732928",
+                "synthetic_request trace_id=2c281034c984949b39b800f75cceefd5 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320902417325763",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "9d1c52e591aadaef",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "2c281034c984949b39b800f75cceefd5"
+            },
+            "values": [
+              [
+                "1790320902417294080",
+                "synthetic_request trace_id=2c281034c984949b39b800f75cceefd5 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320904430151958",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "1f162fb7716c2fb0",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "2654f42a420013e0402a2632885801f8"
+            },
+            "values": [
+              [
+                "1790320904430078720",
+                "synthetic_request trace_id=2654f42a420013e0402a2632885801f8 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320904431622500",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "19440d1c081c7fe6",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "2654f42a420013e0402a2632885801f8"
+            },
+            "values": [
+              [
+                "1790320904431576576",
+                "synthetic_request trace_id=2654f42a420013e0402a2632885801f8 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320904432735208",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "a6ff4c66ee4d949d",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "2654f42a420013e0402a2632885801f8"
+            },
+            "values": [
+              [
+                "1790320904432688896",
+                "synthetic_request trace_id=2654f42a420013e0402a2632885801f8 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320905934985292",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "31bb646495af48a8",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "fd3f84b9d1ff56e1f0fdb715a8025ca1"
+            },
+            "values": [
+              [
+                "1790320905934950144",
+                "synthetic_request trace_id=fd3f84b9d1ff56e1f0fdb715a8025ca1 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320905935463417",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "548f676893ac16c2",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "fd3f84b9d1ff56e1f0fdb715a8025ca1"
+            },
+            "values": [
+              [
+                "1790320905935434752",
+                "synthetic_request trace_id=fd3f84b9d1ff56e1f0fdb715a8025ca1 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320905935950126",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "c8173ff44325c39d",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "fd3f84b9d1ff56e1f0fdb715a8025ca1"
+            },
+            "values": [
+              [
+                "1790320905935919872",
+                "synthetic_request trace_id=fd3f84b9d1ff56e1f0fdb715a8025ca1 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320906443018626",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "dc0764ed28a41e04",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "1bb37863b41d55a3b5fede9710ede39d"
+            },
+            "values": [
+              [
+                "1790320906442966784",
+                "synthetic_request trace_id=1bb37863b41d55a3b5fede9710ede39d service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320906443934626",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "e144b077941a9f9d",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "1bb37863b41d55a3b5fede9710ede39d"
+            },
+            "values": [
+              [
+                "1790320906443891200",
+                "synthetic_request trace_id=1bb37863b41d55a3b5fede9710ede39d service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320906444870376",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "9f631bf9a8ad6273",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "1bb37863b41d55a3b5fede9710ede39d"
+            },
+            "values": [
+              [
+                "1790320906444826624",
+                "synthetic_request trace_id=1bb37863b41d55a3b5fede9710ede39d service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320908449138085",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "76d47fe33154ecf4",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "a655694159bd420ef583ec753bac0104"
+            },
+            "values": [
+              [
+                "1790320908449115136",
+                "synthetic_request trace_id=a655694159bd420ef583ec753bac0104 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320908449493168",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "89b9694c46a7a351",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "a655694159bd420ef583ec753bac0104"
+            },
+            "values": [
+              [
+                "1790320908449473536",
+                "synthetic_request trace_id=a655694159bd420ef583ec753bac0104 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320908449846877",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "4d187dd49dc42543",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "a655694159bd420ef583ec753bac0104"
+            },
+            "values": [
+              [
+                "1790320908449826816",
+                "synthetic_request trace_id=a655694159bd420ef583ec753bac0104 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320909339980544",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "ac4bbc73da2544e1",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "36d767a55bb5c68421e1b305169bf9d7"
+            },
+            "values": [
+              [
+                "1790320909339940864",
+                "synthetic_request trace_id=36d767a55bb5c68421e1b305169bf9d7 service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320909340537919",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "1da4505f0326124a",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "36d767a55bb5c68421e1b305169bf9d7"
+            },
+            "values": [
+              [
+                "1790320909340509440",
+                "synthetic_request trace_id=36d767a55bb5c68421e1b305169bf9d7 service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320909341108086",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "22734583e4990034",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "36d767a55bb5c68421e1b305169bf9d7"
+            },
+            "values": [
+              [
+                "1790320909341079296",
+                "synthetic_request trace_id=36d767a55bb5c68421e1b305169bf9d7 service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320910461039378",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "58f7e446c5598e7a",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "38dc5d77f7316ac3da32dfd51991fd9b"
+            },
+            "values": [
+              [
+                "1790320910460992512",
+                "synthetic_request trace_id=38dc5d77f7316ac3da32dfd51991fd9b service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320910461826378",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "8cbd0de70f5ecb5e",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "38dc5d77f7316ac3da32dfd51991fd9b"
+            },
+            "values": [
+              [
+                "1790320910461788160",
+                "synthetic_request trace_id=38dc5d77f7316ac3da32dfd51991fd9b service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320910462530419",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "dbdc2f246123cda1",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "38dc5d77f7316ac3da32dfd51991fd9b"
+            },
+            "values": [
+              [
+                "1790320910462487552",
+                "synthetic_request trace_id=38dc5d77f7316ac3da32dfd51991fd9b service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320912468298045",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "c6bcbe08e24bd7f5",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "2e3dc8bd77f940fd87ca09941b7a332e"
+            },
+            "values": [
+              [
+                "1790320912468263680",
+                "synthetic_request trace_id=2e3dc8bd77f940fd87ca09941b7a332e service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320912468756879",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "e95f95f3c2e9605c",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "2e3dc8bd77f940fd87ca09941b7a332e"
+            },
+            "values": [
+              [
+                "1790320912468718080",
+                "synthetic_request trace_id=2e3dc8bd77f940fd87ca09941b7a332e service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320912469261212",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "f57f8b3cc4db975b",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "2e3dc8bd77f940fd87ca09941b7a332e"
+            },
+            "values": [
+              [
+                "1790320912469232128",
+                "synthetic_request trace_id=2e3dc8bd77f940fd87ca09941b7a332e service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320912734884587",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "96de6384c10ada59",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "2ce721efb8048583cfb7cc3921bd793b"
+            },
+            "values": [
+              [
+                "1790320912734842880",
+                "synthetic_request trace_id=2ce721efb8048583cfb7cc3921bd793b service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320912735409045",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "736b5cdf80a87be4",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "2ce721efb8048583cfb7cc3921bd793b"
+            },
+            "values": [
+              [
+                "1790320912735381248",
+                "synthetic_request trace_id=2ce721efb8048583cfb7cc3921bd793b service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320912735930879",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "f8207398914f1c95",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "2ce721efb8048583cfb7cc3921bd793b"
+            },
+            "values": [
+              [
+                "1790320912735898112",
+                "synthetic_request trace_id=2ce721efb8048583cfb7cc3921bd793b service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320914527351713",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "77be01757aa035ab",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "323eb51f47d824fe793ca55a9a67814c"
+            },
+            "values": [
+              [
+                "1790320914527280640",
+                "synthetic_request trace_id=323eb51f47d824fe793ca55a9a67814c service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320914528459546",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "dcc1431b5b0daafb",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "323eb51f47d824fe793ca55a9a67814c"
+            },
+            "values": [
+              [
+                "1790320914528404736",
+                "synthetic_request trace_id=323eb51f47d824fe793ca55a9a67814c service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320914529668588",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "1703da3a2984a329",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "323eb51f47d824fe793ca55a9a67814c"
+            },
+            "values": [
+              [
+                "1790320914529600256",
+                "synthetic_request trace_id=323eb51f47d824fe793ca55a9a67814c service=checkout status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320916541533881",
+              "scope_name": "p001.workload",
+              "service_name": "inventory",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "6c36598b992cac0d",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "7d0c9f38762268af9f238dd88d8adfba"
+            },
+            "values": [
+              [
+                "1790320916541481472",
+                "synthetic_request trace_id=7d0c9f38762268af9f238dd88d8adfba service=inventory status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320916542516339",
+              "scope_name": "p001.workload",
+              "service_name": "catalog",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "10bfb50cceecd754",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "7d0c9f38762268af9f238dd88d8adfba"
+            },
+            "values": [
+              [
+                "1790320916542472192",
+                "synthetic_request trace_id=7d0c9f38762268af9f238dd88d8adfba service=catalog status=200"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "code_filepath": "/app/app.py",
+              "code_function": "do_GET",
+              "code_lineno": "96",
+              "detected_level": "info",
+              "flags": "1",
+              "observed_timestamp": "1790320916543529214",
+              "scope_name": "p001.workload",
+              "service_name": "checkout",
+              "service_namespace": "p001",
+              "severity_number": "9",
+              "severity_text": "INFO",
+              "span_id": "bcca7661bd1925a9",
+              "telemetry_sdk_language": "python",
+              "telemetry_sdk_name": "opentelemetry",
+              "telemetry_sdk_version": "1.31.1",
+              "trace_id": "7d0c9f38762268af9f238dd88d8adfba"
+            },
+            "values": [
+              [
+                "1790320916543480320",
+                "synthetic_request trace_id=7d0c9f38762268af9f238dd88d8adfba service=checkout status=200"
+              ]
+            ]
+          }
+        ],
+        "resultType": "streams",
+        "stats": {
+          "cache": {
+            "chunk": {
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "downloadTime": 0,
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "queryLengthServed": 0,
+              "requests": 0
+            },
+            "index": {
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "downloadTime": 0,
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "queryLengthServed": 0,
+              "requests": 0
+            },
+            "instantMetricResult": {
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "downloadTime": 0,
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "queryLengthServed": 0,
+              "requests": 0
+            },
+            "labelResult": {
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "downloadTime": 0,
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "queryLengthServed": 0,
+              "requests": 0
+            },
+            "result": {
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "downloadTime": 0,
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "queryLengthServed": 0,
+              "requests": 0
+            },
+            "seriesResult": {
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "downloadTime": 0,
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "queryLengthServed": 0,
+              "requests": 0
+            },
+            "statsResult": {
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "downloadTime": 0,
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "queryLengthServed": 0,
+              "requests": 0
+            },
+            "volumeResult": {
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "downloadTime": 0,
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "queryLengthServed": 0,
+              "requests": 0
+            }
+          },
+          "index": {
+            "postFilterChunks": 0,
+            "shardsDuration": 0,
+            "totalChunks": 0,
+            "usedBloomFilters": false
+          },
+          "ingester": {
+            "store": {
+              "chunk": {
+                "compressedBytes": 0,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "decompressedStructuredMetadataBytes": 0,
+                "headChunkBytes": 27468,
+                "headChunkLines": 138,
+                "headChunkStructuredMetadataBytes": 15456,
+                "postFilterLines": 138,
+                "totalDuplicates": 0
+              },
+              "chunkRefsFetchTime": 178584,
+              "chunksDownloadTime": 0,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0,
+              "queryReferencedStructuredMetadata": false,
+              "totalChunksDownloaded": 0,
+              "totalChunksRef": 0
+            },
+            "totalBatches": 1,
+            "totalChunksMatched": 3,
+            "totalLinesSent": 100,
+            "totalReached": 1
+          },
+          "querier": {
+            "store": {
+              "chunk": {
+                "compressedBytes": 0,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "decompressedStructuredMetadataBytes": 0,
+                "headChunkBytes": 0,
+                "headChunkLines": 0,
+                "headChunkStructuredMetadataBytes": 0,
+                "postFilterLines": 0,
+                "totalDuplicates": 0
+              },
+              "chunkRefsFetchTime": 0,
+              "chunksDownloadTime": 0,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0,
+              "queryReferencedStructuredMetadata": false,
+              "totalChunksDownloaded": 0,
+              "totalChunksRef": 0
+            }
+          },
+          "summary": {
+            "bytesProcessedPerSecond": 2421981,
+            "execTime": 0.011341,
+            "linesProcessedPerSecond": 12168,
+            "queueTime": 5.7e-05,
+            "shards": 1,
+            "splits": 0,
+            "subqueries": 0,
+            "totalBytesProcessed": 27468,
+            "totalEntriesReturned": 100,
+            "totalLinesProcessed": 138,
+            "totalPostFilterLines": 138,
+            "totalStructuredMetadataBytesProcessed": 15456
+          }
+        }
+      },
+      "status": "success"
+    },
+    "ok": true
+  },
+  "metrics": {
+    "data": {
+      "data": {
+        "result": [
+          {
+            "metric": {
+              "__name__": "p001_request_duration_seconds_count",
+              "exported_job": "p001/catalog",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "catalog",
+              "status": "200"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "309"
+              ],
+              [
+                1790320867.83,
+                "311"
+              ],
+              [
+                1790320872.83,
+                "318"
+              ],
+              [
+                1790320877.83,
+                "321"
+              ],
+              [
+                1790320882.83,
+                "325"
+              ],
+              [
+                1790320887.83,
+                "329"
+              ],
+              [
+                1790320892.83,
+                "333"
+              ],
+              [
+                1790320897.83,
+                "337"
+              ],
+              [
+                1790320902.83,
+                "341"
+              ],
+              [
+                1790320907.83,
+                "345"
+              ],
+              [
+                1790320912.83,
+                "349"
+              ],
+              [
+                1790320917.83,
+                "352"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_request_duration_seconds_count",
+              "exported_job": "p001/catalog",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "catalog",
+              "status": "502"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "3"
+              ],
+              [
+                1790320867.83,
+                "3"
+              ],
+              [
+                1790320872.83,
+                "3"
+              ],
+              [
+                1790320877.83,
+                "3"
+              ],
+              [
+                1790320882.83,
+                "3"
+              ],
+              [
+                1790320887.83,
+                "3"
+              ],
+              [
+                1790320892.83,
+                "3"
+              ],
+              [
+                1790320897.83,
+                "3"
+              ],
+              [
+                1790320902.83,
+                "3"
+              ],
+              [
+                1790320907.83,
+                "3"
+              ],
+              [
+                1790320912.83,
+                "3"
+              ],
+              [
+                1790320917.83,
+                "3"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_request_duration_seconds_count",
+              "exported_job": "p001/checkout",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "checkout",
+              "status": "200"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "159"
+              ],
+              [
+                1790320867.83,
+                "101"
+              ],
+              [
+                1790320872.83,
+                "163"
+              ],
+              [
+                1790320877.83,
+                "106"
+              ],
+              [
+                1790320882.83,
+                "169"
+              ],
+              [
+                1790320887.83,
+                "108"
+              ],
+              [
+                1790320892.83,
+                "174"
+              ],
+              [
+                1790320897.83,
+                "111"
+              ],
+              [
+                1790320902.83,
+                "179"
+              ],
+              [
+                1790320907.83,
+                "114"
+              ],
+              [
+                1790320912.83,
+                "183"
+              ],
+              [
+                1790320917.83,
+                "118"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_request_duration_seconds_count",
+              "exported_job": "p001/checkout",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "checkout",
+              "status": "502"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "1"
+              ],
+              [
+                1790320867.83,
+                "2"
+              ],
+              [
+                1790320872.83,
+                "1"
+              ],
+              [
+                1790320877.83,
+                "2"
+              ],
+              [
+                1790320882.83,
+                "1"
+              ],
+              [
+                1790320887.83,
+                "2"
+              ],
+              [
+                1790320892.83,
+                "1"
+              ],
+              [
+                1790320897.83,
+                "2"
+              ],
+              [
+                1790320902.83,
+                "1"
+              ],
+              [
+                1790320907.83,
+                "2"
+              ],
+              [
+                1790320912.83,
+                "1"
+              ],
+              [
+                1790320917.83,
+                "2"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_request_duration_seconds_count",
+              "exported_job": "p001/inventory",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "inventory",
+              "status": "200"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "23"
+              ],
+              [
+                1790320867.83,
+                "26"
+              ],
+              [
+                1790320872.83,
+                "30"
+              ],
+              [
+                1790320877.83,
+                "35"
+              ],
+              [
+                1790320882.83,
+                "38"
+              ],
+              [
+                1790320887.83,
+                "43"
+              ],
+              [
+                1790320892.83,
+                "46"
+              ],
+              [
+                1790320897.83,
+                "57"
+              ],
+              [
+                1790320902.83,
+                "60"
+              ],
+              [
+                1790320907.83,
+                "65"
+              ],
+              [
+                1790320912.83,
+                "68"
+              ],
+              [
+                1790320917.83,
+                "73"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_request_duration_seconds_sum",
+              "exported_job": "p001/catalog",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "catalog",
+              "status": "200"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "0.9135019085370004"
+              ],
+              [
+                1790320867.83,
+                "0.9252399074612185"
+              ],
+              [
+                1790320872.83,
+                "0.9399718235945329"
+              ],
+              [
+                1790320877.83,
+                "0.9496643234742805"
+              ],
+              [
+                1790320882.83,
+                "0.9604283237131312"
+              ],
+              [
+                1790320887.83,
+                "0.9703783645527437"
+              ],
+              [
+                1790320892.83,
+                "0.9831501146545634"
+              ],
+              [
+                1790320897.83,
+                "0.9907480316469446"
+              ],
+              [
+                1790320902.83,
+                "1.0041504055261612"
+              ],
+              [
+                1790320907.83,
+                "1.0125411985209212"
+              ],
+              [
+                1790320912.83,
+                "1.0246377394068986"
+              ],
+              [
+                1790320917.83,
+                "1.0319351555081084"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_request_duration_seconds_sum",
+              "exported_job": "p001/catalog",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "catalog",
+              "status": "502"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "0.0025390831287950277"
+              ],
+              [
+                1790320867.83,
+                "0.0025390831287950277"
+              ],
+              [
+                1790320872.83,
+                "0.0025390831287950277"
+              ],
+              [
+                1790320877.83,
+                "0.0025390831287950277"
+              ],
+              [
+                1790320882.83,
+                "0.0025390831287950277"
+              ],
+              [
+                1790320887.83,
+                "0.0025390831287950277"
+              ],
+              [
+                1790320892.83,
+                "0.0025390831287950277"
+              ],
+              [
+                1790320897.83,
+                "0.0025390831287950277"
+              ],
+              [
+                1790320902.83,
+                "0.0025390831287950277"
+              ],
+              [
+                1790320907.83,
+                "0.0025390831287950277"
+              ],
+              [
+                1790320912.83,
+                "0.0025390831287950277"
+              ],
+              [
+                1790320917.83,
+                "0.0025390831287950277"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_request_duration_seconds_sum",
+              "exported_job": "p001/checkout",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "checkout",
+              "status": "200"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "0.990233124117367"
+              ],
+              [
+                1790320867.83,
+                "0.5261409595841542"
+              ],
+              [
+                1790320872.83,
+                "1.0152083751745522"
+              ],
+              [
+                1790320877.83,
+                "0.5492366275284439"
+              ],
+              [
+                1790320882.83,
+                "1.0485767502104864"
+              ],
+              [
+                1790320887.83,
+                "0.5567674195626751"
+              ],
+              [
+                1790320892.83,
+                "1.0743497492512688"
+              ],
+              [
+                1790320897.83,
+                "0.573994044563733"
+              ],
+              [
+                1790320902.83,
+                "1.1034448322607204"
+              ],
+              [
+                1790320907.83,
+                "0.5861512115225196"
+              ],
+              [
+                1790320912.83,
+                "1.1246854981873184"
+              ],
+              [
+                1790320917.83,
+                "0.6065377534832805"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_request_duration_seconds_sum",
+              "exported_job": "p001/checkout",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "checkout",
+              "status": "502"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "0.0025321251014247537"
+              ],
+              [
+                1790320867.83,
+                "0.004154750029556453"
+              ],
+              [
+                1790320872.83,
+                "0.0025321251014247537"
+              ],
+              [
+                1790320877.83,
+                "0.004154750029556453"
+              ],
+              [
+                1790320882.83,
+                "0.0025321251014247537"
+              ],
+              [
+                1790320887.83,
+                "0.004154750029556453"
+              ],
+              [
+                1790320892.83,
+                "0.0025321251014247537"
+              ],
+              [
+                1790320897.83,
+                "0.004154750029556453"
+              ],
+              [
+                1790320902.83,
+                "0.0025321251014247537"
+              ],
+              [
+                1790320907.83,
+                "0.004154750029556453"
+              ],
+              [
+                1790320912.83,
+                "0.0025321251014247537"
+              ],
+              [
+                1790320917.83,
+                "0.004154750029556453"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_request_duration_seconds_sum",
+              "exported_job": "p001/inventory",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "inventory",
+              "status": "200"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "0.006292960257269442"
+              ],
+              [
+                1790320867.83,
+                "0.007217919337563217"
+              ],
+              [
+                1790320872.83,
+                "0.007813002332113683"
+              ],
+              [
+                1790320877.83,
+                "0.008764919475652277"
+              ],
+              [
+                1790320882.83,
+                "0.009383336524479091"
+              ],
+              [
+                1790320887.83,
+                "0.010412586503662169"
+              ],
+              [
+                1790320892.83,
+                "0.01125841960310936"
+              ],
+              [
+                1790320897.83,
+                "0.01262858568225056"
+              ],
+              [
+                1790320902.83,
+                "0.013441877556033432"
+              ],
+              [
+                1790320907.83,
+                "0.014215334434993565"
+              ],
+              [
+                1790320912.83,
+                "0.015024127438664436"
+              ],
+              [
+                1790320917.83,
+                "0.015796752413734794"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_requests_total",
+              "exported_job": "p001/catalog",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "catalog",
+              "status": "200"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "309"
+              ],
+              [
+                1790320867.83,
+                "311"
+              ],
+              [
+                1790320872.83,
+                "318"
+              ],
+              [
+                1790320877.83,
+                "321"
+              ],
+              [
+                1790320882.83,
+                "325"
+              ],
+              [
+                1790320887.83,
+                "329"
+              ],
+              [
+                1790320892.83,
+                "333"
+              ],
+              [
+                1790320897.83,
+                "337"
+              ],
+              [
+                1790320902.83,
+                "341"
+              ],
+              [
+                1790320907.83,
+                "345"
+              ],
+              [
+                1790320912.83,
+                "349"
+              ],
+              [
+                1790320917.83,
+                "352"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_requests_total",
+              "exported_job": "p001/catalog",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "catalog",
+              "status": "502"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "3"
+              ],
+              [
+                1790320867.83,
+                "3"
+              ],
+              [
+                1790320872.83,
+                "3"
+              ],
+              [
+                1790320877.83,
+                "3"
+              ],
+              [
+                1790320882.83,
+                "3"
+              ],
+              [
+                1790320887.83,
+                "3"
+              ],
+              [
+                1790320892.83,
+                "3"
+              ],
+              [
+                1790320897.83,
+                "3"
+              ],
+              [
+                1790320902.83,
+                "3"
+              ],
+              [
+                1790320907.83,
+                "3"
+              ],
+              [
+                1790320912.83,
+                "3"
+              ],
+              [
+                1790320917.83,
+                "3"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_requests_total",
+              "exported_job": "p001/checkout",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "checkout",
+              "status": "200"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "159"
+              ],
+              [
+                1790320867.83,
+                "101"
+              ],
+              [
+                1790320872.83,
+                "163"
+              ],
+              [
+                1790320877.83,
+                "106"
+              ],
+              [
+                1790320882.83,
+                "169"
+              ],
+              [
+                1790320887.83,
+                "108"
+              ],
+              [
+                1790320892.83,
+                "174"
+              ],
+              [
+                1790320897.83,
+                "111"
+              ],
+              [
+                1790320902.83,
+                "179"
+              ],
+              [
+                1790320907.83,
+                "114"
+              ],
+              [
+                1790320912.83,
+                "183"
+              ],
+              [
+                1790320917.83,
+                "118"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_requests_total",
+              "exported_job": "p001/checkout",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "checkout",
+              "status": "502"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "1"
+              ],
+              [
+                1790320867.83,
+                "2"
+              ],
+              [
+                1790320872.83,
+                "1"
+              ],
+              [
+                1790320877.83,
+                "2"
+              ],
+              [
+                1790320882.83,
+                "1"
+              ],
+              [
+                1790320887.83,
+                "2"
+              ],
+              [
+                1790320892.83,
+                "1"
+              ],
+              [
+                1790320897.83,
+                "2"
+              ],
+              [
+                1790320902.83,
+                "1"
+              ],
+              [
+                1790320907.83,
+                "2"
+              ],
+              [
+                1790320912.83,
+                "1"
+              ],
+              [
+                1790320917.83,
+                "2"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "p001_requests_total",
+              "exported_job": "p001/inventory",
+              "instance": "collector:8889",
+              "job": "p001-collector",
+              "otel_scope_name": "p001.workload",
+              "route": "/work",
+              "service": "inventory",
+              "status": "200"
+            },
+            "values": [
+              [
+                1790320862.83,
+                "23"
+              ],
+              [
+                1790320867.83,
+                "26"
+              ],
+              [
+                1790320872.83,
+                "30"
+              ],
+              [
+                1790320877.83,
+                "35"
+              ],
+              [
+                1790320882.83,
+                "38"
+              ],
+              [
+                1790320887.83,
+                "43"
+              ],
+              [
+                1790320892.83,
+                "46"
+              ],
+              [
+                1790320897.83,
+                "57"
+              ],
+              [
+                1790320902.83,
+                "60"
+              ],
+              [
+                1790320907.83,
+                "65"
+              ],
+              [
+                1790320912.83,
+                "68"
+              ],
+              [
+                1790320917.83,
+                "73"
+              ]
+            ]
+          }
+        ],
+        "resultType": "matrix"
+      },
+      "status": "success"
+    },
+    "ok": true
+  },
+  "traces": {
+    "data": {
+      "metrics": {
+        "completedJobs": 1,
+        "inspectedBytes": "335381",
+        "inspectedTraces": 152,
+        "totalJobs": 1
+      },
+      "traces": [
+        {
+          "rootServiceName": "inventory",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320890372913091",
+          "traceID": "480be24ee1391210ff881eaf8c6166aa"
+        },
+        {
+          "durationMs": 3,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320888304585673",
+          "traceID": "40936cd9012b06e7e0c745d49577952b"
+        },
+        {
+          "durationMs": 3,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320885502000630",
+          "traceID": "12f1b8a3ad4f5321bd909ec6f6256ac9"
+        },
+        {
+          "durationMs": 6,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320880244082878",
+          "traceID": "6fd882bed79b553c043616029f7bf6bf"
+        },
+        {
+          "durationMs": 3,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320878726705752",
+          "traceID": "55ea0b442aa1f32eba895fb4097186df"
+        },
+        {
+          "durationMs": 4,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320878235635252",
+          "traceID": "c8aeb16a7a51bef354f60cc6ef8732c2"
+        },
+        {
+          "durationMs": 9,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320876223169417",
+          "traceID": "697e5e3fc1a19bd0ed5df6ec7dd7b8c"
+        },
+        {
+          "durationMs": 3,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320875239387834",
+          "traceID": "949bc43f487426e34511106ec97d16d0"
+        },
+        {
+          "durationMs": 4,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320874213952791",
+          "traceID": "644f7aadc0279d954d6d819ce503f784"
+        },
+        {
+          "durationMs": 8,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320872150843846",
+          "traceID": "d22caff96b63292bec2de831a18817af"
+        },
+        {
+          "durationMs": 3,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320871736020721",
+          "traceID": "18157912b73684f2bbcc04c6c879d385"
+        },
+        {
+          "durationMs": 7,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320870137743637",
+          "traceID": "b664e8dd78c33dee701157675843c637"
+        },
+        {
+          "durationMs": 3,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320868334802678",
+          "traceID": "14d8ccb1adce998f1e4c37957add5347"
+        },
+        {
+          "durationMs": 3,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320868128399261",
+          "traceID": "3689589a294ce6e7e8be68b521d2f0ab"
+        },
+        {
+          "durationMs": 3,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320866817278386",
+          "traceID": "c97a761fee402772ac8e04aaff6844d2"
+        },
+        {
+          "durationMs": 4,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320866119951010",
+          "traceID": "904fe3f223f203308f717ff1a20e17c5"
+        },
+        {
+          "durationMs": 5,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320865617884052",
+          "traceID": "7df5bd063523237526920eff38dc6bca"
+        },
+        {
+          "durationMs": 3,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320864327156968",
+          "traceID": "9d2155afcbc27314cc8d1cd480c2ba6"
+        },
+        {
+          "durationMs": 5,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320864112429134",
+          "traceID": "4ca8db63bb1e85737bfe70cd43ff3880"
+        },
+        {
+          "durationMs": 11,
+          "rootServiceName": "checkout",
+          "rootTraceName": "GET /work",
+          "startTimeUnixNano": "1790320862034455092",
+          "traceID": "122e66b180e19b3b6846c9d8e354ab58"
+        }
+      ]
+    },
+    "ok": true
+  }
+}

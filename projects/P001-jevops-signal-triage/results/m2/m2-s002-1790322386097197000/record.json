@@ -1,0 +1,868 @@
+{
+  "api_cost_krw": 0,
+  "artifacts": [
+    {
+      "path": "manifest.json",
+      "sha256": "71e0c326e360016a13ce418140881fea8d93e9c7f0db613174626f7f61fd2dc8"
+    },
+    {
+      "path": "telemetry.json",
+      "sha256": "8ef33bc57b13e4dc0428689ac8b68fdf13d88473a2185ebb5264b9a8acab2ce3"
+    }
+  ],
+  "catalog_sha256": "54df136f9be30cd19662c3be322dd5e24012407b53f746111f669721e24c2165",
+  "commit": "f15a7d6658da0b5889f8823a97038bccd9899f05",
+  "dirty": false,
+  "ended_at": "2026-09-25T07:47:21.596844+00:00",
+  "engine": {
+    "chart_sha256": "ae4abd385649771300e4d33a44627c0df3618be0780c385bf30cc2fdf2ad93fa",
+    "helm": "v3.16.1",
+    "images": [
+      "ghcr.io/chaos-mesh/chaos-mesh:v2.8.4",
+      "ghcr.io/chaos-mesh/chaos-daemon:v2.8.4",
+      "registry.k8s.io/pause:3.10"
+    ],
+    "version": "2.8.4"
+  },
+  "environment": {
+    "actual": {
+      "docker_server": "28.0.1",
+      "images": {
+        "ghcr.io/chaos-mesh/chaos-daemon:v2.8.4": "sha256:40f7b1b7dbae6962c3066175817aac84324d6876fdf73851d600ca19a8524cab",
+        "ghcr.io/chaos-mesh/chaos-mesh:v2.8.4": "sha256:ee58ccf2c50e09aff1e56305b79cef11c31406d4d218fc14611aff12e2119434"
+      },
+      "kubernetes": {
+        "clientVersion": {
+          "buildDate": "2026-04-22T13:51:51Z",
+          "compiler": "gc",
+          "gitCommit": "ecf6decece6a6de25a57aad9ba90b6ce580f6f78",
+          "gitTreeState": "clean",
+          "gitVersion": "v1.36.0",
+          "goVersion": "go1.26.2",
+          "major": "1",
+          "minor": "36",
+          "platform": "darwin/arm64"
+        },
+        "kustomizeVersion": "v5.8.1",
+        "serverVersion": {
+          "buildDate": "2025-12-17T12:32:07Z",
+          "compiler": "gc",
+          "emulationMajor": "1",
+          "emulationMinor": "35",
+          "gitCommit": "66452049f3d692768c39c797b21b793dce80314e",
+          "gitTreeState": "clean",
+          "gitVersion": "v1.35.0",
+          "goVersion": "go1.25.5",
+          "major": "1",
+          "minCompatibilityMajor": "1",
+          "minCompatibilityMinor": "34",
+          "minor": "35",
+          "platform": "linux/arm64"
+        }
+      },
+      "namespace_filter": true
+    },
+    "cluster": "p001-m1",
+    "host": "macOS-15.4-arm64-arm-64bit-Mach-O",
+    "namespace": "p001",
+    "versions": {
+      "alertmanager": "prom/alertmanager:v0.28.1",
+      "collector": "otel/opentelemetry-collector-contrib:0.128.0",
+      "grafana": "grafana/grafana:11.6.0",
+      "kind": "v0.31.0",
+      "kubectl": "v1.36.0",
+      "loki": "grafana/loki:3.4.2",
+      "node": "kindest/node:v1.35.0",
+      "prometheus": "prom/prometheus:v3.2.1",
+      "python": "python:3.12.10-slim",
+      "tempo": "grafana/tempo:2.7.2"
+    }
+  },
+  "fault_window_end_at": "2026-09-25T07:47:07.049970+00:00",
+  "injection_confirmed": true,
+  "injection_confirmed_at": "2026-09-25T07:46:30.730768+00:00",
+  "injection_requested_at": "2026-09-25T07:46:30.550425+00:00",
+  "injection_required": true,
+  "manifest_sha256": "71e0c326e360016a13ce418140881fea8d93e9c7f0db613174626f7f61fd2dc8",
+  "model": null,
+  "observed_targets": [
+    "p001/catalog-d546db8f8-rhbzv",
+    "p001/inventory-7d7f47bc9f-l2wcj"
+  ],
+  "outcome": "passed",
+  "precondition_passed": true,
+  "question": null,
+  "recovery": {
+    "fault_removed": true,
+    "passed": true,
+    "recovered_at": "2026-09-25T07:47:15.443766+00:00",
+    "samples": [
+      {
+        "at": "2026-09-25T07:47:08.827712+00:00",
+        "elapsed_seconds": 0.007147750002332032,
+        "ok": true,
+        "status": 200,
+        "trace_id": "e21a721fcd12a28f9364f53bb074e725"
+      },
+      {
+        "at": "2026-09-25T07:47:12.055810+00:00",
+        "elapsed_seconds": 0.006593791069462895,
+        "ok": true,
+        "status": 200,
+        "trace_id": "bce4e5425c2d5a5a2e7cac9d52ccf7f6"
+      },
+      {
+        "at": "2026-09-25T07:47:15.443721+00:00",
+        "elapsed_seconds": 0.006760791991837323,
+        "ok": true,
+        "status": 200,
+        "trace_id": "13943b89273068a54c33bc59855d6510"
+      }
+    ]
+  },
+  "repetitions": 1,
+  "run_id": "m2-s002-1790322386097197000",
+  "samples": [
+    {
+      "at": "2026-09-25T07:46:27.741134+00:00",
+      "elapsed_seconds": 0.0072975000366568565,
+      "ok": true,
+      "phase": "baseline",
+      "status": 200,
+      "trace_id": "b396306b59d88ecc62dff549ddfe2927"
+    },
+    {
+      "at": "2026-09-25T07:46:28.934657+00:00",
+      "elapsed_seconds": 0.007019291049800813,
+      "ok": true,
+      "phase": "baseline",
+      "status": 200,
+      "trace_id": "32721a427e253b7a370b5707599a249a"
+    },
+    {
+      "at": "2026-09-25T07:46:30.133158+00:00",
+      "elapsed_seconds": 0.007447707932442427,
+      "ok": true,
+      "phase": "baseline",
+      "status": 200,
+      "trace_id": "f7b5c84cf00dfd7575bff5afd4df63e3"
+    },
+    {
+      "at": "2026-09-25T07:46:32.179086+00:00",
+      "elapsed_seconds": 0.41261195892002434,
+      "ok": true,
+      "phase": "fault",
+      "status": 200,
+      "trace_id": "3fa3a939b0154f93be5ca1083ed1ea72"
+    },
+    {
+      "at": "2026-09-25T07:46:35.930376+00:00",
+      "elapsed_seconds": 0.4150230420054868,
+      "ok": true,
+      "phase": "fault",
+      "status": 200,
+      "trace_id": "07dd2ed9d6bcbeb29d5265a30baf2440"
+    },
+    {
+      "at": "2026-09-25T07:46:39.633464+00:00",
+      "elapsed_seconds": 0.41651879099663347,
+      "ok": true,
+      "phase": "fault",
+      "status": 200,
+      "trace_id": "b88ac06dac599745b62f10e8fb2f871e"
+    },
+    {
+      "at": "2026-09-25T07:46:43.195231+00:00",
+      "elapsed_seconds": 0.41402754199225456,
+      "ok": true,
+      "phase": "fault",
+      "status": 200,
+      "trace_id": "46c6d1336f5406925378ffb1ed70876f"
+    },
+    {
+      "at": "2026-09-25T07:46:46.886549+00:00",
+      "elapsed_seconds": 0.41255195799749345,
+      "ok": true,
+      "phase": "fault",
+      "status": 200,
+      "trace_id": "642f3405b21f9cb4164c4566a89ace37"
+    },
+    {
+      "at": "2026-09-25T07:46:50.733728+00:00",
+      "elapsed_seconds": 0.4850467499345541,
+      "ok": true,
+      "phase": "fault",
+      "status": 200,
+      "trace_id": "bd1da6d8a800af59cb10e1acb266a7b2"
+    },
+    {
+      "at": "2026-09-25T07:46:54.463548+00:00",
+      "elapsed_seconds": 0.4813212079461664,
+      "ok": true,
+      "phase": "fault",
+      "status": 200,
+      "trace_id": "bd22cdf621ed293dd0564b6875fb0778"
+    },
+    {
+      "at": "2026-09-25T07:46:58.332324+00:00",
+      "elapsed_seconds": 0.4152721669524908,
+      "ok": true,
+      "phase": "fault",
+      "status": 200,
+      "trace_id": "d15a079d0e227a7dab1dd8d8d15cd0ba"
+    },
+    {
+      "at": "2026-09-25T07:47:01.655647+00:00",
+      "elapsed_seconds": 0.005633207969367504,
+      "ok": true,
+      "phase": "transition",
+      "status": 200,
+      "trace_id": "e48a0c0a1d5592f58caacd5578d8f57b"
+    },
+    {
+      "at": "2026-09-25T07:47:05.044624+00:00",
+      "elapsed_seconds": 0.005785625078715384,
+      "ok": true,
+      "phase": "transition",
+      "status": 200,
+      "trace_id": "21202a1e79e209c1aa9e141e3b57caae"
+    }
+  ],
+  "scenario": {
+    "affected_service": "catalog",
+    "duration_seconds": 30,
+    "expected_cause": "network_latency",
+    "fault": "delay",
+    "id": "S002"
+  },
+  "schema_version": "p001-ground-truth-v1",
+  "seed": null,
+  "seed_note": "lexical pod selection; packet loss/kernel scheduling not seedable",
+  "source_sha256": "e3e82303c6bc4794a33fa6abf056e7b4771a17f15192d18505570bec32080ee8",
+  "split": "design",
+  "started_at": "2026-09-25T07:46:26.097286+00:00",
+  "statuses": [
+    {
+      "at": "2026-09-25T07:46:30.730736+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": ".Target"
+            },
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/catalog-d546db8f8-rhbzv",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        },
+        "instances": {
+          "p001/catalog-d546db8f8-rhbzv": 1
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:46:34.375909+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": ".Target"
+            },
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/catalog-d546db8f8-rhbzv",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        },
+        "instances": {
+          "p001/catalog-d546db8f8-rhbzv": 1
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:46:38.122834+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": ".Target"
+            },
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/catalog-d546db8f8-rhbzv",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        },
+        "instances": {
+          "p001/catalog-d546db8f8-rhbzv": 1
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:46:41.810832+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": ".Target"
+            },
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/catalog-d546db8f8-rhbzv",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        },
+        "instances": {
+          "p001/catalog-d546db8f8-rhbzv": 1
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:46:45.413456+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": ".Target"
+            },
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/catalog-d546db8f8-rhbzv",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        },
+        "instances": {
+          "p001/catalog-d546db8f8-rhbzv": 1
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:46:49.072776+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": ".Target"
+            },
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/catalog-d546db8f8-rhbzv",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        },
+        "instances": {
+          "p001/catalog-d546db8f8-rhbzv": 1
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:46:52.919901+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": ".Target"
+            },
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/catalog-d546db8f8-rhbzv",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        },
+        "instances": {
+          "p001/catalog-d546db8f8-rhbzv": 1
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:46:56.668460+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": ".Target"
+            },
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/catalog-d546db8f8-rhbzv",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        },
+        "instances": {
+          "p001/catalog-d546db8f8-rhbzv": 1
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:47:00.526499+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "False",
+            "type": "AllInjected"
+          },
+          {
+            "status": "True",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                },
+                {
+                  "operation": "Recover",
+                  "timestamp": "2026-09-25T07:47:00Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Not Injected",
+              "recoveredCount": 1,
+              "selectorKey": ".Target"
+            },
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                },
+                {
+                  "operation": "Recover",
+                  "timestamp": "2026-09-25T07:47:00Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/catalog-d546db8f8-rhbzv",
+              "injectedCount": 1,
+              "phase": "Not Injected",
+              "recoveredCount": 1,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Stop"
+        },
+        "instances": {
+          "p001/catalog-d546db8f8-rhbzv": 2,
+          "p001/inventory-7d7f47bc9f-l2wcj": 1
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:47:03.851516+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "False",
+            "type": "AllInjected"
+          },
+          {
+            "status": "True",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                },
+                {
+                  "operation": "Recover",
+                  "timestamp": "2026-09-25T07:47:00Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/inventory-7d7f47bc9f-l2wcj",
+              "injectedCount": 1,
+              "phase": "Not Injected",
+              "recoveredCount": 1,
+              "selectorKey": ".Target"
+            },
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:46:30Z",
+                  "type": "Succeeded"
+                },
+                {
+                  "operation": "Recover",
+                  "timestamp": "2026-09-25T07:47:00Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/catalog-d546db8f8-rhbzv",
+              "injectedCount": 1,
+              "phase": "Not Injected",
+              "recoveredCount": 1,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Stop"
+        },
+        "instances": {
+          "p001/catalog-d546db8f8-rhbzv": 2,
+          "p001/inventory-7d7f47bc9f-l2wcj": 1
+        }
+      }
+    }
+  ],
+  "targets": {
+    "catalog": "catalog-d546db8f8-rhbzv",
+    "checkout": "checkout-54bc985f9b-p5679",
+    "inventory": "inventory-7d7f47bc9f-l2wcj"
+  },
+  "telemetry_collected": true,
+  "telemetry_window": {
+    "end_unix": 1790322441.448925,
+    "start_unix": 1790322386.097196
+  }
+}

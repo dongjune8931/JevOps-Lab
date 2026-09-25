@@ -68,12 +68,14 @@
 
 ### P001-D007 — Chaos engine
 
-- 상태: pending
-- 추천: `Chaos Mesh`
-- 이유: Kubernetes CRD, selector 기반 blast radius와 workflow/status-check 흐름이 이 프로젝트의 제한된 fault harness에 잘 맞는다.
+- 날짜: 2026-09-25
+- 상태: accepted (M2; 사용자가 후속 milestone 적합성을 기준으로 선택 위임)
+- 결정: `Chaos Mesh 2.8.4`와 checksum을 고정한 Helm chart를 전용 로컬 kind에 사용한다.
+- 이유: 버전 관리한 CRD manifest·selector·주입/복구 상태를 M3의 관측 window, M4a의 AWS 재현, M5의 반복 평가에 연결하기 적합하다. AWS 호환성은 M4a에서 별도 검증한다.
 - 대안: `LitmusChaos`
 - 대안 장점: probe, ChaosHub, experiment 결과와 end-to-end 플랫폼 기능이 강하다.
-- 결정에 필요한 정보: 경량 로컬 실행 우선인지, 완성된 chaos workflow·포털 경험 우선인지.
+- 선택하지 않은 이유: 이번 목적은 Jev 평가용 제한된 fault harness이며 별도 포털·workflow 플랫폼은 필수가 아니다.
+- 영향: privileged daemon은 소유한 kind node에만 설치한다. namespace filter·대상 allowlist·duration·단일 실행 lock·복구 검증을 추가한다. dashboard는 설치하지 않으며 AWS 실행 및 비용은 승인하지 않는다.
 
 ### P001-D008 — Sample workload
 
@@ -149,6 +151,17 @@
 - 이유: 안전한 장애 주입·마스킹·Jev 실패 처리를 갖춘 뒤 클라우드 차이를 확인하고, 운영 화면 완성 전에 환경별 평가 자료를 확보한다.
 - 대안: M1 직후 AWS로 이전하거나 M6까지 기다린 뒤 첫 AWS 테스트. 전자는 triage 비교 기준이 부족하고 후자는 환경 차이 발견이 늦어진다.
 - 영향: M4a pilot은 최종 test split에서 제외한다. AWS 구성·실습 계정·리전은 미정이며 실행별 AWS·Jev 비용 승인이 필요하다. 이번 결정은 리소스 생성이나 크레딧 소비 승인이 아니다.
+
+## 검증에 따른 결정
+
+### P001-D016 — 장애 주입 상태와 실제 효과를 분리한다
+
+- 날짜: 2026-09-25
+- 상태: accepted (M2 구현 검증)
+- 결정: `AllInjected`만으로 지연·의존 서비스 중단 성공을 판정하지 않고 fault window의 요청 증거를 확인한다. catalog → inventory는 headless Service를 사용하고 상태 없는 합성 앱의 종료 유예시간은 2초로 고정한다.
+- 이유: 같은 network fault에서 Service 경로는 약 1~4ms, Pod 직접 경로는 약 404ms였으며, 기본 종료 유예 30초에서는 20초 pod-failure 구간 뒤에야 pause image가 실행됐다.
+- 대안: 주입 상태만 신뢰하거나 주입 시간을 무작정 연장. 잘못된 ground truth 또는 긴 실험 시간을 만들 수 있어 선택하지 않았다.
+- 영향: 이 구성은 합성 실험 fixture이며 일반 운영 서비스 설정으로 권장하지 않는다. 초기 run을 삭제하지 않고 수정 이전 버전으로 구분한다. M4a에서 클라우드의 실제 통신·종료 동작을 다시 검증한다.
 
 ## 결정 추가 형식
 

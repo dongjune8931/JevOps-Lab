@@ -1,0 +1,182 @@
+{
+  "api_cost_krw": 0,
+  "artifacts": [
+    {
+      "path": "telemetry.json",
+      "sha256": "1b382358d49e1c374ed1182f21c091beb6cccfb4bd27a80a0dc1605707572d25"
+    }
+  ],
+  "catalog_sha256": "54df136f9be30cd19662c3be322dd5e24012407b53f746111f669721e24c2165",
+  "commit": "e63ca8ccc61b06471e290924051fbb2536fdbe2e",
+  "dirty": true,
+  "ended_at": "2026-09-25T07:16:18.987795+00:00",
+  "engine": {
+    "chart_sha256": "ae4abd385649771300e4d33a44627c0df3618be0780c385bf30cc2fdf2ad93fa",
+    "helm": "v3.16.1",
+    "images": [
+      "ghcr.io/chaos-mesh/chaos-mesh:v2.8.4",
+      "ghcr.io/chaos-mesh/chaos-daemon:v2.8.4",
+      "registry.k8s.io/pause:3.10"
+    ],
+    "version": "2.8.4"
+  },
+  "environment": {
+    "cluster": "p001-m1",
+    "host": "macOS-15.4-arm64-arm-64bit-Mach-O",
+    "namespace": "p001",
+    "versions": {
+      "alertmanager": "prom/alertmanager:v0.28.1",
+      "collector": "otel/opentelemetry-collector-contrib:0.128.0",
+      "grafana": "grafana/grafana:11.6.0",
+      "kind": "v0.31.0",
+      "kubectl": "v1.36.0",
+      "loki": "grafana/loki:3.4.2",
+      "node": "kindest/node:v1.35.0",
+      "prometheus": "prom/prometheus:v3.2.1",
+      "python": "python:3.12.10-slim",
+      "tempo": "grafana/tempo:2.7.2"
+    }
+  },
+  "fault_window_end_at": "2026-09-25T07:16:04.836693+00:00",
+  "injection_confirmed": true,
+  "injection_confirmed_at": "2026-09-25T07:15:39.268476+00:00",
+  "injection_requested_at": "2026-09-25T07:15:39.138290+00:00",
+  "manifest_sha256": null,
+  "model": null,
+  "outcome": "passed",
+  "precondition_passed": true,
+  "question": null,
+  "recovery": {
+    "fault_removed": true,
+    "passed": true,
+    "recovered_at": "2026-09-25T07:16:12.823899+00:00",
+    "samples": [
+      {
+        "at": "2026-09-25T07:16:06.125403+00:00",
+        "elapsed_seconds": 0.005124249961227179,
+        "ok": true,
+        "status": 200,
+        "trace_id": "2850cd1ba1cbe8f47c24e10e6b71965b"
+      },
+      {
+        "at": "2026-09-25T07:16:09.513305+00:00",
+        "elapsed_seconds": 0.005859083961695433,
+        "ok": true,
+        "status": 200,
+        "trace_id": "ba407849ba8412f625c4d12b4655afd0"
+      },
+      {
+        "at": "2026-09-25T07:16:12.823868+00:00",
+        "elapsed_seconds": 0.005584042053669691,
+        "ok": true,
+        "status": 200,
+        "trace_id": "11173acef1ecacc37edcf947dbf700be"
+      }
+    ]
+  },
+  "repetitions": 1,
+  "run_id": "m2-s000-1790320535636036000",
+  "samples": [
+    {
+      "at": "2026-09-25T07:15:37.044210+00:00",
+      "elapsed_seconds": 0.007250750088132918,
+      "ok": true,
+      "status": 200,
+      "trace_id": "29ede70f1b6861eb5e77ad886a38bdd0"
+    },
+    {
+      "at": "2026-09-25T07:15:38.038721+00:00",
+      "elapsed_seconds": 0.00598849996458739,
+      "ok": true,
+      "status": 200,
+      "trace_id": "b489f6732f5f7d3aea0e4ab14bd50e90"
+    },
+    {
+      "at": "2026-09-25T07:15:39.137963+00:00",
+      "elapsed_seconds": 0.007121792063117027,
+      "ok": true,
+      "status": 200,
+      "trace_id": "abe27b070ca50f33fc3f135ce5aafc58"
+    },
+    {
+      "at": "2026-09-25T07:15:40.338584+00:00",
+      "elapsed_seconds": 0.007817125064320862,
+      "ok": true,
+      "status": 200,
+      "trace_id": "9eefecb0d6ed334821c07fa35c9c82b4"
+    },
+    {
+      "at": "2026-09-25T07:15:43.619786+00:00",
+      "elapsed_seconds": 0.005657249945215881,
+      "ok": true,
+      "status": 200,
+      "trace_id": "8102268be7ad359e94e9c0653168f060"
+    },
+    {
+      "at": "2026-09-25T07:15:46.840961+00:00",
+      "elapsed_seconds": 0.005474291974678636,
+      "ok": true,
+      "status": 200,
+      "trace_id": "ac07c7d43258d90bcdd2a86472282fc2"
+    },
+    {
+      "at": "2026-09-25T07:15:50.039352+00:00",
+      "elapsed_seconds": 0.007165499962866306,
+      "ok": true,
+      "status": 200,
+      "trace_id": "f325c1998d6c00af04f4f0e02076f7f0"
+    },
+    {
+      "at": "2026-09-25T07:15:53.243304+00:00",
+      "elapsed_seconds": 0.006735540926456451,
+      "ok": true,
+      "status": 200,
+      "trace_id": "b38c7bb6910158d7d3eed23fe3b49d64"
+    },
+    {
+      "at": "2026-09-25T07:15:56.439483+00:00",
+      "elapsed_seconds": 0.006112958071753383,
+      "ok": true,
+      "status": 200,
+      "trace_id": "a85166907867e03c05d489d6cf2820b9"
+    },
+    {
+      "at": "2026-09-25T07:15:59.636894+00:00",
+      "elapsed_seconds": 0.0063584999879822135,
+      "ok": true,
+      "status": 200,
+      "trace_id": "2284a6f3c69f53c549c01142e33e6ce0"
+    },
+    {
+      "at": "2026-09-25T07:16:02.834440+00:00",
+      "elapsed_seconds": 0.07716966699808836,
+      "ok": true,
+      "status": 200,
+      "trace_id": "885a5d280752da238d898e29dab5f57e"
+    }
+  ],
+  "scenario": {
+    "affected_service": "checkout",
+    "duration_seconds": 20,
+    "expected_cause": "no_incident",
+    "fault": "control",
+    "id": "S000"
+  },
+  "schema_version": "p001-ground-truth-v1",
+  "seed": null,
+  "seed_note": "lexical pod selection; packet loss/kernel scheduling not seedable",
+  "source_sha256": "230df1527567317ff458814f896ef9cd92161c199f1c36542abaababb40a7a7d",
+  "split": "design",
+  "started_at": "2026-09-25T07:15:35.636189+00:00",
+  "statuses": [],
+  "targets": {
+    "catalog": "catalog-6ffc45ccbc-lt6mm",
+    "checkout": "checkout-96f7f9755-64skw",
+    "inventory": "inventory-598dcf44f8-dnwld"
+  },
+  "telemetry_collected": true,
+  "telemetry_window": {
+    "end_unix": 1790320578.8288279,
+    "start_unix": 1790320535.636018
+  }
+}

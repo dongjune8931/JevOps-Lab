@@ -1,0 +1,58 @@
+{
+  "apiVersion": "chaos-mesh.org/v1alpha1",
+  "kind": "NetworkChaos",
+  "metadata": {
+    "labels": {
+      "managed-by": "p001-m2",
+      "project": "p001"
+    },
+    "name": "m2-s002-1790321457032550000",
+    "namespace": "p001"
+  },
+  "spec": {
+    "action": "delay",
+    "delay": {
+      "correlation": "0",
+      "jitter": "0ms",
+      "latency": "200ms"
+    },
+    "direction": "to",
+    "duration": "30s",
+    "mode": "one",
+    "selector": {
+      "fieldSelectors": {
+        "metadata.name": "catalog-59fbb58569-mxmwb"
+      },
+      "labelSelectors": {
+        "app": "catalog",
+        "p001-chaos": "enabled",
+        "project": "p001"
+      },
+      "namespaces": [
+        "p001"
+      ],
+      "podPhaseSelectors": [
+        "Running"
+      ]
+    },
+    "target": {
+      "mode": "one",
+      "selector": {
+        "fieldSelectors": {
+          "metadata.name": "inventory-598dcf44f8-rwg9h"
+        },
+        "labelSelectors": {
+          "app": "inventory",
+          "p001-chaos": "enabled",
+          "project": "p001"
+        },
+        "namespaces": [
+          "p001"
+        ],
+        "podPhaseSelectors": [
+          "Running"
+        ]
+      }
+    }
+  }
+}

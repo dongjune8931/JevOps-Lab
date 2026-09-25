@@ -4,25 +4,29 @@
 
 `active`
 
-M1 무료 로컬 관측 baseline을 구현·검증했다. 3개 합성 서비스의 metrics·logs·traces, Grafana provisioning, Alertmanager 로컬 webhook이 동작한다. Jev 호출, chaos 주입과 triage 성능 평가는 아직 수행하지 않았다.
+M1 로컬 관측 baseline과 M2 Chaos ground truth harness를 구현·검증했다. 3개 합성 서비스의 metrics·logs·traces, Grafana, Alertmanager와 Chaos Mesh 기반 정상·5개 장애 시나리오를 재현한다. Jev 호출과 triage 성능 평가는 아직 수행하지 않았다.
 
-후속 순서는 로컬 M2~M4 → M4a 첫 AWS 통합 테스트 → M5 로컬·AWS 비교 평가 → M6 운영 화면 → M7 최종 AWS 검증(선택)이다. AWS 실행은 별도 비용 승인 후 진행하며 세부 조건은 [PLAN.md](PLAN.md)에 기록한다.
+남은 순서는 로컬 M3~M4 → M4a 첫 AWS 통합 테스트 → M5 로컬·AWS 비교 평가 → M6 운영 화면 → M7 최종 AWS 검증(선택)이다. AWS 실행은 별도 비용 승인 후 진행하며 세부 조건은 [PLAN.md](PLAN.md)에 기록한다.
 
 ## 실행 및 검증
 
-실행 환경, 고정 버전, 구성 상세와 문제 확인은 [M1 로컬 실행 안내](docs/M1-LOCAL.md)를 따른다.
+실행 환경·관측 구성은 [M1 안내](docs/M1-LOCAL.md), 장애 실행·안전 경계는 [M2 안내](docs/M2-CHAOS.md)를 따른다.
 
 ```bash
 cd projects/P001-jevops-signal-triage
 python3 scripts/lab.py test
 python3 scripts/lab.py start
+python3 scripts/chaos.py setup
+python3 scripts/chaos.py run --scenario all --repetitions 2
+python3 scripts/chaos.py run --scenario S002 --abort-after 5
+python3 scripts/chaos.py check-results
 python3 scripts/lab.py verify
 python3 scripts/lab.py dashboard
 # 대시보드 확인 후 Ctrl-C
 python3 scripts/lab.py teardown
 ```
 
-로컬 전용 `p001-m1` kind 클러스터와 `.local/kubeconfig`를 사용한다. 실험 후 teardown까지 수행한다. [M1 검증 기록](docs/M1-VALIDATION.md)에서 실제 결과와 실행 중 발견한 문제를 확인할 수 있다.
+로컬 전용 `p001-m1` kind 클러스터와 `.local/kubeconfig`를 사용한다. 실험 후 teardown까지 수행한다. [M1 검증](docs/M1-VALIDATION.md)과 [M2 검증 기록](docs/M2-VALIDATION.md)에서 실제 결과·실패와 보완을 확인할 수 있다.
 
 ## 요약
 
@@ -381,6 +385,8 @@ Jev 장애, timeout 또는 낮은 confidence는 `human_review`로 fail closed한
 
 ## 결과와 성과
 
+- M2 검증: 전체 단위·경계 테스트 33개 통과. 정상 control과 5개 fault 각각 2회 이상, 조기 abort·복구 통과. 최종 소스 기준 14개 run과 이전 개발 기록 16개를 모두 보존했다.
+- M2 근거: [요약 JSON](results/m2-summary.json), [검증·한계](docs/M2-VALIDATION.md), [최종 teardown](results/m2-final-teardown.json). 활성 장애·내부 network 기록·stress 프로세스가 남지 않았음을 확인했다.
 - M1 검증: 격리·배포 경계·webhook 테스트 9개 통과, 두 번의 clean-cluster 통합 검증과 teardown 완료.
 - 최종 통합 결과: 3개 서비스의 metric·log·trace 상관관계, 3개 recording-rule 시계열, 5개 Grafana 패널 및 3개 SLI 쿼리, Alertmanager webhook firing 수신 확인.
 - 원본 근거: [최종 결과 JSON](results/m1-final.json), [정리 결과 JSON](results/m1-final-teardown.json), [전체 검증 기록](docs/M1-VALIDATION.md).
@@ -389,6 +395,8 @@ Jev 장애, timeout 또는 낮은 confidence는 `human_review`로 fail closed한
 
 ## 알려진 한계와 위험
 
+- M2는 주입 원인과 관측 window를 기록한다. Pod 종료·CPU stress 등이 실제 incident나 뚜렷한 latency 저하를 항상 만드는 것은 아니다. 주입 label을 사용자 영향의 정답으로 간주하지 않는다.
+- Chaos Mesh privileged daemon, headless dependency와 2초 종료 유예는 격리된 합성 실험용이다. 공유·운영 cluster 구성으로 일반화하지 않는다.
 - M1은 합성 트래픽·단일 노드·임시 저장소를 사용한다. 운영 규모의 성능, HA, 장애 상황과 범용 telemetry 마스킹은 검증하지 않았다.
 - 이미지와 패키지는 실습 재현을 위한 고정 버전이다. 운영 배포용 보안·업그레이드 검토를 대신하지 않는다.
 - `dashboard`를 Ctrl-C로 종료하면 Python `KeyboardInterrupt`가 출력될 수 있다. 포워딩 종료와 포트 반환은 검증했다.
@@ -402,12 +410,12 @@ Jev 장애, timeout 또는 낮은 confidence는 `human_review`로 fail closed한
 
 ## 결정이 필요한 기술 선택
 
-확정 사항과 미결정 항목은 [`DECISIONS.md`](DECISIONS.md)에 기록한다. M1 구현 요청에 따라 kind·3개 소형 서비스·Alertmanager webhook·Grafana provisioning을 선택했다. 다음 표의 후속 기술 선택은 pending 상태다.
+확정 사항과 미결정 항목은 [`DECISIONS.md`](DECISIONS.md)에 기록한다. M1은 kind·3개 소형 서비스·Alertmanager·Grafana를, M2는 사용자 위임에 따라 Chaos Mesh를 적용했다. 나머지 후속 기술 선택은 pending 상태다.
 
 | 선택 | 추천안 | 주요 대안 |
 |---|---|---|
 | 로컬 Kubernetes | kind (M1 적용) | k3d, minikube, Docker Compose only |
-| Chaos engine | Chaos Mesh | LitmusChaos |
+| Chaos engine | Chaos Mesh 2.8.4 (M2 적용) | LitmusChaos |
 | Sample workload | 작은 3개 서비스 (M1 적용) | OpenTelemetry Demo의 일부 또는 전체 |
 | Context Builder 언어 | Python으로 검증 후 필요 시 Go 재평가 | 처음부터 Go |
 | Trigger | Alertmanager webhook (M1 로컬 전달 적용) | 주기적 polling, Grafana alert webhook |

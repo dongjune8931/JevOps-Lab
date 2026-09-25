@@ -1,0 +1,32 @@
+{
+  "apiVersion": "chaos-mesh.org/v1alpha1",
+  "kind": "PodChaos",
+  "metadata": {
+    "labels": {
+      "managed-by": "p001-m2",
+      "project": "p001"
+    },
+    "name": "m2-s001-1790320578988263000",
+    "namespace": "p001"
+  },
+  "spec": {
+    "action": "pod-kill",
+    "mode": "one",
+    "selector": {
+      "fieldSelectors": {
+        "metadata.name": "checkout-96f7f9755-64skw"
+      },
+      "labelSelectors": {
+        "app": "checkout",
+        "p001-chaos": "enabled",
+        "project": "p001"
+      },
+      "namespaces": [
+        "p001"
+      ],
+      "podPhaseSelectors": [
+        "Running"
+      ]
+    }
+  }
+}

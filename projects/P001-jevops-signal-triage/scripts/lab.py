@@ -102,7 +102,7 @@ def start(context):
 
 def source_hash():
     digest = hashlib.sha256()
-    for folder in ("src", "deploy", "dashboards", "scripts", "tests"):
+    for folder in ("src", "deploy", "dashboards", "scripts", "tests", "fixtures"):
         for path in sorted((ROOT / folder).rglob("*")):
             if path.is_file() and "__pycache__" not in path.parts:
                 digest.update(str(path.relative_to(ROOT)).encode())
