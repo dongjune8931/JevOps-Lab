@@ -21,6 +21,8 @@
 - 현재 단계: Milestone 0 — 기획 및 프로젝트 bootstrap 완료
 - 기획 브랜치: `docs/p001-project-planning` (원격 브랜치 삭제 완료)
 - 기획 PR: https://github.com/dongjune8931/JevOps-Lab/pull/2 (squash merge 완료)
+- 검증 보완 브랜치: `docs/p001-planning-validation`
+- 검증 보완 PR: https://github.com/dongjune8931/JevOps-Lab/pull/3
 - 사용자 승인이 필요한 항목: chaos engine, 로컬 실행 환경, sample workload, 구현 언어, Jev provider, 유료 평가 예산
 - 블로커: 없음. 구현 시작 전 미결정 기술 선택 확인 필요
 
