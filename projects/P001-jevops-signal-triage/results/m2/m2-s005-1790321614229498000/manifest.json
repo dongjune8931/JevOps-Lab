@@ -1,0 +1,33 @@
+{
+  "apiVersion": "chaos-mesh.org/v1alpha1",
+  "kind": "PodChaos",
+  "metadata": {
+    "labels": {
+      "managed-by": "p001-m2",
+      "project": "p001"
+    },
+    "name": "m2-s005-1790321614229498000",
+    "namespace": "p001"
+  },
+  "spec": {
+    "action": "pod-failure",
+    "duration": "20s",
+    "mode": "one",
+    "selector": {
+      "fieldSelectors": {
+        "metadata.name": "inventory-598dcf44f8-rwg9h"
+      },
+      "labelSelectors": {
+        "app": "inventory",
+        "p001-chaos": "enabled",
+        "project": "p001"
+      },
+      "namespaces": [
+        "p001"
+      ],
+      "podPhaseSelectors": [
+        "Running"
+      ]
+    }
+  }
+}

@@ -1,0 +1,523 @@
+{
+  "api_cost_krw": 0,
+  "artifacts": [
+    {
+      "path": "manifest.json",
+      "sha256": "562e0136d53cd06972fb482989d8bf32cecf4171167ebbd0912661d9f73699bf"
+    },
+    {
+      "path": "telemetry.json",
+      "sha256": "17e72829a5f09a2b1f6f9f63f36d239d6dc353107685a9403dfde0935932b6b0"
+    }
+  ],
+  "catalog_sha256": "54df136f9be30cd19662c3be322dd5e24012407b53f746111f669721e24c2165",
+  "commit": "e63ca8ccc61b06471e290924051fbb2536fdbe2e",
+  "dirty": true,
+  "ended_at": "2026-09-25T07:17:02.708878+00:00",
+  "engine": {
+    "chart_sha256": "ae4abd385649771300e4d33a44627c0df3618be0780c385bf30cc2fdf2ad93fa",
+    "helm": "v3.16.1",
+    "images": [
+      "ghcr.io/chaos-mesh/chaos-mesh:v2.8.4",
+      "ghcr.io/chaos-mesh/chaos-daemon:v2.8.4",
+      "registry.k8s.io/pause:3.10"
+    ],
+    "version": "2.8.4"
+  },
+  "environment": {
+    "cluster": "p001-m1",
+    "host": "macOS-15.4-arm64-arm-64bit-Mach-O",
+    "namespace": "p001",
+    "versions": {
+      "alertmanager": "prom/alertmanager:v0.28.1",
+      "collector": "otel/opentelemetry-collector-contrib:0.128.0",
+      "grafana": "grafana/grafana:11.6.0",
+      "kind": "v0.31.0",
+      "kubectl": "v1.36.0",
+      "loki": "grafana/loki:3.4.2",
+      "node": "kindest/node:v1.35.0",
+      "prometheus": "prom/prometheus:v3.2.1",
+      "python": "python:3.12.10-slim",
+      "tempo": "grafana/tempo:2.7.2"
+    }
+  },
+  "fault_window_end_at": "2026-09-25T07:16:48.544590+00:00",
+  "injection_confirmed": true,
+  "injection_confirmed_at": "2026-09-25T07:16:22.888442+00:00",
+  "injection_requested_at": "2026-09-25T07:16:22.749703+00:00",
+  "manifest_sha256": "562e0136d53cd06972fb482989d8bf32cecf4171167ebbd0912661d9f73699bf",
+  "model": null,
+  "outcome": "passed",
+  "precondition_passed": true,
+  "question": null,
+  "recovery": {
+    "fault_removed": true,
+    "passed": true,
+    "recovered_at": "2026-09-25T07:16:56.536426+00:00",
+    "samples": [
+      {
+        "at": "2026-09-25T07:16:50.021747+00:00",
+        "elapsed_seconds": 0.005415291991084814,
+        "ok": true,
+        "status": 200,
+        "trace_id": "89f54f132e5d45dbbefe5e7bdc2537b7"
+      },
+      {
+        "at": "2026-09-25T07:16:53.326542+00:00",
+        "elapsed_seconds": 0.06893458298873156,
+        "ok": true,
+        "status": 200,
+        "trace_id": "1cd9d26711b9d80a1eb4226fb91e71a2"
+      },
+      {
+        "at": "2026-09-25T07:16:56.536361+00:00",
+        "elapsed_seconds": 0.006889250013045967,
+        "ok": true,
+        "status": 200,
+        "trace_id": "fcc864784a73aecbd72e544773965daf"
+      }
+    ]
+  },
+  "repetitions": 1,
+  "run_id": "m2-s001-1790320578988263000",
+  "samples": [
+    {
+      "at": "2026-09-25T07:16:20.418661+00:00",
+      "elapsed_seconds": 0.005749874981120229,
+      "ok": true,
+      "status": 200,
+      "trace_id": "c2389d586a3b07751fa96c21aea20242"
+    },
+    {
+      "at": "2026-09-25T07:16:21.543114+00:00",
+      "elapsed_seconds": 0.00709379103500396,
+      "ok": true,
+      "status": 200,
+      "trace_id": "f904f0ecafa49da2863a580410c875f3"
+    },
+    {
+      "at": "2026-09-25T07:16:22.546906+00:00",
+      "elapsed_seconds": 0.00555962510406971,
+      "ok": true,
+      "status": 200,
+      "trace_id": "7af712f6a9e4c05db45f8ae2a3196d40"
+    },
+    {
+      "at": "2026-09-25T07:16:23.733472+00:00",
+      "elapsed_seconds": 0.004539874964393675,
+      "ok": true,
+      "status": 200,
+      "trace_id": "455a8500afbbe12671bf1e113fa97a23"
+    },
+    {
+      "at": "2026-09-25T07:16:26.931958+00:00",
+      "elapsed_seconds": 0.0761167510645464,
+      "ok": true,
+      "status": 200,
+      "trace_id": "43b0b8ae5398a773287a60a1ac0f4046"
+    },
+    {
+      "at": "2026-09-25T07:16:30.321048+00:00",
+      "elapsed_seconds": 0.07017283292952925,
+      "ok": true,
+      "status": 200,
+      "trace_id": "226f0858e9ef5180d4ac0f545c3593fd"
+    },
+    {
+      "at": "2026-09-25T07:16:33.529213+00:00",
+      "elapsed_seconds": 0.007278458098880947,
+      "ok": true,
+      "status": 200,
+      "trace_id": "ddc895112680b0d91d73f961663056f5"
+    },
+    {
+      "at": "2026-09-25T07:16:36.813528+00:00",
+      "elapsed_seconds": 0.005186417023651302,
+      "ok": true,
+      "status": 200,
+      "trace_id": "149327702f5e11699a8bf1e537eb04c3"
+    },
+    {
+      "at": "2026-09-25T07:16:40.039920+00:00",
+      "elapsed_seconds": 0.005688374978490174,
+      "ok": true,
+      "status": 200,
+      "trace_id": "d4771fd771aa94c9155784b018142a94"
+    },
+    {
+      "at": "2026-09-25T07:16:43.323903+00:00",
+      "elapsed_seconds": 0.005759957944974303,
+      "ok": true,
+      "status": 200,
+      "trace_id": "86cab569013051a2cdb1f6cc469b9b9c"
+    },
+    {
+      "at": "2026-09-25T07:16:46.539285+00:00",
+      "elapsed_seconds": 0.0059397079749032855,
+      "ok": true,
+      "status": 200,
+      "trace_id": "ac2da70b79277123c87d6fe5435acbe9"
+    }
+  ],
+  "scenario": {
+    "affected_service": "checkout",
+    "duration_seconds": 20,
+    "expected_cause": "workload_unavailable",
+    "fault": "pod-kill",
+    "id": "S001"
+  },
+  "schema_version": "p001-ground-truth-v1",
+  "seed": null,
+  "seed_note": "lexical pod selection; packet loss/kernel scheduling not seedable",
+  "source_sha256": "230df1527567317ff458814f896ef9cd92161c199f1c36542abaababb40a7a7d",
+  "split": "design",
+  "started_at": "2026-09-25T07:16:18.988335+00:00",
+  "statuses": [
+    {
+      "at": "2026-09-25T07:16:22.888404+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:16:22Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/checkout-96f7f9755-64skw",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:16:25.904660+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:16:22Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/checkout-96f7f9755-64skw",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:16:29.130046+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:16:22Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/checkout-96f7f9755-64skw",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:16:32.505143+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:16:22Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/checkout-96f7f9755-64skw",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:16:35.714222+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:16:22Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/checkout-96f7f9755-64skw",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:16:38.992995+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:16:22Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/checkout-96f7f9755-64skw",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:16:42.226149+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:16:22Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/checkout-96f7f9755-64skw",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    },
+    {
+      "at": "2026-09-25T07:16:45.511681+00:00",
+      "status": {
+        "conditions": [
+          {
+            "status": "True",
+            "type": "Selected"
+          },
+          {
+            "status": "True",
+            "type": "AllInjected"
+          },
+          {
+            "status": "False",
+            "type": "AllRecovered"
+          },
+          {
+            "status": "False",
+            "type": "Paused"
+          }
+        ],
+        "experiment": {
+          "containerRecords": [
+            {
+              "events": [
+                {
+                  "operation": "Apply",
+                  "timestamp": "2026-09-25T07:16:22Z",
+                  "type": "Succeeded"
+                }
+              ],
+              "id": "p001/checkout-96f7f9755-64skw",
+              "injectedCount": 1,
+              "phase": "Injected",
+              "recoveredCount": 0,
+              "selectorKey": "."
+            }
+          ],
+          "desiredPhase": "Run"
+        }
+      }
+    }
+  ],
+  "targets": {
+    "catalog": "catalog-6ffc45ccbc-lt6mm",
+    "checkout": "checkout-96f7f9755-64skw",
+    "inventory": "inventory-598dcf44f8-dnwld"
+  },
+  "telemetry_collected": true,
+  "telemetry_window": {
+    "end_unix": 1790320622.541685,
+    "start_unix": 1790320578.988262
+  }
+}

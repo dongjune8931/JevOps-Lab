@@ -2,6 +2,8 @@
 
 M1의 범위는 합성 트래픽의 metrics·logs·traces 수집과 로컬 alert 전달이다. Jev adapter, Context Builder, 규칙 기반 triage 분류기, chaos fault와 평가 데이터셋은 후속 milestone 범위다.
 
+현재 코드는 M2에서 checkout replica 2개·headless dependency·합성 앱 종료 유예 2초를 추가했다. M1 당시 결과는 그대로 보존하며, 추가 실행 요구량과 Chaos Mesh 경계는 [M2 안내](M2-CHAOS.md)를 따른다.
+
 ## 실행 환경
 
 - 기존 로컬 Docker daemon이 필요하다. Unix socket만 허용하며 원격 Docker endpoint는 거부한다.

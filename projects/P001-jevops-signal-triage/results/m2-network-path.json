@@ -1,0 +1,36 @@
+{
+  "active_experiment": "m2-s002-1790320862830500000",
+  "at": "2026-09-25T07:21:28.917388+00:00",
+  "samples": [
+    {
+      "path": "service",
+      "seconds": 0.0038602909771725535,
+      "status": 200
+    },
+    {
+      "path": "service",
+      "seconds": 0.001125333015806973,
+      "status": 200
+    },
+    {
+      "path": "service",
+      "seconds": 0.0010942090302705765,
+      "status": 200
+    },
+    {
+      "path": "pod",
+      "seconds": 0.4067682089516893,
+      "status": 200
+    },
+    {
+      "path": "pod",
+      "seconds": 0.4039213330252096,
+      "status": 200
+    },
+    {
+      "path": "pod",
+      "seconds": 0.4041892499662936,
+      "status": 200
+    }
+  ]
+}
