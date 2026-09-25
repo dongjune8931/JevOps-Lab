@@ -20,7 +20,7 @@
 - 상태: `active`
 - 현재 단계: Milestone 1 — 무료 로컬 관측 baseline 완료
 - 현재 브랜치: `feat/p001-local-observability`
-- M1 PR: 생성 후 이 항목에 기록
+- M1 PR: https://github.com/dongjune8931/JevOps-Lab/pull/4
 - 기획 브랜치: `docs/p001-project-planning` (원격 브랜치 삭제 완료)
 - 기획 PR: https://github.com/dongjune8931/JevOps-Lab/pull/2 (squash merge 완료)
 - 검증 보완 브랜치: `docs/p001-planning-validation`
