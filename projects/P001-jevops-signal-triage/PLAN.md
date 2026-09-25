@@ -20,7 +20,7 @@
 - 상태: `active`
 - 현재 단계: Milestone 2 — Chaos ground truth harness 완료
 - 현재 브랜치: `feat/p001-chaos-ground-truth`
-- M2 PR: 생성 후 기록
+- M2 PR: https://github.com/dongjune8931/JevOps-Lab/pull/6
 - AWS 검증 계획 PR: https://github.com/dongjune8931/JevOps-Lab/pull/5
 - M1 PR: https://github.com/dongjune8931/JevOps-Lab/pull/4
 - 기획 브랜치: `docs/p001-project-planning` (원격 브랜치 삭제 완료)
