@@ -1,0 +1,12 @@
+{
+  "kind": "v0.31.0",
+  "kubectl": "v1.36.0",
+  "node": "kindest/node:v1.35.0",
+  "python": "python:3.12.10-slim",
+  "collector": "otel/opentelemetry-collector-contrib:0.128.0",
+  "prometheus": "prom/prometheus:v3.2.1",
+  "alertmanager": "prom/alertmanager:v0.28.1",
+  "tempo": "grafana/tempo:2.7.2",
+  "loki": "grafana/loki:3.4.2",
+  "grafana": "grafana/grafana:11.6.0"
+}

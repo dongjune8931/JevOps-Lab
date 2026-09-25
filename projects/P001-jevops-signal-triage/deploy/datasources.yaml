@@ -1,0 +1,32 @@
+apiVersion: 1
+datasources:
+  - name: Prometheus
+    uid: p001-prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+  - name: Tempo
+    uid: p001-tempo
+    type: tempo
+    access: proxy
+    url: http://tempo:3200
+    jsonData:
+      tracesToLogsV2:
+        datasourceUid: p001-loki
+        spanStartTimeShift: '-1m'
+        spanEndTimeShift: '1m'
+        filterByTraceID: true
+        tags: [{key: service.name, value: service_name}]
+  - name: Loki
+    uid: p001-loki
+    type: loki
+    access: proxy
+    url: http://loki:3100
+    jsonData:
+      derivedFields:
+        - name: TraceID
+          matcherRegex: 'trace_id=([a-f0-9]{32})'
+          datasourceUid: p001-tempo
+          url: '$${__value.raw}'
+          urlDisplayLabel: View trace
