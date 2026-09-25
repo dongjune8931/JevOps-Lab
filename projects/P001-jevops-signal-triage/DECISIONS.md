@@ -68,12 +68,14 @@
 
 ### P001-D007 — Chaos engine
 
-- 상태: pending
-- 추천: `Chaos Mesh`
-- 이유: Kubernetes CRD, selector 기반 blast radius와 workflow/status-check 흐름이 이 프로젝트의 제한된 fault harness에 잘 맞는다.
+- 날짜: 2026-09-25
+- 상태: accepted (M2; 사용자가 후속 milestone 적합성을 기준으로 선택 위임)
+- 결정: `Chaos Mesh 2.8.4`와 checksum을 고정한 Helm chart를 전용 로컬 kind에 사용한다.
+- 이유: 버전 관리한 CRD manifest·selector·주입/복구 상태를 M3의 관측 window, M4a의 AWS 재현, M5의 반복 평가에 연결하기 적합하다. AWS 호환성은 M4a에서 별도 검증한다.
 - 대안: `LitmusChaos`
 - 대안 장점: probe, ChaosHub, experiment 결과와 end-to-end 플랫폼 기능이 강하다.
-- 결정에 필요한 정보: 경량 로컬 실행 우선인지, 완성된 chaos workflow·포털 경험 우선인지.
+- 선택하지 않은 이유: 이번 목적은 Jev 평가용 제한된 fault harness이며 별도 포털·workflow 플랫폼은 필수가 아니다.
+- 영향: privileged daemon은 소유한 kind node에만 설치한다. namespace filter·대상 allowlist·duration·단일 실행 lock·복구 검증을 추가한다. dashboard는 설치하지 않으며 AWS 실행 및 비용은 승인하지 않는다.
 
 ### P001-D008 — Sample workload
 

@@ -18,8 +18,8 @@
 ## 현재 상태
 
 - 상태: `active`
-- 현재 단계: Milestone 1 — 무료 로컬 관측 baseline 완료
-- 현재 브랜치: `docs/p001-aws-validation-plan`
+- 현재 단계: Milestone 2 — Chaos ground truth harness 구현·검증 중
+- 현재 브랜치: `feat/p001-chaos-ground-truth`
 - AWS 검증 계획 PR: https://github.com/dongjune8931/JevOps-Lab/pull/5
 - M1 PR: https://github.com/dongjune8931/JevOps-Lab/pull/4
 - 기획 브랜치: `docs/p001-project-planning` (원격 브랜치 삭제 완료)
@@ -27,8 +27,8 @@
 - 검증 보완 브랜치: `docs/p001-planning-validation`
 - 검증 보완 PR: https://github.com/dongjune8931/JevOps-Lab/pull/3
 - 다음 미완료 단계: Milestone 2 — Chaos ground truth harness
-- 후속 결정 항목: chaos engine(M2), Context Builder 언어(M3), Jev provider·유료 평가 예산(M4), AWS 실습 계정·리전·구성·비용 상한(M4a)
-- 블로커: M1 없음. M2 시작 전 chaos engine 선택 필요
+- 후속 결정 항목: Context Builder 언어(M3), Jev provider·유료 평가 예산(M4), AWS 실습 계정·리전·구성·비용 상한(M4a)
+- 블로커: chaos engine은 사용자 위임에 따라 Chaos Mesh로 확정. M2 실제 반복·abort·teardown 검증 진행 중
 
 ## 진행 순서와 클라우드 진입 시점
 
@@ -107,7 +107,7 @@ python3 scripts/lab.py teardown
 
 ### Acceptance criteria
 
-- [ ] 사용자 결정으로 chaos engine을 확정하고 `DECISIONS.md`에 기록했다.
+- [x] 사용자 위임에 따라 Chaos Mesh를 확정하고 `DECISIONS.md`에 기록했다.
 - [ ] `S000`과 최소 5개 fault 시나리오가 버전 관리된다.
 - [ ] namespace·label allowlist, 최대 duration, target 수와 timeout이 강제된다.
 - [ ] precondition 실패 시 fault를 주입하지 않는다.
@@ -115,13 +115,23 @@ python3 scripts/lab.py teardown
 - [ ] ground truth record에 checksum, 시각, 대상, parameter와 결과가 포함된다.
 - [ ] 반복 실행 후 잔존 chaos resource와 workload 이상이 없다.
 
-### 검증 방법 후보
+### 검증 방법
 
-- chaos manifest schema·dry-run 검증
-- 허용되지 않은 namespace와 selector에 대한 음성 테스트
-- 시나리오별 주입·복구 상태 확인
-- Prometheus steady-state와 abort rule 테스트
-- fixture checksum과 ground truth schema 테스트
+가설·비교군·성공/실패 조건과 안전 제한은 [M2 실행 안내](docs/M2-CHAOS.md)에 정의한다.
+
+```bash
+cd projects/P001-jevops-signal-triage
+python3 scripts/lab.py test
+python3 scripts/lab.py start
+python3 scripts/chaos.py setup
+python3 scripts/chaos.py run --scenario all --repetitions 2
+python3 scripts/chaos.py run --scenario S002 --abort-after 5
+python3 scripts/chaos.py check-results
+python3 scripts/lab.py verify
+python3 scripts/lab.py teardown
+```
+
+서버 dry-run·namespace/selector 음성 테스트·주입 상태·직접 health/Prometheus scrape 안전 조건·복구·checksum을 확인한다. 결과는 design split이며 Jev 성과나 최종 test로 사용하지 않는다.
 
 ## Milestone 3 — Context Builder와 규칙 baseline
 
