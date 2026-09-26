@@ -1,0 +1,15 @@
+{
+  "schema_version": "p001-state-v1",
+  "window": {"start_unix": 1000, "end_unix": 1060},
+  "services": [
+    {"name": "checkout", "metrics": {"observed_requests": 10, "request_rate_per_second": 0.166667, "error_rate": 0, "mean_latency_ms": 10, "counter_resets": 0, "sample_coverage": 1}, "logs": {"sample_count": 1, "error_count": 0, "unrecognized_count": 0, "patterns": [{"template": "request_ok", "count": 1}]}, "traces": {"sample_count": 1, "mean_duration_ms": 10, "max_duration_ms": 10}},
+    {"name": "catalog", "metrics": {"observed_requests": 10, "request_rate_per_second": 0.166667, "error_rate": 0, "mean_latency_ms": 10, "counter_resets": 0, "sample_coverage": 1}, "logs": {"sample_count": 1, "error_count": 0, "unrecognized_count": 0, "patterns": [{"template": "request_ok", "count": 1}]}, "traces": {"sample_count": 0, "mean_duration_ms": null, "max_duration_ms": null}},
+    {"name": "inventory", "metrics": {"observed_requests": 10, "request_rate_per_second": 0.166667, "error_rate": 0, "mean_latency_ms": 10, "counter_resets": 0, "sample_coverage": 1}, "logs": {"sample_count": 1, "error_count": 0, "unrecognized_count": 0, "patterns": [{"template": "request_ok", "count": 1}]}, "traces": {"sample_count": 0, "mean_duration_ms": null, "max_duration_ms": null}}
+  ],
+  "data_quality": {
+    "backend_status": {"metrics": "ok", "logs": "ok", "traces": "ok"},
+    "missing_signals": ["changes", "dependency_spans", "kubernetes", "resource_usage"],
+    "truncated_signals": [], "invalid_signals": [],
+    "limitations": ["counter_delta_lower_bound", "logs_sampled", "trace_search_sampled", "trace_roots_only", "no_causal_labels"]
+  }
+}

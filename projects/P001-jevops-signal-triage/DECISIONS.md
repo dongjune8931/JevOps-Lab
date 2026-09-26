@@ -90,12 +90,15 @@
 
 ### P001-D009 — Context Builder 구현 언어
 
-- 상태: pending
+- 날짜: 2026-09-26
+- 상태: accepted (M3)
+- 결정: Python 표준 라이브러리로 구현한다. Python 추천안을 안내한 뒤 사용자가 M3 진행을 요청했다.
 - 추천: Python으로 실험 인터페이스를 먼저 검증한 뒤 성능 병목이 확인되면 Go를 재평가
 - 이유: schema, evaluator와 데이터 분석을 빠르게 반복하기 쉽다.
 - 대안: 처음부터 Go
 - 대안 장점: 단일 binary, concurrency, 배포와 운영 특성이 좋다.
 - 결정에 필요한 정보: 사용자의 학습 목표, 장기 도구화 의도와 선호 언어.
+- 영향: 신규 외부 패키지 없이 offline replay와 CLI를 제공한다. 성능 병목이나 배포 요구가 확인되면 Go를 재평가한다.
 
 ### P001-D010 — Alert trigger
 
@@ -163,7 +166,19 @@
 - 대안: 주입 상태만 신뢰하거나 주입 시간을 무작정 연장. 잘못된 ground truth 또는 긴 실험 시간을 만들 수 있어 선택하지 않았다.
 - 영향: 이 구성은 합성 실험 fixture이며 일반 운영 서비스 설정으로 권장하지 않는다. 초기 run을 삭제하지 않고 수정 이전 버전으로 구분한다. M4a에서 클라우드의 실제 통신·종료 동작을 다시 검증한다.
 
-## 결정 추가 형식
+## M3 결정
+
+### P001-D017 — 합성 입력은 closed schema로 투영하고 원인 불명은 보존한다
+
+- 날짜: 2026-09-26
+- 상태: accepted (M3)
+- 결정: Python Context Builder는 고정 서비스·로그 패턴·숫자만 허용한다. M2 raw snapshot을 동일 window로 replay하고, rule baseline은 오류/지연 증상과 조사 runbook을 추천하되 root cause와 confidence를 만들어내지 않는다.
+- 이유: M2 counter·trace 검색 표본만으로 loss/latency/CPU fault를 확실히 구분할 수 없다. secret 정규식만으로 raw 로그를 안전하게 외부 전송하기도 어렵다.
+- 대안: 범용 로그 redaction 라이브러리, 상세 span/Kubernetes/change collector까지 추가, symptom을 바로 chaos label로 매핑.
+- 장단점: 새로운 의존성·유료 호출 없이 보수적 안전 경계를 검증할 수 있지만 정상 추천 coverage가 낮고 root cause taxonomy 일부는 아직 구분하지 못한다. 상세 증거 확장은 별도 범위로 남긴다.
+- 영향: state-v1에는 Kubernetes/change/resource_usage/dependency_spans 미수집을 명시한다. M4는 state 객체만 전송하며 provenance/정답을 함께 보내지 않는다. baseline 확률은 null이고 M5 calibration 대상이 아니다.
+
+## 결정 추가 템플릿
 
 ```text
 ### D### — 제목
