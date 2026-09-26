@@ -20,7 +20,7 @@
 - 상태: `active`
 - 현재 단계: Milestone 3 — Context Builder와 규칙 baseline 완료
 - 현재 브랜치: `feat/p001-context-baseline`
-- M3 PR: 검증 완료, 생성 예정
+- M3 PR: https://github.com/dongjune8931/JevOps-Lab/pull/7
 - M2 PR: https://github.com/dongjune8931/JevOps-Lab/pull/6
 - AWS 검증 계획 PR: https://github.com/dongjune8931/JevOps-Lab/pull/5
 - M1 PR: https://github.com/dongjune8931/JevOps-Lab/pull/4
