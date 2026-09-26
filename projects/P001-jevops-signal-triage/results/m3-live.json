@@ -1,0 +1,164 @@
+{
+  "api_calls": 0,
+  "api_cost_krw": 0,
+  "commit": "7d8415c8ad2c0409d8d938a56e41d742834ca330",
+  "dirty": false,
+  "host": "macOS-15.4-arm64-arm-64bit-Mach-O",
+  "input": {
+    "telemetry_sha256": "1a66740137aaa802c5c725af4d33c0d06e1eb0d66f9d1085ea7bdffe5515d51e"
+  },
+  "latency_ms": {
+    "context_build": 1.591,
+    "rules": 0.054
+  },
+  "model": null,
+  "prediction": {
+    "affected_services": [],
+    "confidence": null,
+    "confidence_kind": "not_calibrated",
+    "incident_type": "unknown",
+    "owning_team": "human_triage",
+    "probable_root_cause": "unknown",
+    "reasons": [
+      "incomplete_evidence"
+    ],
+    "recommendation_only": true,
+    "recommended_runbook": "manual-investigation",
+    "rules_version": "p001-rules-v1",
+    "symptom": "insufficient_data",
+    "triage_action": "human_review"
+  },
+  "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+  "python": "3.14.6",
+  "query_latency_ms": {
+    "logs": 39.857,
+    "metrics": 36.943,
+    "traces": 38.828
+  },
+  "query_timeout_seconds": 4,
+  "question": null,
+  "repetitions": 1,
+  "response_byte_limit": 348501,
+  "rules_version": "p001-rules-v1",
+  "schema_sha256": "a6cd72757354b589d6678095064dcc5000f328ebda835766dc2a5f4fa073cf50",
+  "schema_version": "p001-m3-run-v1",
+  "seed": null,
+  "source_sha256": "f6f0a49318c05408f3d2b5765e4f2c8cbc68fa4867ed4fe5a84ee9278020e981",
+  "split": "design",
+  "state": {
+    "data_quality": {
+      "backend_status": {
+        "logs": "ok",
+        "metrics": "ok",
+        "traces": "ok"
+      },
+      "invalid_signals": [],
+      "limitations": [
+        "counter_delta_lower_bound",
+        "logs_sampled",
+        "trace_search_sampled",
+        "trace_roots_only",
+        "no_causal_labels"
+      ],
+      "missing_signals": [
+        "changes",
+        "dependency_spans",
+        "kubernetes",
+        "resource_usage"
+      ],
+      "truncated_signals": [
+        "traces"
+      ]
+    },
+    "schema_version": "p001-state-v1",
+    "services": [
+      {
+        "logs": {
+          "error_count": 0,
+          "patterns": [
+            {
+              "count": 28,
+              "template": "request_ok"
+            }
+          ],
+          "sample_count": 28,
+          "unrecognized_count": 0
+        },
+        "metrics": {
+          "counter_resets": 3,
+          "error_rate": 0.0,
+          "mean_latency_ms": 9.600528,
+          "observed_requests": 9.0,
+          "request_rate_per_second": 0.15,
+          "sample_coverage": 0.833333
+        },
+        "name": "checkout",
+        "traces": {
+          "max_duration_ms": 14.0,
+          "mean_duration_ms": 9.3,
+          "sample_count": 20
+        }
+      },
+      {
+        "logs": {
+          "error_count": 0,
+          "patterns": [
+            {
+              "count": 28,
+              "template": "request_ok"
+            }
+          ],
+          "sample_count": 28,
+          "unrecognized_count": 0
+        },
+        "metrics": {
+          "counter_resets": 0,
+          "error_rate": 0.0,
+          "mean_latency_ms": 4.638845,
+          "observed_requests": 25.0,
+          "request_rate_per_second": 0.416667,
+          "sample_coverage": 0.833333
+        },
+        "name": "catalog",
+        "traces": {
+          "max_duration_ms": null,
+          "mean_duration_ms": null,
+          "sample_count": 0
+        }
+      },
+      {
+        "logs": {
+          "error_count": 0,
+          "patterns": [
+            {
+              "count": 28,
+              "template": "request_ok"
+            }
+          ],
+          "sample_count": 28,
+          "unrecognized_count": 0
+        },
+        "metrics": {
+          "counter_resets": 0,
+          "error_rate": 0.0,
+          "mean_latency_ms": 0.306847,
+          "observed_requests": 25.0,
+          "request_rate_per_second": 0.416667,
+          "sample_coverage": 0.833333
+        },
+        "name": "inventory",
+        "traces": {
+          "max_duration_ms": null,
+          "mean_duration_ms": null,
+          "sample_count": 0
+        }
+      }
+    ],
+    "window": {
+      "end_unix": 1790383753.0,
+      "start_unix": 1790383693.0
+    }
+  },
+  "state_sha256": "15e9e4d5e2ed8465b39b66de1352e4e5039380f4d5312af410e4ed25e4eb5725",
+  "time_utc": "2026-09-26T00:49:18.926244+00:00"
+}

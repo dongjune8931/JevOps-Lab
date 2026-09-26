@@ -8,7 +8,7 @@ Jev를 DevOps 업무에 적용하고 실제 효과와 한계를 검증하는 프
 
 | ID | 이름 | 상태 | 내용 | Jev 활용 | 결과 |
 |---|---|---|---|---|---|
-| P001 | [JevOps Signal Triage](projects/P001-jevops-signal-triage/README.md) | active | 카오스 ground truth와 observability 신호를 이용한 alert triage 평가 | 장애 유형·담당 영역·runbook 판단 설계; Jev 연결은 후속 단계 | M1 관측 경로 및 M2 정상·5개 장애 반복/복구 검증, 테스트 33개 통과. Jev 성능은 아직 측정되지 않음 |
+| P001 | [JevOps Signal Triage](projects/P001-jevops-signal-triage/README.md) | active | 카오스 ground truth와 observability 신호를 이용한 alert triage 평가 | 마스킹 state와 규칙 비교군 준비; Jev 연결은 M4 | M1~M3 검증, 테스트 71개 통과. M2 관측 기록 28개 × 3회 재생 일치. Jev 성능은 아직 측정되지 않음 |
 
 ## Roadmap
 

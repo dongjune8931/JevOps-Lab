@@ -6,8 +6,8 @@
 - 사용자 승인 비용 상한: 0원
 - 실제 사용액: 0원
 - 승인된 유료 서비스: 없음
-- 이번 M2 세션의 유료·외부 AI API 호출: 없음
-- 이번 M2 세션의 리소스 생성: 로컬 전용 kind 클러스터 3회 생성·검증·삭제; 클라우드 리소스 없음
+- 이번 M3 세션의 유료·외부 AI API 호출: 없음
+- 이번 M3 세션의 리소스 생성: 로컬 전용 kind 클러스터 1회 생성·검증·삭제; 클라우드 리소스 없음
 
 ## 0원 기본 경로
 
@@ -83,12 +83,15 @@ provider가 credit 기반이면 token 추정과 별도로 실제 차감 credit�
 | 2026-09-25 | P001 기획 | 없음 | 0원 | 0 | 0원 | 문서 작성만 수행 |
 | 2026-09-25 | P001 M1 | 기존 로컬 Docker, kind, OSS 관측 스택 | 0원 | 신규 로컬 클러스터 검증 2회 | 0원 | 공개 이미지·패키지 다운로드, 합성 데이터만 사용; 유료 API·SaaS 없음 |
 | 2026-09-25 | P001 M2 | 기존 로컬 Docker, kind, Chaos Mesh·관측 OSS | 0원 | 로컬 클러스터 3회, 기록 30개(최종 소스 14개) | 0원 | 공개 차트·이미지 다운로드; 모든 클러스터 정리, AWS·Jev 미사용 |
+| 2026-09-26 | P001 M3 | 기존 로컬 Docker, kind, OSS 관측·Python 표준 라이브러리 | 0원 | 로컬 클러스터 1회, 최종 재생 28개 × 3회 및 재현 확인, 단위·통합 검증 | 0원 | Jev·AWS 미사용, 모델 API 호출 0회, 로컬 리소스 정리 |
 
 M1 종료 확인: [최종 teardown 결과](results/m1-final-teardown.json)에서 P001 node container와 volume 잔존 0개를 확인했다. Grafana 포워딩도 종료했다. 재실행용 이미지·빌드 캐시와 다른 랩이 사용하는 공유 network는 보존했다. 클라우드·유료 SaaS 구독이나 리소스를 생성하지 않았다.
 
 M2 종료 확인: [검증 기록](docs/M2-VALIDATION.md)에 세 번의 teardown 근거가 있다. [최종 정리](results/m2-final-teardown.json)에서 node·volume 잔존 0개, [정리 전 검사](results/m2-post-chaos.json)에서 활성 fault·내부 network 기록·stress 프로세스 0개를 확인했다. 최종 종료 시각은 2026-09-25 07:50:23 UTC다. 이미지·빌드 캐시와 공유 network만 보존하며 클라우드 청구 리소스는 없다.
 
 ## 종료와 정리
+
+M3 종료 확인: [teardown](results/m3-teardown.json)에서 node·volume 잔존 0개, 종료 시각 2026-09-26 00:50:14 UTC를 확인했다. Context Builder는 상시 서비스·포트포워드나 클라우드 자원을 만들지 않는다. 이미지·캐시·다른 랩의 공유 network는 보존했다. [검증 기록](docs/M3-VALIDATION.md)에 재현·실측 범위와 한계를 남겼다.
 
 - 유료 API 실행 뒤 usage 응답과 dashboard 사용량을 가능한 범위에서 교차 확인한다.
 - 로컬 실험도 container, cluster, volume과 port-forward를 teardown한다.

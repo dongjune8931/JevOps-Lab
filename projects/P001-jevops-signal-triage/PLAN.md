@@ -18,8 +18,9 @@
 ## 현재 상태
 
 - 상태: `active`
-- 현재 단계: Milestone 2 — Chaos ground truth harness 완료
-- 현재 브랜치: `feat/p001-chaos-ground-truth`
+- 현재 단계: Milestone 3 — Context Builder와 규칙 baseline 완료
+- 현재 브랜치: `feat/p001-context-baseline`
+- M3 PR: https://github.com/dongjune8931/JevOps-Lab/pull/7
 - M2 PR: https://github.com/dongjune8931/JevOps-Lab/pull/6
 - AWS 검증 계획 PR: https://github.com/dongjune8931/JevOps-Lab/pull/5
 - M1 PR: https://github.com/dongjune8931/JevOps-Lab/pull/4
@@ -27,16 +28,16 @@
 - 기획 PR: https://github.com/dongjune8931/JevOps-Lab/pull/2 (squash merge 완료)
 - 검증 보완 브랜치: `docs/p001-planning-validation`
 - 검증 보완 PR: https://github.com/dongjune8931/JevOps-Lab/pull/3
-- 다음 미완료 단계: Milestone 3 — Context Builder와 규칙 baseline
-- 후속 결정 항목: Context Builder 언어(M3), Jev provider·유료 평가 예산(M4), AWS 실습 계정·리전·구성·비용 상한(M4a)
-- 블로커: M2 없음. M3 시작 전 Context Builder 언어 선택 필요
+- 다음 미완료 단계: Milestone 4 — Jev adapter와 typed decisions
+- 후속 결정 항목: Jev provider·모델·유료 평가 예산(M4), AWS 실습 계정·리전·구성·비용 상한(M4a)
+- 블로커: M3 없음. M4 실제 API 호출 전 provider·최대 비용의 명시적 승인 필요
 
 ## 진행 순서와 클라우드 진입 시점
 
 `로컬 M2 → 로컬 M3 → 로컬 M4 → M4a AWS 통합 테스트 → M5 로컬·AWS 비교 평가 → M6 운영 화면 → M7 최종 AWS 검증(선택)`
 
 - 첫 실제 클라우드 통합 테스트는 M4 완료 직후 진행한다. M2의 안전한 장애 주입·복구, M3의 마스킹·state·규칙 비교군, M4의 Jev 연결·실패 처리를 먼저 확보한다.
-- 기존 M1~M6 번호를 유지하고 중간 단계에 `M4a`를 추가한다. M2 완료 후 다음 구현 세션의 첫 미완료 milestone은 M3다.
+- 기존 M1~M6 번호를 유지하고 중간 단계에 `M4a`를 추가한다. M3 완료 후 다음 구현 세션의 첫 미완료 milestone은 M4다.
 - Jev 비용 승인이 늦어지면 M3 이후 mock으로 AWS 배포·수집 경로만 먼저 확인할 수 있다. 이 경우에도 AWS 비용 승인은 필요하며, M4 또는 M4a의 실제 Jev 통합 완료로 간주하지 않는다.
 - 이 계획의 승인은 AWS 리소스 생성·크레딧 소비·유료 Jev 호출 승인이 아니다. 실행 직전에 구체적인 구성·예상 비용·상한·중단 및 정리 방법을 제시하고 승인을 받는다.
 
@@ -144,21 +145,25 @@ python3 scripts/lab.py teardown
 
 ### Acceptance criteria
 
-- [ ] state schema version과 필수·선택 필드를 고정했다.
-- [ ] backend별 query timeout과 partial failure를 처리한다.
-- [ ] allowlist, 문자열·배열·payload 크기 제한을 적용한다.
-- [ ] dummy secret과 PII fixture가 state에서 제거된다.
-- [ ] blind test state에 chaos 정답 누수가 없다.
-- [ ] 동일 fixture에서 deterministic한 state와 baseline 결과가 생성된다.
-- [ ] rules baseline의 분류와 latency가 저장된다.
+- [x] state schema version과 필수·선택 필드를 고정했다.
+- [x] backend별 query timeout과 partial failure를 처리한다.
+- [x] allowlist, 문자열·배열·payload 크기 제한을 적용한다.
+- [x] dummy secret과 PII fixture가 state에서 제거된다.
+- [x] blind test state에 chaos 정답 누수가 없다. design fixture의 label 누출 검사이며 최종 test split 평가는 아직 아니다.
+- [x] 동일 fixture에서 deterministic한 state와 baseline 결과가 생성된다.
+- [x] rules baseline의 분류와 latency가 저장된다.
 
-### 검증 방법 후보
+### 검증 방법과 결과
 
-- schema unit test와 golden fixture 비교
-- redaction leakage test
-- backend missing/timeout integration test
-- state byte limit과 truncation test
-- ground truth leakage 검사
+```bash
+cd projects/P001-jevops-signal-triage
+python3 -m unittest discover -s tests -p test_context.py -v
+python3 scripts/lab.py test
+python3 scripts/report_context.py --output .local/m3-report.json
+python3 scripts/context.py replay --run-dir results/m2/m2-s005-1790322543120343000 --output .local/m3-example.json
+```
+
+2026-09-26: 전체 71개 테스트, schema/golden·PII/secret/label 누출·실제 subprocess timeout/크기 제한/부분 실패 검증 통과. M2 30개 기록 중 28개 × 3회 재생 일치, telemetry 없는 2개 제외 사유 보존. 새 로컬 랩의 세 backend 조회와 M1 관측 회귀·teardown 통과. [실행 안내](docs/M3-CONTEXT.md), [검증·한계](docs/M3-VALIDATION.md), [결과](results/m3-replay.json)를 참조한다.
 
 ## Milestone 4 — Jev adapter와 typed decisions
 
@@ -314,12 +319,13 @@ M5 평가와 M6 운영 화면을 완성한 뒤 최종 사용 흐름을 AWS에서
 
 ## 이번 세션 인수인계
 
-- 완료: 사용자 위임으로 Chaos Mesh 선택, M2의 정상·5개 fault·precondition·abort·복구·정답/관측 기록·checksum 검증·요약 생성 구현
-- 마지막 검증: 2026-09-25, 전체 테스트 33개, clean-cluster 각 시나리오 2회, 조기 중단 1회, M1 관측 회귀와 teardown 통과. Python 구문·문서 링크·`git diff --check` 검증
-- 검증 코드: `f15a7d6`, 최종 source SHA-256 `e3e82303c6bc4794a33fa6abf056e7b4771a17f15192d18505570bec32080ee8`; 이후 변경은 결과·문서만
-- 실행 안내: `docs/M2-CHAOS.md`, 검증 이력: `docs/M2-VALIDATION.md`, 원본: `results/m2/`, 집계: `results/m2-summary.json`
-- 다음 작업: M3 Context Builder 언어를 확정하고 bounded state schema·backend query·마스킹·정답 누수 방지·무료 규칙 baseline 구현. M2의 `expected_cause`를 관측된 incident 영향의 정답으로 그대로 사용하지 않는다.
-- 구현 상태: M1·M2 완료. M3~M7 및 M4a 미구현·미실행. Jev 호출 및 실제 분류 성능 평가 없음
-- 비용: 0원. M2 로컬 클러스터 3회 생성·정리 완료. AWS 계정 접근·리소스 생성·크레딧 사용 없음. `results/m2-final-teardown.json`에서 node·volume 잔존 0개 확인
-- 환경/한계: ClusterIP 경로의 network fault 미적용과 30초 종료 유예를 발견해 합성 fixture를 보완. 이전 기록 16개와 실패 이유 유지. CPU stress의 뚜렷한 요청 지연 영향은 입증하지 않음
-- 알려진 블로커: M2 없음. M3 언어와 후속 pending 결정·유료 실행 승인은 별도로 유지
+- 완료: Python M3 bounded state·closed schema·규칙 비교군·local GET 수집·offline replay·고정 runbook·재현 보고서 구현
+- 마지막 검증: 2026-09-26, 전체 71개 테스트. M2 28개 × 3회 재생 일치, 새 로컬 클러스터 backend 조회·M1 관측 회귀·teardown 통과. 초기 Tempo 해석 보완 이력과 제외 사유는 검증 문서에 보존
+- 검증 코드: `7d8415c`, source SHA-256 `f6f0a49318c05408f3d2b5765e4f2c8cbc68fa4867ed4fe5a84ee9278020e981`; 이후 변경은 결과·문서만
+- 실행 안내: `docs/M3-CONTEXT.md`, 검증: `docs/M3-VALIDATION.md`, 집계: `results/m3-replay.json`, live: `results/m3-live.json`
+- 다음 작업: M4 provider·모델·가격/retention·예산 상한을 사용자와 확정하고 Jev adapter·typed response·비용 차단·오류 fallback 구현. 승인 전 실제 API 호출 금지; mock contract test는 무료로 가능
+- M4 입력 경계: 실행 record 전체가 아닌 `state`만 사용한다. provenance/정답 label·raw snapshot은 전송하지 않는다. `p001-state-v1` 실제 schema는 `src/triage/contracts.py`, README의 draft JSON은 구현 계약이 아님
+- 구현 상태: M1~M3 완료. M4~M7 및 M4a 미구현·미실행. 정확도·calibration·Jev 성능은 미측정
+- 비용: 0원. M3 로컬 클러스터 1회 생성·검증·정리 완료. AWS·Jev 미사용. `results/m3-teardown.json`에서 node·volume 잔존 0개 확인
+- 한계: 고정 합성 서비스/로그 전용. 상세 span·Kubernetes/change/resource 미수집. 표본 상한·counter 감소가 있으면 정상 추천을 보류하며 원인 분류는 unknown. M2 주입 label을 incident 영향의 정답으로 그대로 쓰지 않는다
+- 알려진 블로커: M3 없음. M4 provider·모델·비용 상한, M4a AWS 실행 승인은 별도로 필요

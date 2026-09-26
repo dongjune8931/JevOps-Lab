@@ -1,0 +1,21 @@
+{
+  "metrics": {"ok": true, "data": {"status": "success", "data": {"resultType": "matrix", "result": [
+    {"metric": {"__name__": "p001_requests_total", "service": "checkout", "route": "/work", "status": "200"}, "values": [[1000, "10"], [1060, "20"]]},
+    {"metric": {"__name__": "p001_request_duration_seconds_count", "service": "checkout", "route": "/work", "status": "200"}, "values": [[1000, "10"], [1060, "20"]]},
+    {"metric": {"__name__": "p001_request_duration_seconds_sum", "service": "checkout", "route": "/work", "status": "200"}, "values": [[1000, "0.1"], [1060, "0.2"]]},
+    {"metric": {"__name__": "p001_requests_total", "service": "catalog", "route": "/work", "status": "200"}, "values": [[1000, "10"], [1060, "20"]]},
+    {"metric": {"__name__": "p001_request_duration_seconds_count", "service": "catalog", "route": "/work", "status": "200"}, "values": [[1000, "10"], [1060, "20"]]},
+    {"metric": {"__name__": "p001_request_duration_seconds_sum", "service": "catalog", "route": "/work", "status": "200"}, "values": [[1000, "0.1"], [1060, "0.2"]]},
+    {"metric": {"__name__": "p001_requests_total", "service": "inventory", "route": "/work", "status": "200"}, "values": [[1000, "10"], [1060, "20"]]},
+    {"metric": {"__name__": "p001_request_duration_seconds_count", "service": "inventory", "route": "/work", "status": "200"}, "values": [[1000, "10"], [1060, "20"]]},
+    {"metric": {"__name__": "p001_request_duration_seconds_sum", "service": "inventory", "route": "/work", "status": "200"}, "values": [[1000, "0.1"], [1060, "0.2"]]}
+  ]}}},
+  "logs": {"ok": true, "data": {"status": "success", "data": {"resultType": "streams", "result": [
+    {"stream": {"service_namespace": "p001", "service_name": "checkout"}, "values": [["1030000000000", "synthetic_request trace_id=00000000000000000000000000000000 service=checkout status=200"]]},
+    {"stream": {"service_namespace": "p001", "service_name": "catalog"}, "values": [["1030000000000", "synthetic_request trace_id=00000000000000000000000000000000 service=catalog status=200"]]},
+    {"stream": {"service_namespace": "p001", "service_name": "inventory"}, "values": [["1030000000000", "synthetic_request trace_id=00000000000000000000000000000000 service=inventory status=200"]]}
+  ]}}},
+  "traces": {"ok": true, "data": {"traces": [
+    {"traceID": "00000000000000000000000000000000", "startTimeUnixNano": "1030000000000", "rootServiceName": "checkout", "rootTraceName": "GET /work", "durationMs": 10}
+  ]}}
+}
