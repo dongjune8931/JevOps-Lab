@@ -4,13 +4,24 @@
 
 `active`
 
-M1 로컬 관측 baseline과 M2 Chaos ground truth harness를 구현·검증했다. 3개 합성 서비스의 metrics·logs·traces, Grafana, Alertmanager와 Chaos Mesh 기반 정상·5개 장애 시나리오를 재현한다. Jev 호출과 triage 성능 평가는 아직 수행하지 않았다.
+M1 로컬 관측 baseline, M2 Chaos ground truth harness, M3 Context Builder와 규칙 비교군을 구현·검증했다. 3개 합성 서비스의 신호를 제한된 state로 변환하고 오류·지연 증상과 조사 runbook을 추천한다. 원인을 구분할 증거가 부족하면 unknown/human_review로 남긴다. Jev 호출과 정식 triage 정확도 평가는 아직 수행하지 않았다.
 
-남은 순서는 로컬 M3~M4 → M4a 첫 AWS 통합 테스트 → M5 로컬·AWS 비교 평가 → M6 운영 화면 → M7 최종 AWS 검증(선택)이다. AWS 실행은 별도 비용 승인 후 진행하며 세부 조건은 [PLAN.md](PLAN.md)에 기록한다.
+남은 순서는 로컬 M4 → M4a 첫 AWS 통합 테스트 → M5 로컬·AWS 비교 평가 → M6 운영 화면 → M7 최종 AWS 검증(선택)이다. Jev·AWS 실행은 별도 비용 승인 후 진행하며 세부 조건은 [PLAN.md](PLAN.md)에 기록한다.
 
 ## 실행 및 검증
 
 실행 환경·관측 구성은 [M1 안내](docs/M1-LOCAL.md), 장애 실행·안전 경계는 [M2 안내](docs/M2-CHAOS.md)를 따른다.
+
+M3의 Docker·API 호출 없는 재생 경로는 [Context Builder 안내](docs/M3-CONTEXT.md)를 따른다.
+
+```bash
+cd projects/P001-jevops-signal-triage
+python3 -m unittest discover -s tests -p test_context.py -v
+python3 scripts/context.py replay --run-dir results/m2/m2-s005-1790322543120343000 --output .local/m3-demo.json
+python3 scripts/report_context.py --output .local/m3-report.json
+```
+
+출력 파일은 불변이다. 재실행 시 다른 output 이름을 사용한다. 전체 로컬 랩 재현은 아래와 같다.
 
 ```bash
 cd projects/P001-jevops-signal-triage
@@ -135,11 +146,13 @@ Jev는 telemetry ingest hot path에 두지 않는다. Jev가 지연되거나 실
 
 ## Jev에 전달할 state 후보
 
-Context Builder는 raw telemetry를 그대로 보내지 않고 incident window를 요약한다. 다음은 논리 schema 후보이며 구현 전에 크기 제한과 필수·선택 필드를 확정한다.
+M3에서 확정한 실제 계약은 [`src/triage/contracts.py`](src/triage/contracts.py)의 `p001-state-v1`이다. [실제 출력 예시](results/m3-example.json)의 `state`만 후속 Jev 입력 대상으로 사용한다. 현재는 3개 서비스의 metrics·고정 로그 패턴·root trace 검색 요약과 data_quality를 제공하며 Kubernetes/변경/자원/상세 dependency 신호는 미수집으로 명시한다. [제한과 필드 설명](docs/M3-CONTEXT.md)을 참조한다.
+
+아래는 기획 때의 확장 후보이며 **구현된 v1 계약이 아니다**. 실제 state에는 chaos_context·scenario ID·임의 문자열을 넣지 않는다.
 
 ```json
 {
-  "schema_version": "p001-state-v1",
+  "schema_version": "p001-state-draft",
   "incident_id": "synthetic-incident-id",
   "observed_at": "RFC3339 timestamp",
   "window": { "before_seconds": 300, "after_seconds": 120 },
@@ -385,6 +398,10 @@ Jev 장애, timeout 또는 낮은 confidence는 `human_review`로 fail closed한
 
 ## 결과와 성과
 
+- M3 검증: 전체 테스트 71개(기존 33 + M3 38) 통과. M2 기록 30개 중 telemetry가 있는 28개를 각 3회 재생해 state·판단 일치를 확인했고, 없는 2개는 제외 사유를 보존했다. state 최대 크기는 1,662 bytes였다.
+- M3 관측: 오류 증상 9개·지연 증상 6개·증거 부족 13개. 모두 root cause unknown/human_review이며 주입 label을 incident 영향의 정답으로 간주하지 않는다. 정확도나 모델 성과가 아니다.
+- M3 성능: 저장 fixture 재생의 context-build p95 2.683ms, rules p95 0.098ms. 호스트의 단일 실행 batch 값이며 backend·네트워크·Jev latency를 포함하지 않는다.
+- M3 근거: [검증 기록](docs/M3-VALIDATION.md), [재생 보고서](results/m3-replay.json), [실제 로컬 조회](results/m3-live.json), [관측 회귀](results/m3-observability-regression.json), [teardown](results/m3-teardown.json). Jev·AWS 없이 비용 0원.
 - M2 검증: 전체 단위·경계 테스트 33개 통과. 정상 control과 5개 fault 각각 2회 이상, 조기 abort·복구 통과. 최종 소스 기준 14개 run과 이전 개발 기록 16개를 모두 보존했다.
 - M2 근거: [요약 JSON](results/m2-summary.json), [검증·한계](docs/M2-VALIDATION.md), [최종 teardown](results/m2-final-teardown.json). 활성 장애·내부 network 기록·stress 프로세스가 남지 않았음을 확인했다.
 - M1 검증: 격리·배포 경계·webhook 테스트 9개 통과, 두 번의 clean-cluster 통합 검증과 teardown 완료.
@@ -395,6 +412,8 @@ Jev 장애, timeout 또는 낮은 confidence는 `human_review`로 fail closed한
 
 ## 알려진 한계와 위험
 
+- M3는 범용 원인 추론기가 아니라 합성 fixture용 안전한 입력 경계와 보수적 비교군이다. 표본 한도·누락·counter 감소 때문에 정상 추천 coverage가 낮으며 confidence는 null이다. 실제 조직 라우팅·운영 데이터 마스킹 보장·자동 복구는 제공하지 않는다.
+- 현재 checkout replica의 counter 감소는 실제 재시작과 replica series 충돌을 구분하지 못한다. 해당 window는 정상으로 판정하지 않으며 metric 증가량과 평균을 신뢰 가능한 운영 지표로 일반화하지 않는다. 상세 범위는 [M3 한계](docs/M3-VALIDATION.md)에 기록한다.
 - M2는 주입 원인과 관측 window를 기록한다. Pod 종료·CPU stress 등이 실제 incident나 뚜렷한 latency 저하를 항상 만드는 것은 아니다. 주입 label을 사용자 영향의 정답으로 간주하지 않는다.
 - Chaos Mesh privileged daemon, headless dependency와 2초 종료 유예는 격리된 합성 실험용이다. 공유·운영 cluster 구성으로 일반화하지 않는다.
 - M1은 합성 트래픽·단일 노드·임시 저장소를 사용한다. 운영 규모의 성능, HA, 장애 상황과 범용 telemetry 마스킹은 검증하지 않았다.
@@ -410,14 +429,14 @@ Jev 장애, timeout 또는 낮은 confidence는 `human_review`로 fail closed한
 
 ## 결정이 필요한 기술 선택
 
-확정 사항과 미결정 항목은 [`DECISIONS.md`](DECISIONS.md)에 기록한다. M1은 kind·3개 소형 서비스·Alertmanager·Grafana를, M2는 사용자 위임에 따라 Chaos Mesh를 적용했다. 나머지 후속 기술 선택은 pending 상태다.
+확정 사항과 미결정 항목은 [`DECISIONS.md`](DECISIONS.md)에 기록한다. M1은 kind·3개 소형 서비스·Alertmanager·Grafana, M2는 Chaos Mesh, M3는 Python을 적용했다. Jev provider와 비용 승인은 아직 pending이다.
 
 | 선택 | 추천안 | 주요 대안 |
 |---|---|---|
 | 로컬 Kubernetes | kind (M1 적용) | k3d, minikube, Docker Compose only |
 | Chaos engine | Chaos Mesh 2.8.4 (M2 적용) | LitmusChaos |
 | Sample workload | 작은 3개 서비스 (M1 적용) | OpenTelemetry Demo의 일부 또는 전체 |
-| Context Builder 언어 | Python으로 검증 후 필요 시 Go 재평가 | 처음부터 Go |
+| Context Builder 언어 | Python 표준 라이브러리 (M3 적용), 필요 시 Go 재평가 | 처음부터 Go |
 | Trigger | Alertmanager webhook (M1 로컬 전달 적용) | 주기적 polling, Grafana alert webhook |
 | 운영자 UI | Grafana dashboard (M1 적용), annotation은 후속 범위 | 별도 web UI |
 | Jev provider | TypeSafe 공식 API 우선 검토 | OpenRouter 경유 |

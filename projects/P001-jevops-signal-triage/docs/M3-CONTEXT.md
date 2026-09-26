@@ -39,7 +39,7 @@ Kubernetes resources/events, CPU/memory, 변경 이력, 상세 dependency spans�
 
 ## 통계 해석과 비교군
 
-Counter delta는 window 안의 인접 samples 차이를 더한다. reset 시 새 counter 값만 더하고 reset 횟수를 표시한다. 최초 sample 이전 증가량·재시작 사이 요청은 알 수 없으므로 증가량은 lower bound다. PromQL `rate`/`increase`의 경계 외삽과 동일하지 않다. latency는 sum/count로 계산한 **평균**이며 p95나 p99가 아니다.
+Counter delta는 window 안의 인접 samples 차이를 더한다. 감소 시 새 counter 값만 더하고 감소 횟수를 표시한다. 독립된 정상 counter라는 가정 아래 최초 sample 이전 증가량·재시작 사이 요청은 알 수 없으므로 증가량은 lower bound다. replica가 같은 series로 충돌하는 경우에는 이 가정이 성립하지 않을 수 있고, 감소가 있는 window의 숫자는 잠정값이다. PromQL `rate`/`increase`의 경계 외삽과 동일하지 않다. latency는 sum/count로 계산한 **평균**이며 p95나 p99가 아니다. [실측 한계](M3-VALIDATION.md)를 참조한다.
 
 Loki/Tempo 조회는 제한된 표본이다. 실시간으로 같은 window를 다시 조회하면 ingest 지연이나 검색 순서 때문에 표본이 바뀔 수 있다. **동일한 저장 fixture의 재생**에 대해 결정성을 보장하며, 반복 live query가 동일하다고 주장하지 않는다. Tempo의 짧은 hex ID는 내부 dedup에만 사용하고 출력하지 않는다. duration이 없는 항목은 다른 유효 항목과 분리해 invalid로 표시한다.
 

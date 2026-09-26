@@ -1,0 +1,91 @@
+{
+  "time_utc": "2026-09-26T00:49:15.599962+00:00",
+  "commit": "7d8415c8ad2c0409d8d938a56e41d742834ca330",
+  "dirty": false,
+  "source_sha256": "f6f0a49318c05408f3d2b5765e4f2c8cbc68fa4867ed4fe5a84ee9278020e981",
+  "versions": {
+    "kind": "v0.31.0",
+    "kubectl": "v1.36.0",
+    "node": "kindest/node:v1.35.0",
+    "python": "python:3.12.10-slim",
+    "collector": "otel/opentelemetry-collector-contrib:0.128.0",
+    "prometheus": "prom/prometheus:v3.2.1",
+    "alertmanager": "prom/alertmanager:v0.28.1",
+    "tempo": "grafana/tempo:2.7.2",
+    "loki": "grafana/loki:3.4.2",
+    "grafana": "grafana/grafana:11.6.0"
+  },
+  "host": "macOS-15.4-arm64-arm-64bit-Mach-O",
+  "host_python": "3.14.6",
+  "docker_server": "28.0.1",
+  "kubernetes": {
+    "clientVersion": {
+      "major": "1",
+      "minor": "36",
+      "gitVersion": "v1.36.0",
+      "gitCommit": "ecf6decece6a6de25a57aad9ba90b6ce580f6f78",
+      "gitTreeState": "clean",
+      "buildDate": "2026-04-22T13:51:51Z",
+      "goVersion": "go1.26.2",
+      "compiler": "gc",
+      "platform": "darwin/arm64"
+    },
+    "kustomizeVersion": "v5.8.1",
+    "serverVersion": {
+      "major": "1",
+      "minor": "35",
+      "emulationMajor": "1",
+      "emulationMinor": "35",
+      "minCompatibilityMajor": "1",
+      "minCompatibilityMinor": "34",
+      "gitVersion": "v1.35.0",
+      "gitCommit": "66452049f3d692768c39c797b21b793dce80314e",
+      "gitTreeState": "clean",
+      "buildDate": "2025-12-17T12:32:07Z",
+      "goVersion": "go1.25.5",
+      "compiler": "gc",
+      "platform": "linux/arm64"
+    }
+  },
+  "model": null,
+  "question": null,
+  "seed": null,
+  "repetitions": 1,
+  "api_cost_krw": 0,
+  "dataset": "M1 synthetic smoke traffic (not an evaluation dataset)",
+  "verification": {
+    "passed": true,
+    "trace_id": "a97b3f95433e71ff7eb8d655c823805d",
+    "trace_services": [
+      "catalog",
+      "checkout",
+      "inventory"
+    ],
+    "metric_series": 3,
+    "log_streams": 3,
+    "dashboard_panels": 5,
+    "alert": {
+      "status": "firing",
+      "labels": {
+        "alertname": "P001SyntheticTraffic",
+        "project": "p001",
+        "severity": "smoke"
+      }
+    },
+    "recording_rule_series": 3,
+    "dashboard_query_series": {
+      "Request rate": 3,
+      "Error ratio": 3,
+      "p95 request duration": 3
+    }
+  },
+  "images": {
+    "docker.io/prom/alertmanager:v0.28.1": "sha256:d1950c730ae9121fe5ad7b7313be63a26f4a075087d2190a31fd9261f7767a44",
+    "docker.io/library/p001-m1-workload:d278db18a04de004": "sha256:9d16c1b1c2a0d750ea86ecc9221b683db28a906cb54cb62da35c8549871619de",
+    "docker.io/otel/opentelemetry-collector-contrib:0.128.0": "sha256:544e9ddaab31864e8bad77d64fde663840bfe3ab71424783f817841f49ede292",
+    "docker.io/grafana/grafana:11.6.0": "sha256:bfadbbcb25fd75c30c295843f1a861414f46c080f0f1d0c5cd93843c88edabcf",
+    "docker.io/grafana/loki:3.4.2": "sha256:f9bca3c5226cf375451256c3b1079e684c9ef3711dc777330494b760758dc58a",
+    "docker.io/prom/prometheus:v3.2.1": "sha256:bddbcb4cc90686ddf7ef05b64eeafe557224549ae93b68115bb27d15a698081a",
+    "docker.io/grafana/tempo:2.7.2": "sha256:0f7c6218c009c0716f33a6e005302b2c23e088f34deb4eb29d79141477eef32f"
+  }
+}

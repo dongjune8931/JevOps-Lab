@@ -1,0 +1,2073 @@
+{
+  "accuracy": null,
+  "all_replayable_passed": true,
+  "api_calls": 0,
+  "api_cost_krw": 0,
+  "calibration": null,
+  "commit": "7d8415c8ad2c0409d8d938a56e41d742834ca330",
+  "counts": {
+    "excluded": 2,
+    "replayed": 28
+  },
+  "deterministic": true,
+  "dirty": false,
+  "evaluation_note": "Design replay only; injection label is not incident-impact ground truth. No Jev evaluation.",
+  "host": "macOS-15.4-arm64-arm-64bit-Mach-O",
+  "latency_ms": {
+    "context_build": {
+      "p50": 1.737,
+      "p95": 2.683,
+      "p99": 3.733
+    },
+    "rules": {
+      "p50": 0.045,
+      "p95": 0.098,
+      "p99": 0.149
+    }
+  },
+  "model": null,
+  "python": "3.14.6",
+  "query_timeout_seconds": 4,
+  "question": null,
+  "repetitions": 3,
+  "response_byte_limit": 348501,
+  "rules_version": "p001-rules-v1",
+  "runs": [
+    {
+      "input_outcome": "precondition_failed",
+      "reason": "no_telemetry_artifact",
+      "record_sha256": "ea4964cadba3e96b5e1907c134e68024c89f1a0f1be4eac66d26290fc59d5d1c",
+      "run_id": "m2-s000-1790320486222120000",
+      "state_contains_ground_truth": false,
+      "status": "excluded"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "5ae19143cb0af5df703eebf1e2ec8b2e8e1a1658291a21f89505d38c1a63c41a",
+        "telemetry_sha256": "1b382358d49e1c374ed1182f21c091beb6cccfb4bd27a80a0dc1605707572d25"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.816,
+          "rules": 0.051
+        },
+        {
+          "context_build": 1.527,
+          "rules": 0.049
+        },
+        {
+          "context_build": 1.502,
+          "rules": 0.044
+        }
+      ],
+      "prediction": {
+        "affected_services": [],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "manual-investigation",
+        "rules_version": "p001-rules-v1",
+        "symptom": "insufficient_data",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+      "record_sha256": "5ae19143cb0af5df703eebf1e2ec8b2e8e1a1658291a21f89505d38c1a63c41a",
+      "run_id": "m2-s000-1790320535636036000",
+      "state_bytes": 1575,
+      "state_contains_ground_truth": false,
+      "state_sha256": "4b9627d5feafeb176ff77759a2d06223d67aaa7e61c42bcb43d2a36000b5051e",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "0b75939d21e803adf0aaee21323e2485dcfbb13ab4b9149db21ed649a82198e1",
+        "telemetry_sha256": "52c3294bd391a4096f52603ebcf8492a8644817a65035db995d829166cd7fce5"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.458,
+          "rules": 0.043
+        },
+        {
+          "context_build": 1.681,
+          "rules": 0.047
+        },
+        {
+          "context_build": 2.656,
+          "rules": 0.067
+        }
+      ],
+      "prediction": {
+        "affected_services": [],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "manual-investigation",
+        "rules_version": "p001-rules-v1",
+        "symptom": "insufficient_data",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+      "record_sha256": "0b75939d21e803adf0aaee21323e2485dcfbb13ab4b9149db21ed649a82198e1",
+      "run_id": "m2-s000-1790321367195054000",
+      "state_bytes": 1573,
+      "state_contains_ground_truth": false,
+      "state_sha256": "64e8172ecc13fd3f127d2fdedbc1bd2653b68519af5f1f135761ff83ebd72d9d",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "797f964518a5c144ccd72df35d8d4c9198b7df6c0e6db40425fc3d9ac44290f1",
+        "telemetry_sha256": "b78e39fe61a9768bca4418114982a74818b72e06c7cbdb1c8f21ca072914b0dd"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.608,
+          "rules": 0.042
+        },
+        {
+          "context_build": 1.456,
+          "rules": 0.041
+        },
+        {
+          "context_build": 1.554,
+          "rules": 0.045
+        }
+      ],
+      "prediction": {
+        "affected_services": [],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "manual-investigation",
+        "rules_version": "p001-rules-v1",
+        "symptom": "insufficient_data",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+      "record_sha256": "797f964518a5c144ccd72df35d8d4c9198b7df6c0e6db40425fc3d9ac44290f1",
+      "run_id": "m2-s000-1790322003301830000",
+      "state_bytes": 1572,
+      "state_contains_ground_truth": false,
+      "state_sha256": "18d02cba0cf188ec24dabc9c40a8996dd2830aae811bd4fe7d035c7c211dcba3",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "c48f7f3969e90cb704175f1d10d4fbe579fd5a610bc086620b468e60156cc4df",
+        "telemetry_sha256": "05d514510b868237289ff3db092d76a9be47ba4572c9c31ba9225318ffec550f"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.773,
+          "rules": 0.045
+        },
+        {
+          "context_build": 1.969,
+          "rules": 0.048
+        },
+        {
+          "context_build": 1.658,
+          "rules": 0.042
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "checkout"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "observed_request_errors"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-service-errors",
+        "rules_version": "p001-rules-v1",
+        "symptom": "request_errors",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "bc3c96b447320d65ef4fb80f5f83d3c4eeee872e0ff0f6580f53078e8b4cc841",
+      "record_sha256": "c48f7f3969e90cb704175f1d10d4fbe579fd5a610bc086620b468e60156cc4df",
+      "run_id": "m2-s000-1790322297398757000",
+      "state_bytes": 1582,
+      "state_contains_ground_truth": false,
+      "state_sha256": "be4e2dedd19da14b7845ec7392ea78aa7fabd603a302b335e7ec9b995402dd1c",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "33bd1d605ccc534863a4477e7c075eb3cb3776ae8af0c67497383a8990099c28",
+        "telemetry_sha256": "17e72829a5f09a2b1f6f9f63f36d239d6dc353107685a9403dfde0935932b6b0"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.632,
+          "rules": 0.043
+        },
+        {
+          "context_build": 1.593,
+          "rules": 0.047
+        },
+        {
+          "context_build": 1.787,
+          "rules": 0.043
+        }
+      ],
+      "prediction": {
+        "affected_services": [],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "manual-investigation",
+        "rules_version": "p001-rules-v1",
+        "symptom": "insufficient_data",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+      "record_sha256": "33bd1d605ccc534863a4477e7c075eb3cb3776ae8af0c67497383a8990099c28",
+      "run_id": "m2-s001-1790320578988263000",
+      "state_bytes": 1572,
+      "state_contains_ground_truth": false,
+      "state_sha256": "ec216c743710f51cc23b0ead6130b68d981d081491b713125cd715b7ed72d384",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "ff011ce16c6b871080a58513f97edfa18662a356c0bb821cc319c96d1806571e",
+        "telemetry_sha256": "2660f61dee449ceeeab45a1af85729be3b0204210bd7f54153c9e547a37b0b1a"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 2.683,
+          "rules": 0.044
+        },
+        {
+          "context_build": 1.88,
+          "rules": 0.046
+        },
+        {
+          "context_build": 2.681,
+          "rules": 0.046
+        }
+      ],
+      "prediction": {
+        "affected_services": [],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "manual-investigation",
+        "rules_version": "p001-rules-v1",
+        "symptom": "insufficient_data",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+      "record_sha256": "ff011ce16c6b871080a58513f97edfa18662a356c0bb821cc319c96d1806571e",
+      "run_id": "m2-s001-1790321411747638000",
+      "state_bytes": 1573,
+      "state_contains_ground_truth": false,
+      "state_sha256": "e33b029ba7e98022fa3f62083fb456ecd98402526fb72fb0600e5c2b97284896",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "eec83a36c8ca75b70ad3ab17ffa48f246484364b0f0b430e84248e0b3f3f8545",
+        "telemetry_sha256": "e4433bb9bf33cf786089296c225cbdb749ee33349279431c8315cad02136826f"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.868,
+          "rules": 0.045
+        },
+        {
+          "context_build": 1.678,
+          "rules": 0.045
+        },
+        {
+          "context_build": 1.633,
+          "rules": 0.044
+        }
+      ],
+      "prediction": {
+        "affected_services": [],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "manual-investigation",
+        "rules_version": "p001-rules-v1",
+        "symptom": "insufficient_data",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+      "record_sha256": "eec83a36c8ca75b70ad3ab17ffa48f246484364b0f0b430e84248e0b3f3f8545",
+      "run_id": "m2-s001-1790322047883074000",
+      "state_bytes": 1575,
+      "state_contains_ground_truth": false,
+      "state_sha256": "4846fea4c16616abe5a0249dc3448b20912fdd44caccd23bd84e5cd063b0ed4c",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "7c85d5517eedee26760eec7804878240ae5bf830261acf0db0527342fb59416b",
+        "telemetry_sha256": "925462fba0d107735d42e42dd4337223bdd4b7ea93a81c9f6aa0a0e4381499fb"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.654,
+          "rules": 0.042
+        },
+        {
+          "context_build": 1.862,
+          "rules": 0.044
+        },
+        {
+          "context_build": 1.863,
+          "rules": 0.045
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "checkout"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "observed_request_errors"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-service-errors",
+        "rules_version": "p001-rules-v1",
+        "symptom": "request_errors",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "bc3c96b447320d65ef4fb80f5f83d3c4eeee872e0ff0f6580f53078e8b4cc841",
+      "record_sha256": "7c85d5517eedee26760eec7804878240ae5bf830261acf0db0527342fb59416b",
+      "run_id": "m2-s001-1790322340468248000",
+      "state_bytes": 1580,
+      "state_contains_ground_truth": false,
+      "state_sha256": "2e849579f7fa27752ea04da5901062a84fce01cef424e7a4803a3b5992a44ad2",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "b234ac5b8527be31c7653b253cf667ef041d8bf1cdd162d0e05f53e7dc934929",
+        "telemetry_sha256": "cc8f73f3d58343a3e4e6f00372c2bbbd40660e30b454d904560d8a66446ec1f9"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.793,
+          "rules": 0.043
+        },
+        {
+          "context_build": 1.651,
+          "rules": 0.046
+        },
+        {
+          "context_build": 2.149,
+          "rules": 0.044
+        }
+      ],
+      "prediction": {
+        "affected_services": [],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "manual-investigation",
+        "rules_version": "p001-rules-v1",
+        "symptom": "insufficient_data",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+      "record_sha256": "b234ac5b8527be31c7653b253cf667ef041d8bf1cdd162d0e05f53e7dc934929",
+      "run_id": "m2-s002-1790320622709291000",
+      "state_bytes": 1576,
+      "state_contains_ground_truth": false,
+      "state_sha256": "50d57c71be8eb42f2b9b3d9fec65f143ba5c290956343c65531aecc90e335238",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [
+          "traces"
+        ],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "6e0c1239f43dc0cc63740dfda994239f57481818345d1413628ad6c9177368de",
+        "telemetry_sha256": "9f60820ed3fb8eb75d2b230b505b0aee356263e174012ef9fc437e46fbd5825d"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.756,
+          "rules": 0.043
+        },
+        {
+          "context_build": 1.641,
+          "rules": 0.042
+        },
+        {
+          "context_build": 2.716,
+          "rules": 0.045
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "checkout"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "observed_request_errors"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-service-errors",
+        "rules_version": "p001-rules-v1",
+        "symptom": "request_errors",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "bc3c96b447320d65ef4fb80f5f83d3c4eeee872e0ff0f6580f53078e8b4cc841",
+      "record_sha256": "6e0c1239f43dc0cc63740dfda994239f57481818345d1413628ad6c9177368de",
+      "run_id": "m2-s002-1790320862830500000",
+      "state_bytes": 1593,
+      "state_contains_ground_truth": false,
+      "state_sha256": "38648a4c7b1494ba134048e630e5e201da9271a158a5d828ccd46c7c7ba3645a",
+      "status": "replayed"
+    },
+    {
+      "input_outcome": "precondition_failed",
+      "reason": "no_telemetry_artifact",
+      "record_sha256": "69f82771473c907864d90c24bfa7d6df033bbb7a9a6e1326eef4f83ba46329a3",
+      "run_id": "m2-s002-1790321069130326000",
+      "state_contains_ground_truth": false,
+      "status": "excluded"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "dc483310ca9808a2774d583ed6ff81c585316c412a7eed98110daede917f088c",
+        "telemetry_sha256": "924878fc35d3c9dce0f53e0d727d7456c98d07efa815c05c0995701cbca3a28c"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.78,
+          "rules": 0.126
+        },
+        {
+          "context_build": 1.653,
+          "rules": 0.043
+        },
+        {
+          "context_build": 1.759,
+          "rules": 0.045
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "catalog"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "mean_latency_at_least_200ms"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-latency",
+        "rules_version": "p001-rules-v1",
+        "symptom": "high_latency",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "a3db5ab2d83ae8e417f4243a8c6e00e45ca343b8d3ac25b41296086bc40d3ec6",
+      "record_sha256": "dc483310ca9808a2774d583ed6ff81c585316c412a7eed98110daede917f088c",
+      "run_id": "m2-s002-1790321143483864000",
+      "state_bytes": 1589,
+      "state_contains_ground_truth": false,
+      "state_sha256": "89b13d530aa1d82ccad9e5a70d4e8043bfd8ed6e6e74ca83a797b2cfe872df7a",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "690b18710fa04f92a20c1431f35bf3c6430f6d25540424fea885fcb076c050b9",
+        "telemetry_sha256": "9e58077561233cb75c815b592847ddd5173b331e5a1869c0606adb5fa2aa9c45"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 2.51,
+          "rules": 0.053
+        },
+        {
+          "context_build": 3.733,
+          "rules": 0.046
+        },
+        {
+          "context_build": 3.352,
+          "rules": 0.047
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "catalog"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "mean_latency_at_least_200ms"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-latency",
+        "rules_version": "p001-rules-v1",
+        "symptom": "high_latency",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "a3db5ab2d83ae8e417f4243a8c6e00e45ca343b8d3ac25b41296086bc40d3ec6",
+      "record_sha256": "690b18710fa04f92a20c1431f35bf3c6430f6d25540424fea885fcb076c050b9",
+      "run_id": "m2-s002-1790321457032550000",
+      "state_bytes": 1581,
+      "state_contains_ground_truth": false,
+      "state_sha256": "bcbbde7a3342dd71d6ac25c84eef5e085bea245b025aacec548b8ffa2c70ed38",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "8173e3fabdfa3576fa7c8df80c6b102a3cfc4c2023b473d43b26ecbf32077c08",
+        "telemetry_sha256": "a691ed26cf27dcabdc2218d1541ad41bfe27ad5e8b54321938292dbfc766f8f8"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.61,
+          "rules": 0.044
+        },
+        {
+          "context_build": 1.668,
+          "rules": 0.067
+        },
+        {
+          "context_build": 1.939,
+          "rules": 0.046
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "catalog"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "mean_latency_at_least_200ms"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-latency",
+        "rules_version": "p001-rules-v1",
+        "symptom": "high_latency",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "a3db5ab2d83ae8e417f4243a8c6e00e45ca343b8d3ac25b41296086bc40d3ec6",
+      "record_sha256": "8173e3fabdfa3576fa7c8df80c6b102a3cfc4c2023b473d43b26ecbf32077c08",
+      "run_id": "m2-s002-1790322093217144000",
+      "state_bytes": 1580,
+      "state_contains_ground_truth": false,
+      "state_sha256": "3e560baf5590e3be7223b6848aa685c45c72dd85c0a747583d69cc6373775e96",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "fb90b338295a58d9dd383706333e68c1a62e9b2bf02ae56be5a5bb5d94b393b1",
+        "telemetry_sha256": "8ef33bc57b13e4dc0428689ac8b68fdf13d88473a2185ebb5264b9a8acab2ce3"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.799,
+          "rules": 0.045
+        },
+        {
+          "context_build": 1.716,
+          "rules": 0.043
+        },
+        {
+          "context_build": 2.084,
+          "rules": 0.089
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "checkout",
+          "catalog"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "mean_latency_at_least_200ms"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-latency",
+        "rules_version": "p001-rules-v1",
+        "symptom": "high_latency",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "1bfaa79733bb25f9d80117301ed0dc5e74ed8caae276be0a7df264cf9e37a2e6",
+      "record_sha256": "fb90b338295a58d9dd383706333e68c1a62e9b2bf02ae56be5a5bb5d94b393b1",
+      "run_id": "m2-s002-1790322386097197000",
+      "state_bytes": 1579,
+      "state_contains_ground_truth": false,
+      "state_sha256": "c804d145f00f7a59b2f92cb52d8196bc364d77bc0ca039d52bfd3381273c03e1",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": []
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "5094047b9689e43e21db30bdc6a3df398d2a47b962776f4548748bd63d0f3315",
+        "telemetry_sha256": "51daec0ccd5d2e504c3b51b686c9b28ecaa4535d47fc1188ac786a5a506ce329"
+      },
+      "input_outcome": "aborted",
+      "latency_ms": [
+        {
+          "context_build": 1.158,
+          "rules": 0.046
+        },
+        {
+          "context_build": 1.18,
+          "rules": 0.047
+        },
+        {
+          "context_build": 1.121,
+          "rules": 0.042
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "checkout"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "observed_request_errors"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-service-errors",
+        "rules_version": "p001-rules-v1",
+        "symptom": "request_errors",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "bc3c96b447320d65ef4fb80f5f83d3c4eeee872e0ff0f6580f53078e8b4cc841",
+      "record_sha256": "5094047b9689e43e21db30bdc6a3df398d2a47b962776f4548748bd63d0f3315",
+      "run_id": "m2-s002-1790322588701144000",
+      "state_bytes": 1577,
+      "state_contains_ground_truth": false,
+      "state_sha256": "022023a18e2756d5e4988fe6bce76fb02613a7269f6c8b74bed5a23304f5ce91",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "66ed9b4502b907a19ae92f865346afb39bcb46636553cccb880d4a7af2d5cc87",
+        "telemetry_sha256": "c5f6cb41d3125ade799b14b95ccd3f8721f81d7f2ea95cdf85759794d0cb1bad"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 2.85,
+          "rules": 0.098
+        },
+        {
+          "context_build": 2.045,
+          "rules": 0.049
+        },
+        {
+          "context_build": 2.114,
+          "rules": 0.044
+        }
+      ],
+      "prediction": {
+        "affected_services": [],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "manual-investigation",
+        "rules_version": "p001-rules-v1",
+        "symptom": "insufficient_data",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+      "record_sha256": "66ed9b4502b907a19ae92f865346afb39bcb46636553cccb880d4a7af2d5cc87",
+      "run_id": "m2-s003-1790320678422538000",
+      "state_bytes": 1575,
+      "state_contains_ground_truth": false,
+      "state_sha256": "e3f86e7d815621f630fe2909e91412c9afddb8b10b9656f074c8065355e4f199",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "fc9c807e7403bf34da8f3e0a9e85e2d183eeda49cfad8e196261c0bf8c625b3c",
+        "telemetry_sha256": "7b5445c31b6e53e8ab7a33b66c6b45961215e115383285c9d181780ae60a19fc"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.837,
+          "rules": 0.044
+        },
+        {
+          "context_build": 1.874,
+          "rules": 0.047
+        },
+        {
+          "context_build": 2.191,
+          "rules": 0.149
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "catalog"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "mean_latency_at_least_200ms"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-latency",
+        "rules_version": "p001-rules-v1",
+        "symptom": "high_latency",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "a3db5ab2d83ae8e417f4243a8c6e00e45ca343b8d3ac25b41296086bc40d3ec6",
+      "record_sha256": "fc9c807e7403bf34da8f3e0a9e85e2d183eeda49cfad8e196261c0bf8c625b3c",
+      "run_id": "m2-s003-1790321512546090000",
+      "state_bytes": 1581,
+      "state_contains_ground_truth": false,
+      "state_sha256": "59163e109d4198f88a7ad59aba7c60829fe82bc44309a84b17d5808572892083",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "3f277bdd84cb21e16a5f3362391d1a41a4d18249dff4088060e451f20a9bef91",
+        "telemetry_sha256": "5244029763e808a78dcfa3356b7c012d44d3ec3793570989d0ac90f75d1fea04"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.953,
+          "rules": 0.047
+        },
+        {
+          "context_build": 2.528,
+          "rules": 0.104
+        },
+        {
+          "context_build": 1.67,
+          "rules": 0.045
+        }
+      ],
+      "prediction": {
+        "affected_services": [],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "manual-investigation",
+        "rules_version": "p001-rules-v1",
+        "symptom": "insufficient_data",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+      "record_sha256": "3f277bdd84cb21e16a5f3362391d1a41a4d18249dff4088060e451f20a9bef91",
+      "run_id": "m2-s003-1790322148490352000",
+      "state_bytes": 1588,
+      "state_contains_ground_truth": false,
+      "state_sha256": "5feb7510ea40057bdabb6f589a9e18739a5dc4f0ad900cf00c129e34e91b434e",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "01b36ed5454a4efbbc189bb0406a438f4d97dbd483757109e0cd460502469347",
+        "telemetry_sha256": "d705e7e9ea076dc1325c358d07d8730f801429e81381931697ba58aa28a03691"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.748,
+          "rules": 0.046
+        },
+        {
+          "context_build": 1.894,
+          "rules": 0.044
+        },
+        {
+          "context_build": 1.718,
+          "rules": 0.043
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "checkout",
+          "catalog"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "mean_latency_at_least_200ms"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-latency",
+        "rules_version": "p001-rules-v1",
+        "symptom": "high_latency",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "1bfaa79733bb25f9d80117301ed0dc5e74ed8caae276be0a7df264cf9e37a2e6",
+      "record_sha256": "01b36ed5454a4efbbc189bb0406a438f4d97dbd483757109e0cd460502469347",
+      "run_id": "m2-s003-1790322441597241000",
+      "state_bytes": 1573,
+      "state_contains_ground_truth": false,
+      "state_sha256": "1609b5c7526c351a30c6ad3ea4a9123c50ca6dc21fff53048d5cc122af5281d8",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "b2f15d5540bd6b8bd2f8063a3c067ca3383c60f9dba6d18f0dd736e73d7706da",
+        "telemetry_sha256": "21f282a8b8e81a107a333fefa4dccda9f1e9475d4240e0dd03d7599ca61df5b9"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.612,
+          "rules": 0.044
+        },
+        {
+          "context_build": 1.562,
+          "rules": 0.043
+        },
+        {
+          "context_build": 2.285,
+          "rules": 0.047
+        }
+      ],
+      "prediction": {
+        "affected_services": [],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "manual-investigation",
+        "rules_version": "p001-rules-v1",
+        "symptom": "insufficient_data",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+      "record_sha256": "b2f15d5540bd6b8bd2f8063a3c067ca3383c60f9dba6d18f0dd736e73d7706da",
+      "run_id": "m2-s004-1790320734920656000",
+      "state_bytes": 1575,
+      "state_contains_ground_truth": false,
+      "state_sha256": "6a12862a84e61a580ee85cdb22a9fa0b71411d34e9aa85c324d1571e3d1d534e",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "9337f53a895f167205a8f787e39613cfcc5e82dfd712c1e30c475087495bfc1e",
+        "telemetry_sha256": "e7685cba6c00f45e0163f96bfb71c9a8c73c1bd50bde2e0b6f6555f2a3ff3892"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.604,
+          "rules": 0.045
+        },
+        {
+          "context_build": 1.533,
+          "rules": 0.043
+        },
+        {
+          "context_build": 1.737,
+          "rules": 0.043
+        }
+      ],
+      "prediction": {
+        "affected_services": [],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "manual-investigation",
+        "rules_version": "p001-rules-v1",
+        "symptom": "insufficient_data",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+      "record_sha256": "9337f53a895f167205a8f787e39613cfcc5e82dfd712c1e30c475087495bfc1e",
+      "run_id": "m2-s004-1790321567807315000",
+      "state_bytes": 1576,
+      "state_contains_ground_truth": false,
+      "state_sha256": "21c04a27ba54a19d5d716a0714bf86ba550f9bff6432034fafb47bae8fb82545",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "2b3f3c7b4c6d593cce15189148606a9208e03d15ba117ff613158c479401e895",
+        "telemetry_sha256": "673e2e065e73eea539eac25a81d6fa14c71eb801dbcb65b94b145c330791b43a"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 2.04,
+          "rules": 0.044
+        },
+        {
+          "context_build": 1.741,
+          "rules": 0.043
+        },
+        {
+          "context_build": 1.579,
+          "rules": 0.042
+        }
+      ],
+      "prediction": {
+        "affected_services": [],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "manual-investigation",
+        "rules_version": "p001-rules-v1",
+        "symptom": "insufficient_data",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+      "record_sha256": "2b3f3c7b4c6d593cce15189148606a9208e03d15ba117ff613158c479401e895",
+      "run_id": "m2-s004-1790322204390055000",
+      "state_bytes": 1579,
+      "state_contains_ground_truth": false,
+      "state_sha256": "6027b436100299850c2b0887710e4ae4a8e9997476aceb8de266d575afe80242",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "c0fd173c20ea57caff19d1a1349e30c1841818de55b957871444beee8adcb090",
+        "telemetry_sha256": "857bbdae66ff11f91f37dd89a1f12c8ded89aa5aef887893b6fb4b15abe1c274"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.692,
+          "rules": 0.043
+        },
+        {
+          "context_build": 1.638,
+          "rules": 0.041
+        },
+        {
+          "context_build": 1.619,
+          "rules": 0.042
+        }
+      ],
+      "prediction": {
+        "affected_services": [],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "manual-investigation",
+        "rules_version": "p001-rules-v1",
+        "symptom": "insufficient_data",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "7fe6c29da519d4bd932fdb167fd30246da7818465bcfa2c77df1f503acfa1f2f",
+      "record_sha256": "c0fd173c20ea57caff19d1a1349e30c1841818de55b957871444beee8adcb090",
+      "run_id": "m2-s004-1790322496100123000",
+      "state_bytes": 1569,
+      "state_contains_ground_truth": false,
+      "state_sha256": "801cb2397f92cd41d1ff7314c545a61c90817e96c1494bd6e6a97cca3cd803d4",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "873483f833467abe44c0257609759fb14946204e7c6a15006ad6ca423e3a366f",
+        "telemetry_sha256": "8baf3e0324684f80847a7ce816f0efdf9636e3f414a574c21436e45e025c8e05"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.843,
+          "rules": 0.05
+        },
+        {
+          "context_build": 1.771,
+          "rules": 0.048
+        },
+        {
+          "context_build": 1.644,
+          "rules": 0.045
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "checkout",
+          "catalog"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "observed_request_errors"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-service-errors",
+        "rules_version": "p001-rules-v1",
+        "symptom": "request_errors",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "ada8c5e3ab8fb755f399b8f39134a0e139a06907f82f45e3831fc056b05948f8",
+      "record_sha256": "873483f833467abe44c0257609759fb14946204e7c6a15006ad6ca423e3a366f",
+      "run_id": "m2-s005-1790320781413455000",
+      "state_bytes": 1662,
+      "state_contains_ground_truth": false,
+      "state_sha256": "539d79faf5cb1b3dbbd8528dccfe9ef7ce7c5ab4d48d9c8586a0eddcdf649aa1",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "logs",
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "357feb59fdfee5a451d2eda2c58e6fcf0645d3bb1045720c76c64ed596c3f21f",
+        "telemetry_sha256": "ff94df648b12b2f69fa1883bb1e5d9706f81510d0820f308a725f81419787c17"
+      },
+      "input_outcome": "failed",
+      "latency_ms": [
+        {
+          "context_build": 1.654,
+          "rules": 0.109
+        },
+        {
+          "context_build": 1.742,
+          "rules": 0.046
+        },
+        {
+          "context_build": 1.821,
+          "rules": 0.05
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "checkout",
+          "catalog"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "observed_request_errors"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-service-errors",
+        "rules_version": "p001-rules-v1",
+        "symptom": "request_errors",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "ada8c5e3ab8fb755f399b8f39134a0e139a06907f82f45e3831fc056b05948f8",
+      "record_sha256": "357feb59fdfee5a451d2eda2c58e6fcf0645d3bb1045720c76c64ed596c3f21f",
+      "run_id": "m2-s005-1790321614229498000",
+      "state_bytes": 1655,
+      "state_contains_ground_truth": false,
+      "state_sha256": "9901560ead11f3cc0dd2d1ddd7f7f57359ba1ec75920edf3abfd634141e2b8dd",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "59d95b479ecbc4bcb0ea2c08f8c21f869111083a09d60e8c286aa5dfa504f8c4",
+        "telemetry_sha256": "6d42f335dca7c600dbe2a25dcee5f3955b0b3c1f5ef8da01122c58c4f1732be6"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.586,
+          "rules": 0.047
+        },
+        {
+          "context_build": 1.547,
+          "rules": 0.045
+        },
+        {
+          "context_build": 1.556,
+          "rules": 0.044
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "checkout",
+          "catalog"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "observed_request_errors"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-service-errors",
+        "rules_version": "p001-rules-v1",
+        "symptom": "request_errors",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "ada8c5e3ab8fb755f399b8f39134a0e139a06907f82f45e3831fc056b05948f8",
+      "record_sha256": "59d95b479ecbc4bcb0ea2c08f8c21f869111083a09d60e8c286aa5dfa504f8c4",
+      "run_id": "m2-s005-1790321820161703000",
+      "state_bytes": 1657,
+      "state_contains_ground_truth": false,
+      "state_sha256": "7f83eadeb1566fdb4c5956899824d085d89e8fd9483860b5d62cad74663ecfbb",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "07ca96174e8f4ac9647c68d8280852a96f9a7de11a34308d8721f8f0ae4665bc",
+        "telemetry_sha256": "dfa4846b6b4fc4c700316d9a037cb18389098bdce9a34ef6a411dea6a8e90cf2"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.87,
+          "rules": 0.047
+        },
+        {
+          "context_build": 1.58,
+          "rules": 0.046
+        },
+        {
+          "context_build": 1.547,
+          "rules": 0.045
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "checkout",
+          "catalog"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "observed_request_errors"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-service-errors",
+        "rules_version": "p001-rules-v1",
+        "symptom": "request_errors",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "ada8c5e3ab8fb755f399b8f39134a0e139a06907f82f45e3831fc056b05948f8",
+      "record_sha256": "07ca96174e8f4ac9647c68d8280852a96f9a7de11a34308d8721f8f0ae4665bc",
+      "run_id": "m2-s005-1790322251798320000",
+      "state_bytes": 1660,
+      "state_contains_ground_truth": false,
+      "state_sha256": "0bf97c36a1b5a112cf02ce0f988490116fd79877556bcf3df5a44ed1b02f04ef",
+      "status": "replayed"
+    },
+    {
+      "data_quality": {
+        "backend_status": {
+          "logs": "ok",
+          "metrics": "ok",
+          "traces": "ok"
+        },
+        "invalid_signals": [],
+        "limitations": [
+          "counter_delta_lower_bound",
+          "logs_sampled",
+          "trace_search_sampled",
+          "trace_roots_only",
+          "no_causal_labels"
+        ],
+        "missing_signals": [
+          "changes",
+          "dependency_spans",
+          "kubernetes",
+          "resource_usage"
+        ],
+        "truncated_signals": [
+          "traces"
+        ]
+      },
+      "deterministic": true,
+      "input": {
+        "record_sha256": "60c70acd409ba291cbf67829aed129bf7c66cd7cba947df108c8c3b4bdef9ab4",
+        "telemetry_sha256": "7ead732ec3a81f8b7e2ff564d7feb4e3545c8207a7a5edb2405d1c01efad661d"
+      },
+      "input_outcome": "passed",
+      "latency_ms": [
+        {
+          "context_build": 1.636,
+          "rules": 0.047
+        },
+        {
+          "context_build": 1.56,
+          "rules": 0.045
+        },
+        {
+          "context_build": 1.931,
+          "rules": 0.049
+        }
+      ],
+      "prediction": {
+        "affected_services": [
+          "checkout",
+          "catalog"
+        ],
+        "confidence": null,
+        "confidence_kind": "not_calibrated",
+        "incident_type": "unknown",
+        "owning_team": "human_triage",
+        "probable_root_cause": "unknown",
+        "reasons": [
+          "incomplete_evidence",
+          "observed_request_errors"
+        ],
+        "recommendation_only": true,
+        "recommended_runbook": "inspect-service-errors",
+        "rules_version": "p001-rules-v1",
+        "symptom": "request_errors",
+        "triage_action": "human_review"
+      },
+      "prediction_sha256": "ada8c5e3ab8fb755f399b8f39134a0e139a06907f82f45e3831fc056b05948f8",
+      "record_sha256": "60c70acd409ba291cbf67829aed129bf7c66cd7cba947df108c8c3b4bdef9ab4",
+      "run_id": "m2-s005-1790322543120343000",
+      "state_bytes": 1661,
+      "state_contains_ground_truth": false,
+      "state_sha256": "cc14ec29e5d708665bbb620702a13db9d4ed11f111822faf374a1283f009f157",
+      "status": "replayed"
+    }
+  ],
+  "schema_sha256": "a6cd72757354b589d6678095064dcc5000f328ebda835766dc2a5f4fa073cf50",
+  "schema_version": "p001-m3-run-v1",
+  "seed": null,
+  "semantic_sha256": "41deb4709151608c8c342bf7a027757a37b9664193093b826f8dc76f1ec70d32",
+  "source_sha256": "f6f0a49318c05408f3d2b5765e4f2c8cbc68fa4867ed4fe5a84ee9278020e981",
+  "split": "design",
+  "state_bytes_max": 1662,
+  "symptom_counts": {
+    "high_latency": 6,
+    "insufficient_data": 13,
+    "request_errors": 9
+  },
+  "time_utc": "2026-09-26T00:48:20.371248+00:00"
+}
